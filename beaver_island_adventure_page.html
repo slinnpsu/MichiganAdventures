@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -178,15 +178,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .ferry-highlight {
@@ -270,7 +273,7 @@
             </div>
             
             <!-- Drive to Charlevoix -->
-            <div class="drive-info" style="top: 140px;">🚗 45 minutes north</div>
+            <div class="drive-info">🚗 45 minutes north</div>
             
             <!-- Stop 1: Charlevoix -->
             <div class="destination-stop">
@@ -303,7 +306,7 @@
             </div>
             
             <!-- Ferry crossing -->
-            <div class="drive-info" style="top: 300px;">⛴️ 2h 10min ferry ride</div>
+            <div class="drive-info">⛴️ 2h 10min ferry ride</div>
             
             <!-- Ferry Experience -->
             <div class="destination-stop">
@@ -390,30 +393,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Island Adventure Notes</div>
+            <div class="notes-title">🗒️ Island Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">⛴️</span>
-                <span>Book ferry vehicle reservations well in advance - limited space available</span>
+                <span class="note-icon">🔄</span>
+                <span>FERRY BOOKING SECRET: Book return trip immediately upon arrival - spots fill up fast in summer</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🏪</span>
-                <span>Stock up in Charlevoix - island has 1 grocery store with limited selection</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">📱</span>
-                <span>Limited cell service - perfect for digital detox and stargazing</span>
+                <span class="note-icon">🛒</span>
+                <span>PROVISIONING TIP: Bring all specialty foods/drinks - island store covers basics only, higher prices</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚗</span>
-                <span>Only paved road is in St. James - rest of island is beautiful dirt roads</span>
+                <span>VEHICLE TIP: Air down tires slightly for better traction on island's beautiful dirt roads</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🏝️</span>
-                <span>13×6 mile island with 600 year-round residents - true "island time"</span>
+                <span class="note-icon">🌤️</span>
+                <span>WEATHER ADVANTAGE: Island creates its own microclimate - often clearer skies than mainland</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">⭐</span>
-                <span>Fun fact: Only place in US that was ever ruled by a king (1850-1856)!</span>
+                <span class="note-icon">📸</span>
+                <span>PHOTOGRAPHY SECRET: Lighthouse at sunset from Sand Bay Road is the iconic Beaver Island shot</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">👋</span>
+                <span>LOCAL CONNECTION: Island residents incredibly friendly - ask for hidden spots and local favorites</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📅</span>
+                <span>TIMING TIP: Shoulder seasons (May, September) have fewer crowds and better accommodation rates</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛽</span>
+                <span>FUEL STRATEGY: Fill up before ferry - island has one gas station with significantly higher prices</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🔦</span>
+                <span>DARK SKY TIP: Bring red flashlight for night navigation - protects night vision for incredible stargazing</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏞️</span>
+                <span>HIDDEN GEM: Barney's Lake for quiet kayaking away from Lake Michigan waves - locals' secret spot</span>
             </div>
         </div>
     </div>
