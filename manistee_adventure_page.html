@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -191,15 +191,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .award-highlight {
@@ -273,13 +276,13 @@
                     </div>
                     <div class="activity-item">
                         <span class="activity-icon">🚀</span>
-                        <span>Perfect year-round escape - just 1 hour south!</span>
+                        <span>Perfect year-round escape!</span>
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Forest -->
-            <div class="drive-info" style="top: 140px;">🚗 1 hour south</div>
+            <div class="drive-info">🚗 1 hour southwest</div>
             
             <!-- Stop 1: National Forest -->
             <div class="destination-stop">
@@ -348,7 +351,7 @@
             </div>
             
             <!-- Drive to Beach -->
-            <div class="drive-info" style="top: 420px;">🚗 30 minutes west</div>
+            <div class="drive-info">🚗 30 minutes to Lake Michigan</div>
             
             <!-- Stop 2: Manistee Beaches -->
             <div class="destination-stop">
@@ -397,30 +400,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Four Season Adventure Notes</div>
+            <div class="notes-title">🗒️ Four Season Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🎿</span>
-                <span>PERFECT winter van destination - heated van + endless cross-country ski trails</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🏆</span>
-                <span>Home to Michigan's #1 beach (USA Today 2024) - First Street Beach</span>
+                <span class="note-icon">📅</span>
+                <span>SEASONAL TIMING: XC skiing Jan-March, beaches June-September, fall colors October</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🏕️</span>
-                <span>540,000+ acres of National Forest with free dispersed camping everywhere</span>
+                <span>HIDDEN GEM: Secret dispersed camping spots with lake views along Forest Road 5629</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🌲</span>
-                <span>Highest point in Lower Peninsula (Briar Hill, 1,706 ft) for epic views</span>
+                <span class="note-icon">🌊</span>
+                <span>LOCAL SECRET: Manistee River Trail connects deep forest to downtown breweries on foot</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🔄</span>
-                <span>Multiple seasons = multiple visits! Winter skiing, summer beaches, fall colors</span>
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: National Forest allows 14-day stays - move every two weeks for extended trips</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">📍</span>
-                <span>Only 1 hour from home base - perfect for spontaneous getaways</span>
+                <span class="note-icon">❄️</span>
+                <span>WEATHER TIP: Lake effect snow makes this area a winter sports paradise with reliable powder</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📸</span>
+                <span>PHOTO SECRET: Briar Hill sunrise shots are spectacular - highest point in Lower Peninsula at 1,706ft</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">💰</span>
+                <span>BUDGET TIP: Free camping + free trails + free beaches = ultimate budget adventure destination</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚴</span>
+                <span>GEAR TIP: Fat tire bikes work year-round - trails in summer, snow biking in winter</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🛒</span>
+                <span>LOCAL CONNECTION: Downtown Manistee has outdoor gear shops for last-minute supply runs</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📱</span>
+                <span>NAVIGATION TIP: Download offline maps - cell service spotty in deep forest areas</span>
             </div>
         </div>
     </div>
