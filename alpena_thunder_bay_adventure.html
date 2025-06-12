@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -215,15 +215,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .sanctuary-highlight {
@@ -343,7 +346,7 @@
             </div>
             
             <!-- Drive to Alpena -->
-            <div class="drive-info" style="top: 140px;">🚗 2.5 hours northeast</div>
+            <div class="drive-info">🚗 2.5 hours northeast</div>
             
             <!-- Stop 1: Alpena Downtown -->
             <div class="destination-stop">
@@ -395,7 +398,7 @@
             </div>
             
             <!-- Glass-bottom boat -->
-            <div class="drive-info" style="top: 360px;">⛴️ Glass-bottom boat tours</div>
+            <div class="drive-info">⛴️ Glass-bottom boat tours</div>
             
             <!-- Stop 2: Thunder Bay Shipwreck Tours -->
             <div class="destination-stop">
@@ -468,7 +471,7 @@
             </div>
             
             <!-- Drive to Rockport -->
-            <div class="drive-info" style="top: 600px;">🚗 12 miles north</div>
+            <div class="drive-info">🚗 12 miles north</div>
             
             <!-- Stop 3: Rockport State Recreation Area -->
             <div class="destination-stop">
@@ -524,7 +527,7 @@
             </div>
             
             <!-- Drive to Negwegon -->
-            <div class="drive-info" style="top: 820px;">🚗 20 minutes south</div>
+            <div class="drive-info">🚗 20 minutes south</div>
             
             <!-- Stop 4: Negwegon State Park -->
             <div class="destination-stop">
@@ -572,7 +575,7 @@
             </div>
             
             <!-- Boat to Thunder Bay Island -->
-            <div class="drive-info" style="top: 980px;">⛵ Boat access only</div>
+            <div class="drive-info">⛵ Boat access only</div>
             
             <!-- Stop 5: Thunder Bay Island -->
             <div class="destination-stop">
