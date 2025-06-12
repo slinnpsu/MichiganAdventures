@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -199,15 +199,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .highlight-box {
@@ -296,7 +299,7 @@
             </div>
             
             <!-- Drive to Ludington -->
-            <div class="drive-info" style="top: 140px;">🚗 1.5 hours south</div>
+            <div class="drive-info">🚗 1.5 hours south</div>
             
             <!-- Stop 1: Ludington State Park -->
             <div class="destination-stop">
@@ -365,7 +368,7 @@
             </div>
             
             <!-- Walk to Lighthouse -->
-            <div class="drive-info" style="top: 380px;">🚶 1.8 mi walk/bike</div>
+            <div class="drive-info">🚶 1.8 mi walk/bike</div>
             
             <!-- Stop 2: Big Sable Point Lighthouse -->
             <div class="destination-stop">
@@ -377,7 +380,7 @@
                     </div>
                     
                     <div class="highlight-box">
-                        🗼 112-foot lighthouse • Climb 130 steps • Spectacular Lake Michigan views! 🗼
+                        🗼 Spectacular Lake Michigan views from the top! 🗼
                     </div>
                     
                     <div class="lighthouse-special">
@@ -406,7 +409,7 @@
             </div>
             
             <!-- Drive to Wilderness -->
-            <div class="drive-info" style="top: 600px;">🚗 20 minutes south</div>
+            <div class="drive-info">🚗 20 minutes south</div>
             
             <!-- Stop 3: Nordhouse Dunes Wilderness -->
             <div class="destination-stop">
@@ -455,30 +458,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Lighthouse & Wilderness Notes</div>
+            <div class="notes-title">🗒️ Lighthouse & Wilderness Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🗼</span>
-                <span>Historic 1867 lighthouse - Michigan's tallest at 112 feet with 130 steps to top</span>
+                <span class="note-icon">🌅</span>
+                <span>TIMING TIP: Climb lighthouse early morning for sunrise photos and fewer crowds</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">❄️</span>
-                <span>AMAZING winter destination - lantern walks, snowshoeing, cross-country skiing</span>
+                <span class="note-icon">🛶</span>
+                <span>HIDDEN GEM: Hamlin Lake boat rentals available for exploring remote backcountry areas</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🏜️</span>
-                <span>Nordhouse = only federal wilderness in Lower Peninsula (designated 1987)</span>
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: Nordhouse allows dispersed camping with vehicles in designated parking areas</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🚶</span>
-                <span>No driving to lighthouse - peaceful 1.8-mile walk through dunes (bikeable too)</span>
+                <span class="note-icon">🏛️</span>
+                <span>LOCAL SECRET: Historic downtown Ludington has craft breweries and ferry to Wisconsin</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🌊</span>
-                <span>Between massive Hamlin Lake & Lake Michigan - best of both worlds</span>
+                <span class="note-icon">📸</span>
+                <span>PHOTO PRO TIP: Lighthouse most photogenic during "blue hour" twilight (30 min after sunset)</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🎪</span>
-                <span>Jack Pine walk-in sites: unique lakefront camping just steps from Lake Michigan</span>
+                <span class="note-icon">💰</span>
+                <span>PRACTICAL TIP: Bring quarters for lighthouse climb admission - cash only at entrance</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍂</span>
+                <span>SEASONAL BONUS: Fall colors peak late September/early October - spectacular dune views</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎒</span>
+                <span>WILDERNESS TIP: Nordhouse requires hiking in camping gear - pack light but bring warm layers</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏛️</span>
+                <span>LOCAL CONNECTION: White Pine Village historic living museum nearby for rainy day activities</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏖️</span>
+                <span>BEACH SECRET: South of lighthouse offers the most secluded stretches for solitude</span>
             </div>
         </div>
     </div>
