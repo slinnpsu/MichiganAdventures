@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -199,15 +199,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .wilderness-highlight {
@@ -316,7 +319,7 @@
             </div>
             
             <!-- Drive to Nordhouse Dunes -->
-            <div class="drive-info" style="top: 140px;">🚗 2 hours south</div>
+            <div class="drive-info">🚗 2 hours south</div>
             
             <!-- Stop 1: Nordhouse Dunes Wilderness -->
             <div class="destination-stop">
@@ -376,7 +379,7 @@
             </div>
             
             <!-- Drive to Ludington -->
-            <div class="drive-info" style="top: 380px;">🚗 20 minutes south</div>
+            <div class="drive-info">🚗 20 minutes south</div>
             
             <!-- Stop 2: Ludington -->
             <div class="destination-stop">
@@ -453,7 +456,7 @@
             </div>
             
             <!-- Drive to Manistee -->
-            <div class="drive-info" style="top: 640px;">🚗 30 minutes north</div>
+            <div class="drive-info">🚗 30 minutes north</div>
             
             <!-- Stop 3: Manistee -->
             <div class="destination-stop">
@@ -514,30 +517,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Wilderness Adventure Notes</div>
+            <div class="notes-title">🗒️ Wilderness Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🏜️</span>
-                <span>ONLY federally designated wilderness in Michigan's Lower Peninsula - true wilderness experience</span>
+                <span class="note-icon">🎒</span>
+                <span>PACKING TIP: Lightweight gear essential - no vehicle access for resupply once you're in</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">📵</span>
-                <span>No cell service = perfect digital detox! Plan ahead, but enjoy the disconnection</span>
+                <span class="note-icon">💧</span>
+                <span>WATER SOURCE: Bring all water or purification tablets - limited freshwater sources available</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📱</span>
+                <span>NAVIGATION TIP: Download offline maps before entering - no cell service for GPS assistance</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌡️</span>
+                <span>WEATHER SECRET: Dunes create microclimates - pack layers for temperature variations</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📸</span>
+                <span>PHOTO PRO TIP: Golden hour on dunes creates dramatic shadows - best lighting 1 hour before sunset</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏕️</span>
+                <span>CAMPING HACK: Windbreaks essential - Lake Michigan winds can be fierce, especially at night</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌿</span>
+                <span>HIDDEN GEM: Interdunal wetlands have unique ecosystems - rare plants and wildlife viewing</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📅</span>
+                <span>TIMING TIP: Visit weekdays for true solitude experience - weekends can get busy near trailheads</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚗</span>
+                <span>LOCAL SECRET: Beach access via Nurnberg Road less crowded than main entrance</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">⚠️</span>
-                <span>Can get crowded near trailheads - hike 1+ miles further for guaranteed solitude</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🍺</span>
-                <span>Ludington & Manistee breweries: Perfect for post-wilderness celebrations</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">❄️</span>
-                <span>WINTER: Lantern-lit activities at Ludington State Park, winter beer festivals</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🗼</span>
-                <span>Big Sable Point Lighthouse: Epic 6-mile beach hike from Nordhouse Dunes</span>
+                <span>SAFETY TIP: Tell someone your plans - true wilderness with no communication once inside</span>
             </div>
         </div>
     </div>
