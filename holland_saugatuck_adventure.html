@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -207,15 +207,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .tulip-highlight {
@@ -313,7 +316,7 @@
             </div>
             
             <!-- Drive to Holland -->
-            <div class="drive-info" style="top: 140px;">🚗 2.5 hours south</div>
+            <div class="drive-info">🚗 2.5 hours south</div>
             
             <!-- Stop 1: Holland -->
             <div class="destination-stop">
@@ -394,7 +397,7 @@
             </div>
             
             <!-- Drive to Saugatuck -->
-            <div class="drive-info" style="top: 380px;">🚗 15 minutes northeast</div>
+            <div class="drive-info">🚗 15 minutes northeast</div>
             
             <!-- Stop 2: Saugatuck -->
             <div class="destination-stop">
@@ -446,7 +449,7 @@
             </div>
             
             <!-- Drive to Grand Haven -->
-            <div class="drive-info" style="top: 580px;">🚗 30 minutes north</div>
+            <div class="drive-info">🚗 30 minutes north</div>
             
             <!-- Stop 3: Grand Haven -->
             <div class="destination-stop">
@@ -499,7 +502,7 @@
             </div>
             
             <!-- Drive to Warren Dunes -->
-            <div class="drive-info" style="top: 750px;">🚗 45 minutes south</div>
+            <div class="drive-info">🚗 45 minutes south</div>
             
             <!-- Stop 4: Warren Dunes State Park -->
             <div class="destination-stop">
@@ -548,26 +551,14 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ West Michigan Cultural Coast Notes</div>
-            <div class="note-item">
-                <span class="note-icon">🌷</span>
-                <span>Holland Tulip Time (late April-May): 6 million tulips bloom citywide - plan ahead!</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🏖️</span>
-                <span>Multiple Top 10 Michigan beaches: Holland State Park (#1), Oval Beach (Top 25 worldwide), Grand Haven State Park (Top 25 US)</span>
-            </div>
+            <div class="notes-title">🗒️ West Michigan Cultural Coast Pro Tips</div>
             <div class="note-item">
                 <span class="note-icon">🍺</span>
                 <span>Brewery Trail: New Holland (Dragon's Milk), Saugatuck Brewing, Odd Side Ales</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">❄️</span>
-                <span>WINTER: Musical Fountain closed, but cross-country skiing, cozy brewery hopping, snow-covered lighthouses</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">⛲</span>
-                <span>Grand Haven Musical Fountain: World's largest! Nightly shows Memorial Day-Labor Day</span>
+                <span>WINTER: Lake effect snow creates winter wonderland for photography, cozy brewery hopping, snow-covered lighthouses</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">⛰️</span>
@@ -576,6 +567,34 @@
             <div class="note-item">
                 <span class="note-icon">🚴</span>
                 <span>Kal-Haven Trail: 34-mile rail-trail from Kalamazoo to South Haven - great van-supported biking</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌅</span>
+                <span>OPTIMAL ROUTE: Holland → Saugatuck → Grand Haven for perfect sunset viewing progression</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏖️</span>
+                <span>HIDDEN GEM: Saugatuck Dunes State Park - less crowded alternative to Warren Dunes with pristine trails</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">💰</span>
+                <span>BUDGET TIP: Grand Haven City Beach is FREE, state park beaches require Recreation Passport ($12/year)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🥿</span>
+                <span>CULTURAL BONUS: Dutch heritage beyond tulips - wooden shoe demonstrations, authentic Dutch food at local restaurants</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📸</span>
+                <span>PHOTO PRO TIP: Best lighthouse shots from pier walkways during golden hour (1 hour before sunset)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍎</span>
+                <span>LOCAL SECRET: Virtue Cider in Fennville (between stops) for award-winning hard ciders and farm tours</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: Many beaches allow overnight parking in designated areas during off-season (Oct-April)</span>
             </div>
         </div>
     </div>
