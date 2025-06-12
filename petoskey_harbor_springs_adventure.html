@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -199,15 +199,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .stone-highlight {
@@ -305,7 +308,7 @@
             </div>
             
             <!-- Drive to Petoskey Beach -->
-            <div class="drive-info" style="top: 140px;">🚗 45 minutes northeast</div>
+            <div class="drive-info">🚗 45 minutes northeast</div>
             
             <!-- Stop 1: Petoskey Stone Beaches -->
             <div class="destination-stop">
@@ -378,7 +381,7 @@
             </div>
             
             <!-- Bike to Harbor Springs -->
-            <div class="drive-info" style="top: 420px;">🚴 6 miles north on trail</div>
+            <div class="drive-info">🚴 6 miles north on trail</div>
             
             <!-- Stop 2: Harbor Springs -->
             <div class="destination-stop">
@@ -427,7 +430,7 @@
             </div>
             
             <!-- Drive Tunnel of Trees -->
-            <div class="drive-info" style="top: 640px;">🚗 Scenic drive north</div>
+            <div class="drive-info">🚗 22 miles north on M-119</div>
             
             <!-- Stop 3: Tunnel of Trees -->
             <div class="destination-stop">
@@ -476,30 +479,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Stone Hunting & Coastal Adventure Notes</div>
+            <div class="notes-title">🗒️ Stone Hunting & Coastal Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🪨</span>
-                <span>PERFECT Petoskey stone hunting - look for wet stones to see the fossilized coral patterns</span>
+                <span class="note-icon">🌊</span>
+                <span>STONE HUNTING SECRET: Best hunting after storms when waves wash up new stones on shore</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌅</span>
+                <span>TIMING TIP: Early morning hunting before other collectors arrive - fewer crowds, fresh finds</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">💧</span>
+                <span>TOOL TIP: Bring spray bottle to wet stones and see coral patterns clearly - dry stones hide details</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏪</span>
+                <span>HIDDEN GEM: Good Hart General Store - historic 1934 stop on Tunnel of Trees route with local crafts</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📸</span>
+                <span>PHOTO TIP: Golden hour lighting makes wet stones glow on sand - magical for photography</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: Many beach parking areas allow overnight stays during off-season (Oct-April)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📶</span>
+                <span>LOCAL SECRET: Harbor Springs has free downtown Wi-Fi perfect for digital nomads and trip planning</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>WEATHER ADVANTAGE: Winter ice-polishing makes stones easier to spot and creates prettier specimens</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚴</span>
-                <span>26-mile Little Traverse Wheelway - perfect for van-supported biking adventures</span>
+                <span>CYCLING TIP: E-bikes available for rent to tackle Little Traverse Wheelway hills with ease</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🍺</span>
-                <span>Petoskey Brewing: Historic brewery (1996) famous for Horny Monk Belgian Ale</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🌳</span>
-                <span>M-119 Tunnel of Trees: Built 1919, ranked among America's most scenic roads</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🏕️</span>
-                <span>Wilderness State Park: 10,500 acres with remote backcountry camping options</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">💡</span>
-                <span>Pro tip: Best stone hunting at Magnus Park Beach & Petoskey State Park shoreline</span>
+                <span class="note-icon">🛣️</span>
+                <span>NAVIGATION TIP: M-119 can be narrow with limited passing - plan for slow, scenic driving pace</span>
             </div>
         </div>
     </div>
