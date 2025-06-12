@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpena & Thunder Bay Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 50%, #2196f3 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🚢';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #ff7043;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #2196f3 20%, #ff7043 40%, #9c27b0 60%, #4caf50 80%, #607d8b 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .alpena-marker {
+            background: #2196f3;
+        }
+        
+        .shipwreck-marker {
+            background: #ff7043;
+        }
+        
+        .rockport-marker {
+            background: #9c27b0;
+        }
+        
+        .negwegon-marker {
+            background: #4caf50;
+        }
+        
+        .thunder-marker {
+            background: #607d8b;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .alpena-info {
+            border-left-color: #2196f3;
+        }
+        
+        .shipwreck-info {
+            border-left-color: #ff7043;
+        }
+        
+        .rockport-info {
+            border-left-color: #9c27b0;
+        }
+        
+        .negwegon-info {
+            border-left-color: #4caf50;
+        }
+        
+        .thunder-info {
+            border-left-color: #607d8b;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(255, 112, 67, 0.1);
+            border: 2px solid #ff7043;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #ff7043;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .sanctuary-highlight {
+            background: linear-gradient(45deg, #2196f3, #03a9f4);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .brewery-highlight {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .fossil-highlight {
+            background: linear-gradient(45deg, #9c27b0, #8e24aa);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .aurora-highlight {
+            background: linear-gradient(45deg, #4caf50, #66bb6a);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .lighthouse-special {
+            background: rgba(96, 125, 139, 0.15);
+            border: 2px solid #607d8b;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Alpena & Thunder Bay</h1>
+            <p class="subtitle">National Marine Sanctuary & Shipwreck Capital</p>
+        </div>
+        
+        <div class="duration-banner">
+            America's Only Freshwater Marine Sanctuary • 200 historic shipwrecks • Glass-bottom boat tours • 400-million-year fossils
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Head to the "Sanctuary of the Great Lakes"!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Alpena -->
+            <div class="drive-info" style="top: 140px;">🚗 2.5 hours northeast</div>
+            
+            <!-- Stop 1: Alpena Downtown -->
+            <div class="destination-stop">
+                <div class="stop-marker alpena-marker"></div>
+                <div class="destination-info alpena-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏛️</span>
+                        <span class="location-name">Downtown Alpena</span>
+                    </div>
+                    
+                    <div class="sanctuary-highlight">
+                        🏛️ Great Lakes Maritime Heritage Center - Gateway to Thunder Bay National Marine Sanctuary! 🏛️
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Alpena Liquid Assets:</strong> Thunder Bay Winery (family-owned, wines named after local landmarks), Fresh Palate (gourmet dining), Austin Brothers Beer Co. (handcrafted Michigan beer), Red Brick Tap & Barrel (English pub with Michigan craft beers).
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Maritime Heritage Center</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏺</span>
+                            <span>Besser Museum (Sky Theater)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>18.5-mile Alpena Bi-Path</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Thunder Bay River walks</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎨</span>
+                            <span>Historic murals downtown</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>Little Red Lighthouse (1914)</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Urban Base:</strong> Thunder Bay River State Forest Campground, Thunder Bay Resort RV Park (premium option with elk viewing)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Glass-bottom boat -->
+            <div class="drive-info" style="top: 360px;">⛴️ Glass-bottom boat tours</div>
+            
+            <!-- Stop 2: Thunder Bay Shipwreck Tours -->
+            <div class="destination-stop">
+                <div class="stop-marker shipwreck-marker"></div>
+                <div class="destination-info shipwreck-info">
+                    <div class="location-header">
+                        <span class="location-icon">🚢</span>
+                        <span class="location-name">Thunder Bay Shipwreck Tours</span>
+                    </div>
+                    
+                    <div class="sanctuary-highlight">
+                        🚢 65-foot "Lady Michigan" with glass-bottom viewing wells! 200+ historic shipwrecks! 🚢
+                    </div>
+
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Activities</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Norway Ridge XC skiing</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥾</span>
+                                <span>Snowshoeing trails</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">⚡</span>
+                                <span>Aurora Borealis viewing</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎣</span>
+                                <span>Ice fishing</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>4,300 sq mile marine sanctuary</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🤿</span>
+                            <span>Scuba diving shipwrecks</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Kayaking to shallow wrecks</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏊</span>
+                            <span>Snorkeling opportunities</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Charter fishing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📚</span>
+                            <span>Maritime history education</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Tours:</strong> 2.5-hour glass-bottom boat experiences, seasonal moorings May-September, advance booking recommended
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Rockport -->
+            <div class="drive-info" style="top: 600px;">🚗 12 miles north</div>
+            
+            <!-- Stop 3: Rockport State Recreation Area -->
+            <div class="destination-stop">
+                <div class="stop-marker rockport-marker"></div>
+                <div class="destination-info rockport-info">
+                    <div class="location-header">
+                        <span class="location-icon">🪨</span>
+                        <span class="location-name">Rockport State Recreation Area</span>
+                    </div>
+                    
+                    <div class="fossil-highlight">
+                        🪨 400-million-year-old Devonian fossils! 25 lbs per person collection limit! 🪨
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏺</span>
+                            <span>Devonian Period fossil hunting</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>Abandoned limestone quarry</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦇</span>
+                            <span>Bat hibernaculum (3 species)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌌</span>
+                            <span>Official Dark Sky Park</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🕳️</span>
+                            <span>Dozen sinkholes to explore</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛵</span>
+                            <span>Boat launch & historic pier</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>20+ miles rugged trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>Mountain biking</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Rustic Camping:</strong> 4,237-acre recreation area, dispersed camping, requires sturdy shoes for fossil hunting
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Negwegon -->
+            <div class="drive-info" style="top: 820px;">🚗 20 minutes south</div>
+            
+            <!-- Stop 4: Negwegon State Park -->
+            <div class="destination-stop">
+                <div class="stop-marker negwegon-marker"></div>
+                <div class="destination-info negwegon-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏕️</span>
+                        <span class="location-name">Negwegon State Park</span>
+                    </div>
+                    
+                    <div class="aurora-highlight">
+                        🌌 Official Dark Sky Preserve & Aurora Borealis viewing! Hike-in wilderness camping! 🌌
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🎒</span>
+                            <span>4 hike-in primitive campsites</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>7 miles Lake Huron shoreline</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌌</span>
+                            <span>Dark sky preserve stargazing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>11 miles hiking trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦅</span>
+                            <span>Premier birdwatching</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Paddle-in camping option</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Backcountry:</strong> 4 sites (1-2.2 mile hikes), water at parking lot only, reservations through Harrisville State Park
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Boat to Thunder Bay Island -->
+            <div class="drive-info" style="top: 980px;">⛵ Boat access only</div>
+            
+            <!-- Stop 5: Thunder Bay Island -->
+            <div class="destination-stop">
+                <div class="stop-marker thunder-marker"></div>
+                <div class="destination-info thunder-info">
+                    <div class="location-header">
+                        <span class="location-icon">🗼</span>
+                        <span class="location-name">Thunder Bay Island</span>
+                    </div>
+                    
+                    <div class="sanctuary-highlight">
+                        🗼 Historic 1832 lighthouse! One of oldest on Lake Huron! Restoration in progress! 🗼
+                    </div>
+
+                    <div class="lighthouse-special">
+                        <strong>Island Access:</strong> Limited to Coast Guard, Wildlife Service, and Thunder Bay Island Preservation Society members. Best viewed from Lady Michigan glass-bottom boat tours or private boat charter.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>1832 lighthouse (3rd on Lake Huron)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Life-saving station ruins</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐦</span>
+                            <span>National Wildlife Refuge</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏃</span>
+                            <span>Historic ghost town site</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📷</span>
+                            <span>Wildlife photography</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Pristine island beaches</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>No Camping:</strong> Day-use only, accessible by charter or private boat, part of Michigan Islands National Wildlife Refuge
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Sanctuary & Shipwreck Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🚢</span>
+                <span>America's ONLY freshwater National Marine Sanctuary! 200+ shipwrecks in "Shipwreck Alley"</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛴️</span>
+                <span>Glass-bottom boat "Lady Michigan": 2.5-hour tours, large viewing wells, May-October</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🪨</span>
+                <span>Rockport fossil hunting: 400-million-year Devonian Period, 25 lbs collection limit per person</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌌</span>
+                <span>THREE Dark Sky Preserves: Rockport, Negwegon, and Thompson's Harbor for Aurora viewing</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>Thunder Bay Winery: Family-owned, wines named after local landmarks (Starlite Beach, Rockport Red)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>WINTER: Aurora Borealis best Sept-April, XC skiing at Norway Ridge, 100+ miles groomed trails</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🗼</span>
+                <span>Thunder Bay Island: 1832 lighthouse, limited access, best viewed from boat tours</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏕️</span>
+                <span>Negwegon: Pristine hike-in camping, 4 sites max 2.2 miles, dark sky stargazing</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

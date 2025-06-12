@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petoskey & Harbor Springs Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6e6fa 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4169e1 0%, #6495ed 50%, #87ceeb 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🪨';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #3498db 33%, #e74c3c 66%, #9b59b6 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .petoskey-marker {
+            background: #3498db;
+        }
+        
+        .harbor-marker {
+            background: #e74c3c;
+        }
+        
+        .tunnel-marker {
+            background: #9b59b6;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .petoskey-info {
+            border-left-color: #3498db;
+        }
+        
+        .harbor-info {
+            border-left-color: #e74c3c;
+        }
+        
+        .tunnel-info {
+            border-left-color: #9b59b6;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(155, 89, 182, 0.1);
+            border: 2px solid #9b59b6;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #9b59b6;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .stone-highlight {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .wheelway-special {
+            background: rgba(52, 152, 219, 0.15);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .brewery-highlight {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Petoskey & Harbor Springs</h1>
+            <p class="subtitle">Stone Hunting Paradise & Coastal Elegance</p>
+        </div>
+        
+        <div class="duration-banner">
+            Petoskey stone hunting • 26-mile bike trail • Historic breweries • Secluded camping
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Off to hunt for Michigan's state stone!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Petoskey Beach -->
+            <div class="drive-info" style="top: 140px;">🚗 45 minutes northeast</div>
+            
+            <!-- Stop 1: Petoskey Stone Beaches -->
+            <div class="destination-stop">
+                <div class="stop-marker petoskey-marker"></div>
+                <div class="destination-info petoskey-info">
+                    <div class="location-header">
+                        <span class="location-icon">🪨</span>
+                        <span class="location-name">Petoskey Stone Beaches</span>
+                    </div>
+                    
+                    <div class="stone-highlight">
+                        🪨 World's best Petoskey stone hunting! 400-million-year-old fossilized coral! 🪨
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Stone Hunting</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Cross-country skiing trails</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🪨</span>
+                                <span>Ice-polished stones easier to spot</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🌨️</span>
+                            <span>Lake-effect snow paradise</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🔥</span>
+                                <span>Beach bonfires allowed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Multiple public beaches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>Magnus Park & Beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Little Traverse Bay views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>Waterfront walking trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Bay fishing spots</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic Gaslight District</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Van-Friendly Options:</strong> Harvest Hosts nearby, secluded parking at Magnus Park for day use
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bike to Harbor Springs -->
+            <div class="drive-info" style="top: 420px;">🚴 6 miles north on trail</div>
+            
+            <!-- Stop 2: Harbor Springs -->
+            <div class="destination-stop">
+                <div class="stop-marker harbor-marker"></div>
+                <div class="destination-info harbor-info">
+                    <div class="location-header">
+                        <span class="location-icon">⛵</span>
+                        <span class="location-name">Harbor Springs</span>
+                    </div>
+                    
+                    <div class="wheelway-special">
+                        <strong>Little Traverse Wheelway:</strong> 26-mile paved trail connecting Charlevoix to Harbor Springs - perfect for van-supported cycling!
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Notable Brewery:</strong> Petoskey Brewing (downtown Petoskey) - Award-winning craft beer since 1996. Features Horny Monk Belgian Ale!
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic downtown</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Zorn Park Beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛵</span>
+                            <span>Deepest harbor in Great Lakes</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍽️</span>
+                            <span>Waterfront dining</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎭</span>
+                            <span>Arts & cultural events</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌿</span>
+                            <span>Thorne Swift Nature Preserve</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive Tunnel of Trees -->
+            <div class="drive-info" style="top: 640px;">🚗 Scenic drive north</div>
+            
+            <!-- Stop 3: Tunnel of Trees -->
+            <div class="destination-stop">
+                <div class="stop-marker tunnel-marker"></div>
+                <div class="destination-info tunnel-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌳</span>
+                        <span class="location-name">M-119 Tunnel of Trees</span>
+                    </div>
+                    
+                    <div class="stone-highlight">
+                        🌳 One of America's most scenic roads! Tree-lined canopy route along Lake Michigan! 🌳
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🚗</span>
+                            <span>22 miles scenic route</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍂</span>
+                            <span>Spectacular fall colors</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌸</span>
+                            <span>Spring trillium carpets</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Hidden beach access points</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏘️</span>
+                            <span>Cross Village (Legs Inn)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Wilderness State Park</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Remote Camping:</strong> Wilderness State Park (dispersed backcountry sites), roadside pulloffs for scenic overnight parking
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Stone Hunting & Coastal Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🪨</span>
+                <span>PERFECT Petoskey stone hunting - look for wet stones to see the fossilized coral patterns</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚴</span>
+                <span>26-mile Little Traverse Wheelway - perfect for van-supported biking adventures</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>Petoskey Brewing: Historic brewery (1996) famous for Horny Monk Belgian Ale</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌳</span>
+                <span>M-119 Tunnel of Trees: Built 1919, ranked among America's most scenic roads</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏕️</span>
+                <span>Wilderness State Park: 10,500 acres with remote backcountry camping options</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">💡</span>
+                <span>Pro tip: Best stone hunting at Magnus Park Beach & Petoskey State Park shoreline</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

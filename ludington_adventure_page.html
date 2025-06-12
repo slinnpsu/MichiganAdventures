@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludington State Park Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff9e6 0%, #e6f3ff 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #e74c3c 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🗼';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #e67e22;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #2980b9 33%, #8e44ad 66%, #e74c3c 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .park-marker {
+            background: #2980b9;
+        }
+        
+        .lighthouse-marker {
+            background: #8e44ad;
+        }
+        
+        .wilderness-marker {
+            background: #e74c3c;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .park-info {
+            border-left-color: #2980b9;
+        }
+        
+        .lighthouse-info {
+            border-left-color: #8e44ad;
+        }
+        
+        .wilderness-info {
+            border-left-color: #e74c3c;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(142, 68, 173, 0.1);
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .lighthouse-special {
+            background: rgba(142, 68, 173, 0.15);
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Ludington State Park</h1>
+            <p class="subtitle">Lighthouse Views & Dunes Wilderness</p>
+        </div>
+        
+        <div class="duration-banner">
+            112-foot lighthouse • 21 miles of trails • 7 miles Lake Michigan shoreline
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Iconic lighthouse adventure awaits!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Ludington -->
+            <div class="drive-info" style="top: 140px;">🚗 1.5 hours south</div>
+            
+            <!-- Stop 1: Ludington State Park -->
+            <div class="destination-stop">
+                <div class="stop-marker park-marker"></div>
+                <div class="destination-info park-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏞️</span>
+                        <span class="location-name">Ludington State Park</span>
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Magic</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Cross-country skiing</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥾</span>
+                                <span>Snowshoeing tours</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🕯️</span>
+                                <span>Lantern-lit evening walks</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🔥</span>
+                                <span>Bonfire at amphitheater</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>21 miles marked trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>7 miles Lake Michigan shore</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>Paved bike paths</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Hamlin Lake paddling</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Skyline Trail vistas</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐕</span>
+                            <span>Dog-friendly beaches</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Camping:</strong> 3 campgrounds (Pines, Cedars, Jack Pine walk-in sites), 5,000-acre Hamlin Lake
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Walk to Lighthouse -->
+            <div class="drive-info" style="top: 380px;">🚶 1.8 mi walk/bike</div>
+            
+            <!-- Stop 2: Big Sable Point Lighthouse -->
+            <div class="destination-stop">
+                <div class="stop-marker lighthouse-marker"></div>
+                <div class="destination-info lighthouse-info">
+                    <div class="location-header">
+                        <span class="location-icon">🗼</span>
+                        <span class="location-name">Big Sable Point Lighthouse</span>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        🗼 112-foot lighthouse • Climb 130 steps • Spectacular Lake Michigan views! 🗼
+                    </div>
+                    
+                    <div class="lighthouse-special">
+                        <strong>Lighthouse Experience:</strong> Built 1867 • $8 adults/$5 kids to climb • Gift shop in keeper's quarters • 20,000 visitors annually!
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">📸</span>
+                            <span>Iconic striped tower</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Pristine beach access</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎁</span>
+                            <span>Historic gift shop</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Sunrise/sunset views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Wilderness -->
+            <div class="drive-info" style="top: 600px;">🚗 20 minutes south</div>
+            
+            <!-- Stop 3: Nordhouse Dunes Wilderness -->
+            <div class="destination-stop">
+                <div class="stop-marker wilderness-marker"></div>
+                <div class="destination-info wilderness-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏜️</span>
+                        <span class="location-name">Nordhouse Dunes Wilderness</span>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        🏜️ Only federally designated wilderness in Lower Peninsula! 🏜️
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>140-foot sand dunes</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Dispersed beach camping</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>10 miles wilderness trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>4 miles untouched shoreline</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">💧</span>
+                            <span>Interdunal ponds</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌌</span>
+                            <span>Dark sky stargazing</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Wilderness Camping:</strong> 3,500 acres, hike-in camping, largest freshwater interdunal ponds in world
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Lighthouse & Wilderness Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🗼</span>
+                <span>Historic 1867 lighthouse - Michigan's tallest at 112 feet with 130 steps to top</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>AMAZING winter destination - lantern walks, snowshoeing, cross-country skiing</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏜️</span>
+                <span>Nordhouse = only federal wilderness in Lower Peninsula (designated 1987)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚶</span>
+                <span>No driving to lighthouse - peaceful 1.8-mile walk through dunes (bikeable too)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌊</span>
+                <span>Between massive Hamlin Lake & Lake Michigan - best of both worlds</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎪</span>
+                <span>Jack Pine walk-in sites: unique lakefront camping just steps from Lake Michigan</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manistee National Forest Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 50%, #6ab7ff 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🌲';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #28a745;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #16a085 50%, #3498db 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .forest-marker {
+            background: #16a085;
+        }
+        
+        .beach-marker {
+            background: #3498db;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .forest-info {
+            border-left-color: #16a085;
+        }
+        
+        .beach-info {
+            border-left-color: #3498db;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(52, 152, 219, 0.1);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .award-highlight {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Manistee National Forest</h1>
+            <p class="subtitle">Four Season Paradise - Van Life Perfection</p>
+        </div>
+        
+        <div class="duration-banner">
+            540,000 acres • #1 beach in Michigan • World-class cross-country skiing
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Perfect year-round escape - just 1 hour south!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Forest -->
+            <div class="drive-info" style="top: 140px;">🚗 1 hour south</div>
+            
+            <!-- Stop 1: National Forest -->
+            <div class="destination-stop">
+                <div class="stop-marker forest-marker"></div>
+                <div class="destination-info forest-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌲</span>
+                        <span class="location-name">Manistee National Forest</span>
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Wonderland</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Hundreds of miles XC ski trails</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥾</span>
+                                <span>Snowshoeing paradise</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🔥</span>
+                                <span>Cozy van camping with heat</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🌌</span>
+                                <span>Stargazing in snow</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>23-mile trail loop</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌉</span>
+                            <span>Suspension bridge</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Free dispersed camping</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>Briar Hill (highest in LP)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐕</span>
+                            <span>Dog-friendly trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">💧</span>
+                            <span>Waterfalls & river views</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Camping:</strong> Seaton Creek, Red Bridge, Upper River Road, dispersed sites throughout
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Beach -->
+            <div class="drive-info" style="top: 420px;">🚗 30 minutes west</div>
+            
+            <!-- Stop 2: Manistee Beaches -->
+            <div class="destination-stop">
+                <div class="stop-marker beach-marker"></div>
+                <div class="destination-info beach-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏖️</span>
+                        <span class="location-name">Manistee Beach Towns</span>
+                    </div>
+                    
+                    <div class="award-highlight">
+                        🏆 First Street Beach: USA Today's #1 Beach in Michigan 2024! 🏆
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Award-winning beaches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏰</span>
+                            <span>Historic lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Lake Michigan swimming</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>Lakeshore biking</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍺</span>
+                            <span>Downtown breweries</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Epic sunset watching</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Camping:</strong> Lake Michigan Recreation Area (lakefront), Nordhouse Dunes Wilderness
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Four Season Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🎿</span>
+                <span>PERFECT winter van destination - heated van + endless cross-country ski trails</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏆</span>
+                <span>Home to Michigan's #1 beach (USA Today 2024) - First Street Beach</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏕️</span>
+                <span>540,000+ acres of National Forest with free dispersed camping everywhere</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌲</span>
+                <span>Highest point in Lower Peninsula (Briar Hill, 1,706 ft) for epic views</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🔄</span>
+                <span>Multiple seasons = multiple visits! Winter skiing, summer beaches, fall colors</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📍</span>
+                <span>Only 1 hour from home base - perfect for spontaneous getaways</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

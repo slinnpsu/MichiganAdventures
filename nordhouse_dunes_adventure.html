@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nordhouse Dunes Wilderness Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f7dc6f 0%, #aed6f1 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 50%, #d35400 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🏕️';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #8e44ad;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #f39c12 33%, #3498db 66%, #e74c3c 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .wilderness-marker {
+            background: #f39c12;
+        }
+        
+        .ludington-marker {
+            background: #3498db;
+        }
+        
+        .manistee-marker {
+            background: #e74c3c;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .wilderness-info {
+            border-left-color: #f39c12;
+        }
+        
+        .ludington-info {
+            border-left-color: #3498db;
+        }
+        
+        .manistee-info {
+            border-left-color: #e74c3c;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(231, 76, 60, 0.1);
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .wilderness-highlight {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .lighthouse-highlight {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .brewery-highlight {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .wilderness-special {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Nordhouse Dunes Wilderness</h1>
+            <p class="subtitle">Michigan's Only Lower Peninsula Wilderness</p>
+        </div>
+        
+        <div class="duration-banner">
+            140-foot dunes • 4 miles pristine shoreline • True wilderness • Digital detox
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Adventure to Michigan's only wilderness!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Nordhouse Dunes -->
+            <div class="drive-info" style="top: 140px;">🚗 2 hours south</div>
+            
+            <!-- Stop 1: Nordhouse Dunes Wilderness -->
+            <div class="destination-stop">
+                <div class="stop-marker wilderness-marker"></div>
+                <div class="destination-info wilderness-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏕️</span>
+                        <span class="location-name">Nordhouse Dunes Wilderness</span>
+                    </div>
+                    
+                    <div class="wilderness-highlight">
+                        🏜️ Only federally designated wilderness in Michigan's Lower Peninsula! 3,450 acres! 🏜️
+                    </div>
+                    
+                    <div class="wilderness-special">
+                        <strong>True Wilderness Experience:</strong> 140-foot sand dunes (3,500-4,000 years old), 4 miles undeveloped Lake Michigan shoreline, no motorized vehicles, complete cell service blackout.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Dispersed camping anywhere</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>14.5 miles minimally marked trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>4 miles pristine beach hiking</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Freshwater interdunal wetlands</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Hammock camping popular</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦅</span>
+                            <span>Piping plover nesting area</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>Rolling hardwood forests</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📵</span>
+                            <span>Complete digital detox</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Wilderness Rules:</strong> Camp 400+ feet from water, no fires on beach, pack everything in/out, solitude guaranteed if you hike further
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Ludington -->
+            <div class="drive-info" style="top: 380px;">🚗 20 minutes south</div>
+            
+            <!-- Stop 2: Ludington -->
+            <div class="destination-stop">
+                <div class="stop-marker ludington-marker"></div>
+                <div class="destination-info ludington-info">
+                    <div class="location-header">
+                        <span class="location-icon">🗼</span>
+                        <span class="location-name">Ludington</span>
+                    </div>
+                    
+                    <div class="lighthouse-highlight">
+                        🗼 Big Sable Point Lighthouse: 112-foot lighthouse, 6-mile hike from Nordhouse! 🗼
+                    </div>
+
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Adventures (January-February)</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🕯️</span>
+                                <span>Lantern-lit skiing & snowshoeing</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🍺</span>
+                                <span>Pure Ludington BRRRewfest</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Cross-country skiing dunes</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🚴</span>
+                                <span>Fat tire biking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍻 Ludington Liquid Assets:</strong> Jamesport Brewing ("The Pub" since 2000, 12 house brews), Ludington Bay Brewing (modern taproom with glass brewing wall).
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⛴️</span>
+                            <span>SS Badger carferry</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏞️</span>
+                            <span>Ludington State Park</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Stearns Park Beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic downtown</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍺</span>
+                            <span>Multiple breweries</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛒</span>
+                            <span>Resupply shopping</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Base Camp Options:</strong> Lake Michigan Recreation Area (99 campsites), Ludington State Park
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Manistee -->
+            <div class="drive-info" style="top: 640px;">🚗 30 minutes north</div>
+            
+            <!-- Stop 3: Manistee -->
+            <div class="destination-stop">
+                <div class="stop-marker manistee-marker"></div>
+                <div class="destination-info manistee-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏛️</span>
+                        <span class="location-name">Manistee</span>
+                    </div>
+                    
+                    <div class="wilderness-highlight">
+                        🏛️ Charming historic coastal town with North Channel Brewing & Manistee Riverwalk! 🏛️
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Manistee Brewing:</strong> North Channel Brewing - "Ode to Manistee's fascinating history," craft beers and signature cocktails woven into local stories.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Manistee Riverwalk</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>North Pierhead Lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛴️</span>
+                            <span>SS City of Milwaukee (ferry)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>First Street Beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎭</span>
+                            <span>Ramsdell Theatre</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Manistee River paddling</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic Victorian district</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍺</span>
+                            <span>North Channel Brewing</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Additional Access:</strong> Alternative entry point to Nordhouse via Manistee, boutique shops and eateries
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Wilderness Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🏜️</span>
+                <span>ONLY federally designated wilderness in Michigan's Lower Peninsula - true wilderness experience</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📵</span>
+                <span>No cell service = perfect digital detox! Plan ahead, but enjoy the disconnection</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⚠️</span>
+                <span>Can get crowded near trailheads - hike 1+ miles further for guaranteed solitude</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>Ludington & Manistee breweries: Perfect for post-wilderness celebrations</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>WINTER: Lantern-lit activities at Ludington State Park, winter beer festivals</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🗼</span>
+                <span>Big Sable Point Lighthouse: Epic 6-mile beach hike from Nordhouse Dunes</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

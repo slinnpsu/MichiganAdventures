@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michigan Van Adventures - Complete Digital Collection</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 30px;
+        }
+        
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin: 15px 0 0 0;
+            font-style: italic;
+        }
+        
+        .dedication {
+            font-size: 1.1rem;
+            color: #e74c3c;
+            margin: 10px 0 0 0;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        .adventure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .adventure-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 18px;
+            border-left: 4px solid;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .adventure-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* Adventure-specific colors */
+        .alpena-card { border-left-color: #2196f3; }
+        .ludington-card { border-left-color: #e74c3c; }
+        .beaver-card { border-left-color: #03a9f4; }
+        .petoskey-card { border-left-color: #6495ed; }
+        .jordan-card { border-left-color: #4caf50; }
+        .holland-card { border-left-color: #ff9800; }
+        .nordhouse-card { border-left-color: #9c27b0; }
+        .manistee-card { border-left-color: #009688; }
+        .huron-card { border-left-color: #607d8b; }
+        .up-card { border-left-color: #795548; }
+        .resources-card { border-left-color: #1abc9c; }
+        
+        .adventure-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .adventure-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .adventure-description {
+            color: #5d6d7e;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .adventure-highlights {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            font-style: italic;
+            line-height: 1.3;
+        }
+        
+        .pages-info {
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            color: #3498db;
+            font-weight: bold;
+            margin-top: 8px;
+            display: inline-block;
+        }
+        
+        .instructions {
+            background: #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .instructions-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 12px;
+        }
+        
+        .instruction-item {
+            margin: 8px 0;
+            color: #5d6d7e;
+            font-size: 0.9rem;
+        }
+        
+        .icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .stats-text {
+            font-size: 1.1rem;
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="main-title">🚐 Michigan Van Adventures</h1>
+            <p class="subtitle">Complete Digital Collection for Jim & Suzie</p>
+            <p class="dedication">From Our Traverse City Home Base</p>
+        </div>
+
+        <div class="stats">
+            <div class="stats-text">🗺️ 10 Complete Adventures • Full Interactive Pages • Endless Michigan Memories</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🌊 Great Lakes Adventures</h2>
+            
+            <div class="adventure-grid">
+                <div class="adventure-card alpena-card">
+                    <a href="alpena_thunder_bay_adventure.html" class="adventure-link">
+                        <div class="adventure-name">🚢 Alpena & Thunder Bay</div>
+                        <div class="adventure-description">National Marine Sanctuary & Shipwreck Capital</div>
+                        <div class="adventure-highlights">America's only freshwater marine sanctuary • 200+ shipwrecks • Glass-bottom boat tours • 400-million-year fossils</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card ludington-card">
+                    <a href="ludington_adventure_page.html" class="adventure-link">
+                        <div class="adventure-name">🗼 Ludington State Park</div>
+                        <div class="adventure-description">Lighthouse Views & Dunes Wilderness</div>
+                        <div class="adventure-highlights">112-foot lighthouse • 21 miles of trails • 7 miles Lake Michigan shoreline</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card holland-card">
+                    <a href="holland_saugatuck_adventure.html" class="adventure-link">
+                        <div class="adventure-name">🌷 Holland & Saugatuck</div>
+                        <div class="adventure-description">Dutch Heritage & Art Coast</div>
+                        <div class="adventure-highlights">Tulip Time festival • Oval Beach • Art galleries • Dutch architecture</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card nordhouse-card">
+                    <a href="nordhouse_dunes_adventure.html" class="adventure-link">
+                        <div class="adventure-name">🏜️ Nordhouse Dunes</div>
+                        <div class="adventure-description">Wilderness Beach Camping</div>
+                        <div class="adventure-highlights">3,450 acres wilderness • Backcountry beach camping • Lake Michigan dunes</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card manistee-card">
+                    <a href="manistee_adventure_page.html" class="adventure-link">
+                        <div class="adventure-name">🌊 Manistee National Forest</div>
+                        <div class="adventure-description">River Town & Forest Adventures</div>
+                        <div class="adventure-highlights">Manistee River • Victorian port city • First Street Beach • National forest camping</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🏔️ Northern Michigan</h2>
+            
+            <div class="adventure-grid">
+                <div class="adventure-card petoskey-card">
+                    <a href="petoskey_harbor_springs_adventure.html" class="adventure-link">
+                        <div class="adventure-name">🪨 Petoskey & Harbor Springs</div>
+                        <div class="adventure-description">Stone Hunting Paradise & Coastal Elegance</div>
+                        <div class="adventure-highlights">Petoskey stone hunting • 26-mile bike trail • Historic breweries • Secluded camping</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card beaver-card">
+                    <a href="beaver_island_adventure_page.html" class="adventure-link">
+                        <div class="adventure-name">⛴️ Beaver Island Ferry</div>
+                        <div class="adventure-description">America's Emerald Isle by Camper Van</div>
+                        <div class="adventure-highlights">Island life • Dark sky sanctuary • Take your home across Lake Michigan!</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card jordan-card">
+                    <a href="jordan_river_adventure.html" class="adventure-link">
+                        <div class="adventure-name">🎣 Jordan River Valley</div>
+                        <div class="adventure-description">Wild & Scenic River Adventures</div>
+                        <div class="adventure-highlights">America's toughest trout stream • Winter rafting • Short's Brewing • Pristine wilderness</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🌲 Forest & Wilderness</h2>
+            
+            <div class="adventure-grid">
+                <div class="adventure-card huron-card">
+                    <a href="huron_forest_adventure.html" class="adventure-link">
+                        <div class="adventure-name">🌅 Huron National Forest</div>
+                        <div class="adventure-description">AuSable River & Sunrise Coast</div>
+                        <div class="adventure-highlights">Nearly 1 million acres • AuSable River canoeing • Historic lighthouses • Sunrise viewing</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+
+                <div class="adventure-card up-card">
+                    <a href="up_adventure_page.html" class="adventure-link">
+                        <div class="adventure-name">🦌 Upper Peninsula</div>
+                        <div class="adventure-description">Marquette & Copper Harbor</div>
+                        <div class="adventure-highlights">Pictured Rocks • Michigan's northernmost brewery • Superior hiking • Fall colors</div>
+                        <div class="pages-info">Full Adventure Page</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📚 Resources & Planning</h2>
+            
+            <div class="adventure-card resources-card">
+                <a href="michigan_resources.html" class="adventure-link">
+                    <div class="adventure-name">🔗 Michigan Van Adventure Resources</div>
+                    <div class="adventure-description">Complete Guide with Links for Planning</div>
+                    <div class="adventure-highlights">State parks • Tourism websites • Breweries • Camping resources • Trail maps • Local food guides</div>
+                    <div class="pages-info">4 Pages • Planning Guide</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <div class="instructions-title">📖 How to Use This Digital Collection</div>
+            <div class="instruction-item">
+                <span class="icon">🖱️</span>
+                <strong>Click any adventure card</strong> to start reading that full adventure guide
+            </div>
+            <div class="instruction-item">
+                <span class="icon">📄</span>
+                <strong>Full adventure pages:</strong> Each adventure is now a complete, scrollable page with all content
+            </div>
+            <div class="instruction-item">
+                <span class="icon">🔗</span>
+                <strong>Resource links:</strong> All blue links in the Resources section are clickable for planning
+            </div>
+            <div class="instruction-item">
+                <span class="icon">🏠</span>
+                <strong>Return here:</strong> Use your browser's back button or bookmark this index page
+            </div>
+            <div class="instruction-item">
+                <span class="icon">📱</span>
+                <strong>Works offline:</strong> All files work without internet once downloaded
+            </div>
+            <div class="instruction-item">
+                <span class="icon">🖨️</span>
+                <strong>Print versions:</strong> Full adventures may span multiple pages when printed - adjust print settings as needed
+            </div>
+        </div>
+    </div>
+</body>
+</html>

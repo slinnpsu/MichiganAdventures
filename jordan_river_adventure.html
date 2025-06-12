@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan River Valley Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e8f5e8 0%, #d1ecf1 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #16a085 0%, #27ae60 50%, #2ecc71 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🎣';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #e67e22;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #16a085 33%, #3498db 66%, #8e44ad 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .pathway-marker {
+            background: #16a085;
+        }
+        
+        .river-marker {
+            background: #3498db;
+        }
+        
+        .bellaire-marker {
+            background: #8e44ad;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .pathway-info {
+            border-left-color: #16a085;
+        }
+        
+        .river-info {
+            border-left-color: #3498db;
+        }
+        
+        .bellaire-info {
+            border-left-color: #8e44ad;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(142, 68, 173, 0.1);
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .trout-highlight {
+            background: linear-gradient(45deg, #16a085, #27ae60);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .winter-highlight {
+            background: linear-gradient(45deg, #3498db, #74b9ff);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .brewery-highlight {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .pathway-special {
+            background: rgba(22, 160, 133, 0.15);
+            border: 2px solid #16a085;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Jordan River Valley</h1>
+            <p class="subtitle">Michigan's Premier Trout Stream & Winter Wonderland</p>
+        </div>
+        
+        <div class="duration-banner">
+            Michigan's first Wild & Scenic River • Winter rafting • Epic trout fishing • Liquid assets
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Off to Michigan's most legendary trout stream!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Jordan Valley -->
+            <div class="drive-info" style="top: 140px;">🚗 45 minutes south</div>
+            
+            <!-- Stop 1: Jordan Valley Pathway -->
+            <div class="destination-stop">
+                <div class="stop-marker pathway-marker"></div>
+                <div class="destination-info pathway-info">
+                    <div class="location-header">
+                        <span class="location-icon">🥾</span>
+                        <span class="location-name">Jordan Valley Pathway</span>
+                    </div>
+                    
+                    <div class="pathway-special">
+                        <strong>18-Mile Hiking Loop:</strong> Perfect 2-day backpack through 22,000 acres of protected valley. Pinney Bridge State Campground at halfway point.
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">🍂</span>
+                            <span>Fall Colors (Early October Peak)</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🍂</span>
+                                <span>Spectacular hardwood forests</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">📸</span>
+                                <span>Deadman's Hill Overlook</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎣</span>
+                                <span>Prime fall trout fishing</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🌡️</span>
+                                <span>Perfect hiking weather</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>North Country Trail access</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Fish Hatchery side trip</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦫</span>
+                            <span>Wildlife viewing (beavers, deer)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Backcountry camping</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌲</span>
+                            <span>Cedar banks & valley views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>Ridge top climbs</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Camping:</strong> Pinney Bridge State Campground (pit toilets, hand pump), dispersed forest camping
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to East Jordan -->
+            <div class="drive-info" style="top: 420px;">🚗 15 minutes northeast</div>
+            
+            <!-- Stop 2: East Jordan / Jordan River -->
+            <div class="destination-stop">
+                <div class="stop-marker river-marker"></div>
+                <div class="destination-info river-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌊</span>
+                        <span class="location-name">East Jordan & Jordan River</span>
+                    </div>
+                    
+                    <div class="trout-highlight">
+                        🎣 Michigan's First Wild & Scenic River (1972) - "America's Toughest Trout Stream"! 🎣
+                    </div>
+
+                    <div class="winter-highlight">
+                        ❄️ WINTER RAFTING: "Feels like floating in a snow globe" - Hot cocoa stops! ❄️
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Magic (December-March)</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🛶</span>
+                                <span>Guided winter rafting</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">☕</span>
+                                <span>Hot cocoa riverside stops</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🦅</span>
+                                <span>Wildlife viewing (eagles, deer)</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">❄️</span>
+                                <span>Snow-covered forest beauty</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Brook trout (native)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐟</span>
+                            <span>Wild brown trout</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Steelhead runs (spring)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Kayaking & canoeing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>National Fish Hatchery</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦫</span>
+                            <span>Otters, mink, waterfowl</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Jordan Valley Outfitters:</strong> Winter rafting $17-47, kayak rentals, guided eco-tours ages 3-90
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Bellaire -->
+            <div class="drive-info" style="top: 680px;">🚗 15 minutes west</div>
+            
+            <!-- Stop 3: Bellaire Liquid Assets -->
+            <div class="destination-stop">
+                <div class="stop-marker bellaire-marker"></div>
+                <div class="destination-info bellaire-info">
+                    <div class="location-header">
+                        <span class="location-icon">🍺</span>
+                        <span class="location-name">Bellaire "Liquid Assets"</span>
+                    </div>
+                    
+                    <div class="trout-highlight">
+                        🍺 Short's Brewing: Cult following! Plus Mammoth Distilling & Bee Well Mead! 🍺
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍻 Liquid Assets Tour:</strong> Short's Brewing Company (famous unique brews), Mammoth Distilling (Northern Single Malt Whiskey), Bee Well Mead & Cider (local honey & apples), Starcut Ciders.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🍺</span>
+                            <span>Short's Brewing Company</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥃</span>
+                            <span>Mammoth Distilling</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍯</span>
+                            <span>Bee Well Mead & Cider</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍎</span>
+                            <span>Starcut Ciders</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>Glacial Hills MTB trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Chain of Lakes paddling</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏪</span>
+                            <span>Historic downtown</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌿</span>
+                            <span>Grass River Natural Area</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Additional Fun:</strong> 16h 51min daylight in summer, Rubber Ducky Festival (August), hot air balloons
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Jordan Valley Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🎣</span>
+                <span>Jordan River: Michigan's first Wild & Scenic River (1972), legendary for technical trout fishing</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>WINTER RAFTING: Unique guided trips through snowy wilderness, ages 3-90, December-March</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>Bellaire "Liquid Assets": Short's Brewing (cult status), Mammoth Distilling, Bee Well Mead</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌊</span>
+                <span>Best steelhead fishing: mid-March to early May. Fall colors peak: early October</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🥾</span>
+                <span>18-mile backpacking loop perfect for 2-day adventure with Pinney Bridge camping</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏕️</span>
+                <span>Van-friendly: State forest dispersed camping, Jordan Valley protected from development</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Hearts, One Van, Endless Michigan</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            min-height: 100vh;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .title-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 2px solid #3498db;
+        }
+        
+        .main-title {
+            font-size: 3.2rem;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .subtitle {
+            font-size: 1.6rem;
+            margin: 20px 0;
+            font-style: italic;
+            color: #5d6d7e;
+        }
+        
+        .names {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 30px 0 20px 0;
+            color: #e74c3c;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            margin: 20px 0 0 0;
+            font-style: italic;
+            color: #7f8c8d;
+            line-height: 1.4;
+        }
+        
+        .van-icon {
+            font-size: 4rem;
+            margin: 30px 0;
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .heart-decoration {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.6; }
+        }
+        
+        .heart-1 {
+            top: 15%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        
+        .heart-2 {
+            top: 20%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+        
+        .heart-3 {
+            bottom: 25%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+        
+        .heart-4 {
+            bottom: 15%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+        
+        .michigan-outline {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            opacity: 0.2;
+            font-size: 6rem;
+            transform: rotate(15deg);
+        }
+        
+        .year-badge {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e74c3c;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .adventure-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+            transition: transform 0.2s ease;
+            margin-top: 40px;
+        }
+        
+        .adventure-button:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-decoration heart-1">💙</div>
+    <div class="heart-decoration heart-2">💚</div>
+    <div class="heart-decoration heart-3">🧡</div>
+    <div class="heart-decoration heart-4">💛</div>
+    <div class="michigan-outline">🗾</div>
+    
+    <div class="year-badge">10th Anniversary</div>
+    
+    <div class="title-container">
+        <h1 class="main-title">Two Hearts, One Van, Endless Michigan</h1>
+        
+        <div class="van-icon">🚐</div>
+        
+        <p class="subtitle">10 Adventures Built for Us</p>
+        
+        <div class="names">Jim and Suzie</div>
+        
+        <p class="tagline">A Decade of Love, A Lifetime of Exploration</p>
+        
+        <a href="adventures.html" class="adventure-button">
+            🗺️ Begin Our Michigan Adventures
+        </a>
+    </div>
+</body>
+</html>

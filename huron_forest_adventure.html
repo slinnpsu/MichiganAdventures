@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huron National Forest Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e8f4f8 0%, #dceef9 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 50%, #2196f3 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🚣';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #ff6f00;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #2196f3 20%, #ff6f00 40%, #9c27b0 60%, #e91e63 80%, #795548 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .oscoda-marker {
+            background: #2196f3;
+        }
+        
+        .forest-marker {
+            background: #ff6f00;
+        }
+        
+        .wilderness-marker {
+            background: #9c27b0;
+        }
+        
+        .tawas-marker {
+            background: #e91e63;
+        }
+        
+        .augres-marker {
+            background: #795548;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .oscoda-info {
+            border-left-color: #2196f3;
+        }
+        
+        .forest-info {
+            border-left-color: #ff6f00;
+        }
+        
+        .wilderness-info {
+            border-left-color: #9c27b0;
+        }
+        
+        .tawas-info {
+            border-left-color: #e91e63;
+        }
+        
+        .augres-info {
+            border-left-color: #795548;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(156, 39, 176, 0.1);
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #9c27b0;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .river-highlight {
+            background: linear-gradient(45deg, #2196f3, #03a9f4);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .historic-box {
+            background: rgba(255, 111, 0, 0.15);
+            border: 2px solid #ff6f00;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .brewery-highlight {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .lighthouse-highlight {
+            background: linear-gradient(45deg, #e91e63, #ad1457);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Huron National Forest</h1>
+            <p class="subtitle">AuSable River & Sunrise Coast Adventure</p>
+        </div>
+        
+        <div class="duration-banner">
+            Michigan's Most Popular Paddling River • 1 million acres • Historic Lumberman's Trail • Sunrise Coast breweries
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Head to Michigan's legendary river country!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Oscoda -->
+            <div class="drive-info" style="top: 140px;">🚗 2.5 hours east</div>
+            
+            <!-- Stop 1: Oscoda -->
+            <div class="destination-stop">
+                <div class="stop-marker oscoda-marker"></div>
+                <div class="destination-info oscoda-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌅</span>
+                        <span class="location-name">Oscoda - "Heart of Sunrise Side"</span>
+                    </div>
+                    
+                    <div class="river-highlight">
+                        🚣 AuSable River: Michigan's Most Popular Paddling River! Home of 120-mile marathon! 🚣
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Oscoda Liquid Assets:</strong> Alcona Brew Haus - Local craft beer destination with wood-fired pizzas, plus access to the Sunrise Side Wine & Hops Trail (8 wineries, 4 breweries along US-23).
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>World-class canoeing/kayaking</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Blue ribbon trout fishing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Sugar sand Lake Huron beaches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Epic sunrise watching</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛵</span>
+                            <span>AuSable River Queen tours</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏆</span>
+                            <span>Canoe marathon finish line</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Base Camp:</strong> Van Etten Lake campground, Three Mile Beach Park, Huron Sunrise Park for beach access
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Forest -->
+            <div class="drive-info" style="top: 340px;">🚗 30 minutes west</div>
+            
+            <!-- Stop 2: Huron National Forest -->
+            <div class="destination-stop">
+                <div class="stop-marker forest-marker"></div>
+                <div class="destination-info forest-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌲</span>
+                        <span class="location-name">Huron National Forest</span>
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">❄️</span>
+                            <span>Winter Paradise</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Corsair Trails: 28.3 mi XC skiing</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🚴</span>
+                                <span>Eagle Run: groomed fat biking</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎣</span>
+                                <span>Ice fishing Van Etten Lake</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🏕️</span>
+                                <span>Winter van camping</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="historic-box">
+                        <strong>Historic River Road Scenic Byway:</strong> Connects Iargo Springs (sacred Native American site with 30-ft observation deck & 300 steps), Lumberman's Monument (14-ft bronze tribute), and scenic AuSable overlooks.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>Eagle Run Trail (7 mi river)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌿</span>
+                            <span>Highbanks Trail (7 mi pines)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Lumberman's Monument</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">💧</span>
+                            <span>Iargo Springs (300 steps down)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Dispersed camping everywhere</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⚱️</span>
+                            <span>Gold panning opportunities</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Van Paradise:</strong> Nearly unlimited dispersed camping throughout 1 million acres (200+ ft from water), Seaton Creek area popular
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Hoist Lake -->
+            <div class="drive-info" style="top: 580px;">🚗 45 minutes northwest</div>
+            
+            <!-- Stop 3: Hoist Lake Foot Travel Area -->
+            <div class="destination-stop">
+                <div class="stop-marker wilderness-marker"></div>
+                <div class="destination-info wilderness-info">
+                    <div class="location-header">
+                        <span class="location-icon">🎒</span>
+                        <span class="location-name">Hoist Lake Foot Travel Area</span>
+                    </div>
+                    
+                    <div class="river-highlight">
+                        🎒 10,600 acres • No motorized vehicles • 7 pristine lakes • Pure wilderness! 🎒
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>19 miles wilderness trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>7 backcountry lake campsites</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Pristine lake fishing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌌</span>
+                            <span>Dark sky stargazing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦌</span>
+                            <span>Wildlife observation</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📷</span>
+                            <span>Photography paradise</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Backpacking:</strong> Hike-in camping at remote lakes, most pristine wilderness in Lower Peninsula, permits required
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Tawas -->
+            <div class="drive-info" style="top: 740px;">🚗 1 hour southeast</div>
+            
+            <!-- Stop 4: Tawas Area -->
+            <div class="destination-stop">
+                <div class="stop-marker tawas-marker"></div>
+                <div class="destination-info tawas-info">
+                    <div class="location-header">
+                        <span class="location-icon">🗼</span>
+                        <span class="location-name">Tawas Area</span>
+                    </div>
+                    
+                    <div class="lighthouse-highlight">
+                        🗼 Tawas Point Lighthouse (1853) • State park with 2 miles of Lake Huron shoreline! 🗼
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Tawas Brewing:</strong> Boathouse Beer Co. & Boozery - Lakeside location with signature Tawas Bay IPA, part of the Sunrise Side Wine & Hops Trail experience.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>Historic lighthouse tours</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>2 miles pristine beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐦</span>
+                            <span>Tawas Point birding hotspot</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛵</span>
+                            <span>Tawas Bay sailing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Sunrise Coast sunrises</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Charter fishing</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Lakefront Camping:</strong> Tawas Point State Park (193 sites), many with direct Lake Huron access
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Au Gres -->
+            <div class="drive-info" style="top: 900px;">🚗 30 minutes south</div>
+            
+            <!-- Stop 5: Au Gres -->
+            <div class="destination-stop">
+                <div class="stop-marker augres-marker"></div>
+                <div class="destination-info augres-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌊</span>
+                        <span class="location-name">Au Gres</span>
+                    </div>
+                    
+                    <div class="river-highlight">
+                        🌊 Au Gres River mouth • Steelhead & salmon fishing • Quiet Sunrise Coast gem! 🌊
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Steelhead & salmon runs</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Au Gres River paddling</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Quiet Lake Huron beaches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦅</span>
+                            <span>Waterfowl hunting</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Secluded camping spots</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Peaceful sunrise watching</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Hidden Gem:</strong> Au Gres City Park camping, quiet alternative to busier Sunrise Coast destinations
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ River & Wilderness Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🚣</span>
+                <span>AuSable River voted "Michigan's Most Popular River for Paddling" by DNR 2015</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏆</span>
+                <span>Annual 120-mile AuSable River Canoe Marathon in July - world's toughest canoe race</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛷️</span>
+                <span>Corsair Trail System: Largest groomed cross-country ski network in Michigan (28.3 miles)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏛️</span>
+                <span>Historic logging region - Lumberman's Monument honors the men who "cut the big timber"</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>Sunrise Side Wine & Hops Trail: 8 wineries, 4 breweries along US-23 including Alcona Brew Haus</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌅</span>
+                <span>Oscoda = "Heart of Sunrise Side" - best Lake Huron sunrises on the Great Lakes</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏕️</span>
+                <span>Nearly unlimited free dispersed camping in 1 million acres of National Forest</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎒</span>
+                <span>Hoist Lake: Most pristine wilderness backpacking in Lower Peninsula, 7 remote lakes</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

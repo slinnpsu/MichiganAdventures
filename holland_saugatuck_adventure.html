@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holland, Saugatuck & Grand Haven Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fef9e7 0%, #f8f9fa 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🌷';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #e74c3c;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #f39c12 25%, #e74c3c 50%, #8e44ad 75%, #3498db 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .holland-marker {
+            background: #f39c12;
+        }
+        
+        .saugatuck-marker {
+            background: #e74c3c;
+        }
+        
+        .haven-marker {
+            background: #8e44ad;
+        }
+        
+        .state-marker {
+            background: #3498db;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .holland-info {
+            border-left-color: #f39c12;
+        }
+        
+        .saugatuck-info {
+            border-left-color: #e74c3c;
+        }
+        
+        .haven-info {
+            border-left-color: #8e44ad;
+        }
+        
+        .state-info {
+            border-left-color: #3498db;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .seasonal-activities {
+            background: rgba(255, 107, 53, 0.1);
+            border: 2px solid #ff6b35;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .tulip-highlight {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .brewery-highlight {
+            background: rgba(243, 156, 18, 0.15);
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .beach-special {
+            background: rgba(52, 152, 219, 0.15);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Holland, Saugatuck & Grand Haven</h1>
+            <p class="subtitle">Tulips, Art Towns & Lake Michigan Paradise</p>
+        </div>
+        
+        <div class="duration-banner">
+            Top 10 Michigan beaches • Hope College memories • Musical fountain • Dutch heritage
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Journey to West Michigan's cultural coast!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Holland -->
+            <div class="drive-info" style="top: 140px;">🚗 2.5 hours south</div>
+            
+            <!-- Stop 1: Holland -->
+            <div class="destination-stop">
+                <div class="stop-marker holland-marker"></div>
+                <div class="destination-info holland-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌷</span>
+                        <span class="location-name">Holland</span>
+                    </div>
+                    
+                    <div class="tulip-highlight">
+                        🌷 Home to Tulip Time Festival! 6 million tulips bloom in May! Top 10 Michigan beaches! 🌷
+                    </div>
+                    
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">🌷</span>
+                            <span>Spring Tulip Season (Late April-May)</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🌷</span>
+                                <span>6 million tulips in bloom</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎭</span>
+                                <span>Dutch dancing performances</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🏛️</span>
+                                <span>Nelis' Dutch Village</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🌾</span>
+                                <span>DeZwaan Windmill tours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Local Breweries:</strong> New Holland Brewing (founded 1997) - Famous for Dragon's Milk bourbon barrel stout. Also Bravo! Restaurant & Cafe with craft beer focus.
+                    </div>
+
+                    <div class="beach-special">
+                        <strong>🎓 Hope College:</strong> Beautiful 120-acre campus in downtown Holland where you attended! Founded 1851, scenic location near Lake Michigan shores.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Holland State Park Beach (#1 MI)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>"Big Red" Lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>Kal-Haven Trail</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌾</span>
+                            <span>Authentic Dutch windmill</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Lake Macatawa access</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎓</span>
+                            <span>Hope College campus visit</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Van Options:</strong> Harvest Host locations, Holland State Park (lakefront sites), dispersed parking near beaches
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Saugatuck -->
+            <div class="drive-info" style="top: 380px;">🚗 15 minutes northeast</div>
+            
+            <!-- Stop 2: Saugatuck -->
+            <div class="destination-stop">
+                <div class="stop-marker saugatuck-marker"></div>
+                <div class="destination-info saugatuck-info">
+                    <div class="location-header">
+                        <span class="location-icon">🎨</span>
+                        <span class="location-name">Saugatuck</span>
+                    </div>
+                    
+                    <div class="tulip-highlight">
+                        🎨 "Art Coast of Michigan" - Historic artist colony since 1910s! Oval Beach: Top 25 Beaches Worldwide! 🎨
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Brewery Highlights:</strong> Saugatuck Brewing Company (since 2005) - Known for Neapolitan Milk Stout. Virtue Cider nearby for Michigan's finest hard ciders.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🎨</span>
+                            <span>Historic art galleries</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Oval Beach (Top 25 worldwide)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛵</span>
+                            <span>Star of Saugatuck boat tours</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>Mount Baldhead climb</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Kalamazoo River mouth</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Victorian architecture</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Unique Camping:</strong> Warren Dunes State Park (30 min), private campgrounds, Harvest Host options
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Grand Haven -->
+            <div class="drive-info" style="top: 580px;">🚗 30 minutes north</div>
+            
+            <!-- Stop 3: Grand Haven -->
+            <div class="destination-stop">
+                <div class="stop-marker haven-marker"></div>
+                <div class="destination-info haven-info">
+                    <div class="location-header">
+                        <span class="location-icon">⛲</span>
+                        <span class="location-name">Grand Haven</span>
+                    </div>
+                    
+                    <div class="tulip-highlight">
+                        ⛲ World's largest musical fountain! Grand Haven State Park: Top 25 US beaches 2024! ⛲
+                    </div>
+
+                    <div class="brewery-highlight">
+                        <strong>🍺 Grand Haven Brewing:</strong> Odd Side Ales (nearby) - Acclaimed craft brewery. Downtown Grand Haven has several craft beer spots with Lake Michigan views.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⛲</span>
+                            <span>Musical fountain shows</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌉</span>
+                            <span>Grand Haven Pier walk</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Grand Haven State Park Beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Grand Haven City Beach (free)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>Historic lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Epic sunset watching</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic downtown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Warren Dunes -->
+            <div class="drive-info" style="top: 750px;">🚗 45 minutes south</div>
+            
+            <!-- Stop 4: Warren Dunes State Park -->
+            <div class="destination-stop">
+                <div class="stop-marker state-marker"></div>
+                <div class="destination-info state-info">
+                    <div class="location-header">
+                        <span class="location-icon">⛰️</span>
+                        <span class="location-name">Warren Dunes State Park</span>
+                    </div>
+                    
+                    <div class="beach-special">
+                        <strong>Sand Dune Paradise:</strong> 240-foot tall sand dunes! 3 miles of Lake Michigan shoreline with secluded beach camping options.
+                    </div>
+                    
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span>240-foot sand dunes</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>3 miles pristine beach</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>6 miles hiking trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏄</span>
+                            <span>Hang gliding launches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Swimming & surfing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Beachfront camping</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Van Paradise:</strong> Warren Dunes beachfront sites, Tower Hill semi-primitive sites for solitude
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ West Michigan Cultural Coast Notes</div>
+            <div class="note-item">
+                <span class="note-icon">🌷</span>
+                <span>Holland Tulip Time (late April-May): 6 million tulips bloom citywide - plan ahead!</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏖️</span>
+                <span>Multiple Top 10 Michigan beaches: Holland State Park (#1), Oval Beach (Top 25 worldwide), Grand Haven State Park (Top 25 US)</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎓</span>
+                <span>Hope College: Beautiful campus where you attended - 120 acres in downtown Holland</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>Brewery Trail: New Holland (Dragon's Milk), Saugatuck Brewing, Odd Side Ales</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>WINTER: Musical Fountain closed, but cross-country skiing, cozy brewery hopping, snow-covered lighthouses</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛲</span>
+                <span>Grand Haven Musical Fountain: World's largest! Nightly shows Memorial Day-Labor Day</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛰️</span>
+                <span>Warren Dunes: 240-foot dunes perfect for hang gliding, secluded Tower Hill sites for privacy</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚴</span>
+                <span>Kal-Haven Trail: 34-mile rail-trail from Kalamazoo to South Haven - great van-supported biking</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
