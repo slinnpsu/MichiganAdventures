@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -199,15 +199,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .trout-highlight {
@@ -316,7 +319,7 @@
             </div>
             
             <!-- Drive to Jordan Valley -->
-            <div class="drive-info" style="top: 140px;">🚗 45 minutes south</div>
+            <div class="drive-info">🚗 45 minutes south</div>
             
             <!-- Stop 1: Jordan Valley Pathway -->
             <div class="destination-stop">
@@ -389,7 +392,7 @@
             </div>
             
             <!-- Drive to East Jordan -->
-            <div class="drive-info" style="top: 420px;">🚗 15 minutes northeast</div>
+            <div class="drive-info">🚗 15 minutes northeast</div>
             
             <!-- Stop 2: East Jordan / Jordan River -->
             <div class="destination-stop">
@@ -466,7 +469,7 @@
             </div>
             
             <!-- Drive to Bellaire -->
-            <div class="drive-info" style="top: 680px;">🚗 15 minutes west</div>
+            <div class="drive-info">🚗 15 minutes west</div>
             
             <!-- Stop 3: Bellaire Liquid Assets -->
             <div class="destination-stop">
@@ -527,30 +530,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Jordan Valley Adventure Notes</div>
+            <div class="notes-title">🗒️ Jordan Valley Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🎣</span>
-                <span>Jordan River: Michigan's first Wild & Scenic River (1972), legendary for technical trout fishing</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">❄️</span>
-                <span>WINTER RAFTING: Unique guided trips through snowy wilderness, ages 3-90, December-March</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🍺</span>
-                <span>Bellaire "Liquid Assets": Short's Brewing (cult status), Mammoth Distilling, Bee Well Mead</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🌊</span>
-                <span>Best steelhead fishing: mid-March to early May. Fall colors peak: early October</span>
+                <span class="note-icon">🌅</span>
+                <span>FISHING SECRET: Early morning dry fly fishing yields best results on these technical waters</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🥾</span>
-                <span>18-mile backpacking loop perfect for 2-day adventure with Pinney Bridge camping</span>
+                <span>GEAR TIP: Waders essential year-round - water stays cold even in summer months</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🏕️</span>
-                <span>Van-friendly: State forest dispersed camping, Jordan Valley protected from development</span>
+                <span class="note-icon">📱</span>
+                <span>NAVIGATION TIP: Download offline maps before entering - cell service spotty in deep valley</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎯</span>
+                <span>TIMING STRATEGY: Fish upstream sections less crowded than popular downstream access points</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌬️</span>
+                <span>WEATHER ADVANTAGE: Valley creates wind protection - good fishing even on blustery days</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏛️</span>
+                <span>LOCAL SECRET: Fish hatchery has educational programs and easier fishing for beginners</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: Forest roads allow dispersed camping near trailheads for early morning starts</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📸</span>
+                <span>PHOTO TIP: Deadman's Hill overlook best at golden hour for dramatic valley lighting</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍺</span>
+                <span>BREWERY STRATEGY: Bellaire liquid assets tour perfect reward after challenging day on river</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>SEASONAL BONUS: Winter rafting books up fast - reserve early for this unique snow globe experience</span>
             </div>
         </div>
     </div>
