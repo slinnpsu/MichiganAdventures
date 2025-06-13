@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -215,15 +215,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .river-highlight {
@@ -332,7 +335,7 @@
             </div>
             
             <!-- Drive to Oscoda -->
-            <div class="drive-info" style="top: 140px;">🚗 2.5 hours east</div>
+            <div class="drive-info">🚗 2.5 hours east</div>
             
             <!-- Stop 1: Oscoda -->
             <div class="destination-stop">
@@ -384,7 +387,7 @@
             </div>
             
             <!-- Drive to Forest -->
-            <div class="drive-info" style="top: 340px;">🚗 30 minutes west</div>
+            <div class="drive-info">🚗 30 minutes west</div>
             
             <!-- Stop 2: Huron National Forest -->
             <div class="destination-stop">
@@ -457,7 +460,7 @@
             </div>
             
             <!-- Drive to Hoist Lake -->
-            <div class="drive-info" style="top: 580px;">🚗 45 minutes northwest</div>
+            <div class="drive-info">🚗 45 minutes northwest</div>
             
             <!-- Stop 3: Hoist Lake Foot Travel Area -->
             <div class="destination-stop">
@@ -505,7 +508,7 @@
             </div>
             
             <!-- Drive to Tawas -->
-            <div class="drive-info" style="top: 740px;">🚗 1 hour southeast</div>
+            <div class="drive-info">🚗 1 hour southeast</div>
             
             <!-- Stop 4: Tawas Area -->
             <div class="destination-stop">
@@ -557,7 +560,7 @@
             </div>
             
             <!-- Drive to Au Gres -->
-            <div class="drive-info" style="top: 900px;">🚗 30 minutes south</div>
+            <div class="drive-info">🚗 30 minutes south</div>
             
             <!-- Stop 5: Au Gres -->
             <div class="destination-stop">
@@ -606,38 +609,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ River & Wilderness Adventure Notes</div>
+            <div class="notes-title">🗒️ River & Wilderness Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🚣</span>
-                <span>AuSable River voted "Michigan's Most Popular River for Paddling" by DNR 2015</span>
+                <span class="note-icon">🌊</span>
+                <span>RIVER TIMING: AuSable flows year-round but spring/fall offer fewer crowds and better fishing</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🏆</span>
-                <span>Annual 120-mile AuSable River Canoe Marathon in July - world's toughest canoe race</span>
+                <span class="note-icon">🔦</span>
+                <span>GEAR SECRET: Bring headlamp for Iargo Springs 300-step descent - can be dim under tree canopy</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">⛷️</span>
-                <span>Corsair Trail System: Largest groomed cross-country ski network in Michigan (28.3 miles)</span>
+                <span class="note-icon">📱</span>
+                <span>NAVIGATION TIP: Forest roads can be confusing - download offline maps before entering deep woods</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎣</span>
+                <span>FISHING STRATEGY: Early morning on AuSable before canoe traffic starts - trout are less spooked</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: Many forest roads allow overnight parking away from main routes - explore responsibly</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📸</span>
+                <span>PHOTO TIP: Lumberman's Monument best photographed at golden hour for dramatic bronze lighting</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌡️</span>
+                <span>WEATHER ADVANTAGE: Lake Huron moderates temperatures - milder than inland Michigan destinations</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📋</span>
+                <span>LOCAL SECRET: Hoist Lake requires permits but rarely enforced - still get them for peace of mind</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎣</span>
+                <span>SEASONAL BONUS: Ice fishing Van Etten Lake produces excellent perch and walleye in winter</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🏛️</span>
-                <span>Historic logging region - Lumberman's Monument honors the men who "cut the big timber"</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🍺</span>
-                <span>Sunrise Side Wine & Hops Trail: 8 wineries, 4 breweries along US-23 including Alcona Brew Haus</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🌅</span>
-                <span>Oscoda = "Heart of Sunrise Side" - best Lake Huron sunrises on the Great Lakes</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🏕️</span>
-                <span>Nearly unlimited free dispersed camping in 1 million acres of National Forest</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🎒</span>
-                <span>Hoist Lake: Most pristine wilderness backpacking in Lower Peninsula, 7 remote lakes</span>
+                <span>HIDDEN GEM: Iargo Springs sacred to Chippewa tribe - respectful behavior important at this site</span>
             </div>
         </div>
     </div>
