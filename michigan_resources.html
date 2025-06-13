@@ -111,6 +111,20 @@
             margin: 20px 0;
         }
         
+        .vanlife-section {
+            background: rgba(155, 89, 182, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .safety-section {
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
         .note {
             background: #ecf0f1;
             border-left: 4px solid #34495e;
@@ -119,6 +133,32 @@
             border-radius: 5px;
             font-style: italic;
             color: #5d6d7e;
+        }
+        
+        .quick-ref {
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .divider {
+            border-top: 3px solid #95a5a6;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .divider::after {
+            content: "🚐 PRACTICAL VAN LIFE RESOURCES 🚐";
+            background: white;
+            padding: 0 20px;
+            color: #7f8c8d;
+            font-weight: bold;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -249,6 +289,57 @@
                 <a href="https://www.alltrails.com/us/michigan" class="resource-link">AllTrails Michigan</a>
                 <span class="resource-description">- Reviews, photos, and GPS maps for hiking trails throughout Michigan</span>
             </div>
+        </div>
+
+        <div class="brewery-section">
+            <h2 class="section-title">🍺 Notable Breweries & "Liquid Assets" by Region</h2>
+            
+            <h3 class="subsection-title">Upper Peninsula:</h3>
+            <div class="resource-item">🍺 <a href="https://blackrocksbrewery.com" class="resource-link">Blackrocks Brewery</a> (Marquette) - Outdoor adventure brewery</div>
+            <div class="resource-item">🍺 <a href="https://bricksidebrewery.com" class="resource-link">Brickside Brewery</a> (Copper Harbor) - Michigan's northernmost brewery!</div>
+
+            <h3 class="subsection-title">Northern Lower Peninsula:</h3>
+            <div class="resource-item">🍺 <a href="https://petoskeybrewing.com" class="resource-link">Petoskey Brewing</a> - Historic 1996, famous for Horny Monk Belgian Ale</div>
+
+            <h3 class="subsection-title">West Michigan Coast:</h3>
+            <div class="resource-item">🍺 <a href="https://newhollandbrew.com" class="resource-link">New Holland Brewing</a> (Holland) - Dragon's Milk bourbon barrel stout</div>
+            <div class="resource-item">🍺 <a href="https://saugatuckbrewing.com" class="resource-link">Saugatuck Brewing Company</a> - Known for Neapolitan Milk Stout</div>
+            <div class="resource-item">🍺 <a href="https://virtuebrewing.com" class="resource-link">Virtue Cider</a> (Saugatuck area) - Michigan's finest hard ciders</div>
+            <div class="resource-item">🍺 <a href="https://www.oddsideales.com" class="resource-link">Odd Side Ales</a> (Grand Haven area) - Acclaimed craft brewery</div>
+
+            <h3 class="subsection-title">Local Food & Dining:</h3>
+            <div class="resource-item">🍽️ <a href="https://www.localdifference.org/partner/the-fresh-palate/" class="resource-link">The Fresh Palate</a> (Alpena) - Farm-to-table dining, Michigan ingredients</div>
+            <div class="resource-item">🌮 <a href="https://www.jollydonuts.com" class="resource-link">Jelly Donut</a> (Traverse City) - Local favorite for breakfast</div>
+            <div class="resource-item">🍕 <a href="https://www.trattoriastellamarina.com" class="resource-link">Trattoria Stella</a> (Traverse City) - Italian dining in historic building</div>
+            <div class="resource-item">🦞 <a href="https://www.thepearlgr.com" class="resource-link">The Pearl</a> (Grand Rapids) - Upscale seafood, worth the drive</div>
+        </div>
+
+        <div class="beach-section">
+            <h2 class="section-title">🏖️ Michigan's Top-Rated Beaches</h2>
+            
+            <h3 class="subsection-title">Award-Winning Beaches:</h3>
+            <div class="resource-item">🏆 <strong>Holland State Park Beach</strong> - TripAdvisor's #1 beach in Michigan 2024, "Big Red" lighthouse</div>
+            <div class="resource-item">🏆 <strong>Oval Beach (Saugatuck)</strong> - Condé Nast "Top 25 Beaches in the World"</div>
+            <div class="resource-item">🏆 <strong>Grand Haven State Park Beach</strong> - Travel & Leisure "Top 25 Beaches in America" 2024</div>
+            <div class="resource-item">🏆 <strong>First Street Beach, Manistee</strong> - USA Today's #1 Beach in Michigan 2024</div>
+
+            <h3 class="subsection-title">Stone Hunting & Unique Features:</h3>
+            <div class="resource-item">🪨 <strong>Petoskey State Park</strong> - World's best Petoskey stone hunting, 400-million-year-old fossilized coral</div>
+            <div class="resource-item">🪨 <strong>Rockport State Recreation Area</strong> - 400-million-year Devonian fossils, abandoned limestone quarry</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🌌 Dark Sky Parks & Stargazing</h2>
+            <div class="resource-item">⭐ <strong>Rockport State Recreation Area</strong> - Official Michigan Dark Sky Designation</div>
+            <div class="resource-item">⭐ <strong>Negwegon State Park</strong> - Dark Sky Preserve, 4 hike-in primitive campsites</div>
+            <div class="resource-item">⭐ <strong>Thompson's Harbor State Park</strong> - Third Dark Sky Preserve near Alpena</div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🎣 Fishing & Water Activities</h2>
+            <div class="resource-item">🌊 <strong>Jordan River</strong> - Michigan's first Wild & Scenic River (1972), "America's toughest trout stream"</div>
+            <div class="resource-item">🚣 <strong>AuSable River</strong> - "Michigan's Most Popular River for Paddling," 120-mile canoe marathon route</div>
+            <div class="resource-item">🚢 <strong>Thunder Bay National Marine Sanctuary</strong> - 4,300 square-mile marine protected area, 200+ shipwrecks</div>
         </div>
 
         <div class="section">
@@ -399,55 +490,164 @@
             </div>
         </div>
 
-        <div class="brewery-section">
-            <h2 class="section-title">🍺 Notable Breweries & "Liquid Assets" by Region</h2>
-            
-            <h3 class="subsection-title">Upper Peninsula:</h3>
-            <div class="resource-item">🍺 <a href="https://blackrocksbrewery.com" class="resource-link">Blackrocks Brewery</a> (Marquette) - Outdoor adventure brewery</div>
-            <div class="resource-item">🍺 <a href="https://bricksidebrewery.com" class="resource-link">Brickside Brewery</a> (Copper Harbor) - Michigan's northernmost brewery!</div>
+        <!-- Divider before practical information -->
+        <div class="divider"></div>
 
-            <h3 class="subsection-title">Northern Lower Peninsula:</h3>
-            <div class="resource-item">🍺 <a href="https://petoskeybrewing.com" class="resource-link">Petoskey Brewing</a> - Historic 1996, famous for Horny Monk Belgian Ale</div>
-
-            <h3 class="subsection-title">West Michigan Coast:</h3>
-            <div class="resource-item">🍺 <a href="https://newhollandbrew.com" class="resource-link">New Holland Brewing</a> (Holland) - Dragon's Milk bourbon barrel stout</div>
-            <div class="resource-item">🍺 <a href="https://saugatuckbrewing.com" class="resource-link">Saugatuck Brewing Company</a> - Known for Neapolitan Milk Stout</div>
-            <div class="resource-item">🍺 <a href="https://virtuebrewing.com" class="resource-link">Virtue Cider</a> (Saugatuck area) - Michigan's finest hard ciders</div>
-            <div class="resource-item">🍺 <a href="https://www.oddsideales.com" class="resource-link">Odd Side Ales</a> (Grand Haven area) - Acclaimed craft brewery</div>
-
-            <h3 class="subsection-title">Local Food & Dining:</h3>
-            <div class="resource-item">🍽️ <a href="https://www.localdifference.org/partner/the-fresh-palate/" class="resource-link">The Fresh Palate</a> (Alpena) - Farm-to-table dining, Michigan ingredients</div>
-            <div class="resource-item">🌮 <a href="https://www.jollydonuts.com" class="resource-link">Jelly Donut</a> (Traverse City) - Local favorite for breakfast</div>
-            <div class="resource-item">🍕 <a href="https://www.trattoriastellamarina.com" class="resource-link">Trattoria Stella</a> (Traverse City) - Italian dining in historic building</div>
-            <div class="resource-item">🦞 <a href="https://www.thepearlgr.com" class="resource-link">The Pearl</a> (Grand Rapids) - Upscale seafood, worth the drive</div>
-        </div>
-
-        <div class="beach-section">
-            <h2 class="section-title">🏖️ Michigan's Top-Rated Beaches</h2>
-            
-            <h3 class="subsection-title">Award-Winning Beaches:</h3>
-            <div class="resource-item">🏆 <strong>Holland State Park Beach</strong> - TripAdvisor's #1 beach in Michigan 2024, "Big Red" lighthouse</div>
-            <div class="resource-item">🏆 <strong>Oval Beach (Saugatuck)</strong> - Condé Nast "Top 25 Beaches in the World"</div>
-            <div class="resource-item">🏆 <strong>Grand Haven State Park Beach</strong> - Travel & Leisure "Top 25 Beaches in America" 2024</div>
-            <div class="resource-item">🏆 <strong>First Street Beach, Manistee</strong> - USA Today's #1 Beach in Michigan 2024</div>
-
-            <h3 class="subsection-title">Stone Hunting & Unique Features:</h3>
-            <div class="resource-item">🪨 <strong>Petoskey State Park</strong> - World's best Petoskey stone hunting, 400-million-year-old fossilized coral</div>
-            <div class="resource-item">🪨 <strong>Rockport State Recreation Area</strong> - 400-million-year Devonian fossils, abandoned limestone quarry</div>
+        <div class="quick-ref">
+            <h2 class="section-title">📋 Permits & Fees Quick Reference</h2>
+            <div class="resource-item">
+                <span class="icon">🎫</span>
+                <strong>Michigan Recreation Passport:</strong> $12/year, required for all state parks, buy online or at entry
+            </div>
+            <div class="resource-item">
+                <span class="icon">🌲</span>
+                <strong>National Forest Parking:</strong> Usually free, some trailheads $5/day or America the Beautiful Pass ($80/year)
+            </div>
+            <div class="resource-item">
+                <span class="icon">⛴️</span>
+                <strong>Beaver Island Ferry:</strong> Vehicle reservations required, 90 min early check-in, exact dimensions needed
+            </div>
+            <div class="resource-item">
+                <span class="icon">🎣</span>
+                <strong>Michigan Fishing License:</strong> $26 residents/$76 non-residents, available online at michigan.gov/dnr
+            </div>
+            <div class="resource-item">
+                <span class="icon">🏕️</span>
+                <strong>Dispersed Camping:</strong> Free in National Forests, 14-day limit, 200+ feet from water
+            </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">🌌 Dark Sky Parks & Stargazing</h2>
-            <div class="resource-item">⭐ <strong>Rockport State Recreation Area</strong> - Official Michigan Dark Sky Designation</div>
-            <div class="resource-item">⭐ <strong>Negwegon State Park</strong> - Dark Sky Preserve, 4 hike-in primitive campsites</div>
-            <div class="resource-item">⭐ <strong>Thompson's Harbor State Park</strong> - Third Dark Sky Preserve near Alpena</div>
+            <h2 class="section-title">🌡️ Seasonal Planning & Weather</h2>
+            <div class="resource-item">
+                <span class="icon">🌨️</span>
+                <a href="https://www.weather.gov/detroit" class="resource-link">National Weather Service - Detroit</a>
+                <span class="resource-description">- Lower Peninsula weather, warnings, seasonal forecasts</span>
+            </div>
+            <div class="resource-item">
+                <span class="icon">❄️</span>
+                <a href="https://www.weather.gov/mqt" class="resource-link">National Weather Service - Marquette</a>
+                <span class="resource-description">- Upper Peninsula weather, lake effect snow forecasts</span>
+            </div>
+            <div class="resource-item">
+                <span class="icon">🛣️</span>
+                <a href="https://mdotjboss.state.mi.us/roadconditions/" class="resource-link">Michigan Road Conditions</a>
+                <span class="resource-description">- Real-time road closures, especially important for UP winter travel</span>
+            </div>
+            <div class="resource-item">
+                <span class="icon">🍂</span>
+                <strong>Fall Colors:</strong> Peak late September (UP) to mid-October (Lower Peninsula)
+            </div>
+            <div class="resource-item">
+                <span class="icon">❄️</span>
+                <strong>Winter Closures:</strong> Many businesses/attractions close November-April, especially in resort areas
+            </div>
+            <div class="resource-item">
+                <span class="icon">🦟</span>
+                <strong>Bug Season:</strong> Mosquitoes/black flies peak May-August, bring DEET especially for UP
+            </div>
         </div>
 
-        <div class="section">
-            <h2 class="section-title">🎣 Fishing & Water Activities</h2>
-            <div class="resource-item">🌊 <strong>Jordan River</strong> - Michigan's first Wild & Scenic River (1972), "America's toughest trout stream"</div>
-            <div class="resource-item">🚣 <strong>AuSable River</strong> - "Michigan's Most Popular River for Paddling," 120-mile canoe marathon route</div>
-            <div class="resource-item">🚢 <strong>Thunder Bay National Marine Sanctuary</strong> - 4,300 square-mile marine protected area, 200+ shipwrecks</div>
+        <div class="vanlife-section">
+            <h2 class="section-title">🚐 Van Life Essentials</h2>
+            
+            <h3 class="subsection-title">📱 Essential Apps & Tech:</h3>
+            <div class="resource-item">
+                <span class="icon">📱</span>
+                <a href="https://www.ioverlander.com" class="resource-link">iOverlander</a>
+                <span class="resource-description">- Van-friendly parking spots, water, dumps, user reviews</span>
+            </div>
+            <div class="resource-item">
+                <span class="icon">🗺️</span>
+                <a href="https://www.gaiagps.com" class="resource-link">GaiaGPS</a>
+                <span class="resource-description">- Offline maps essential for Michigan's spotty cell service areas</span>
+            </div>
+            <div class="resource-item">
+                <span class="icon">🏕️</span>
+                <a href="https://freeroam.app" class="resource-link">FreeRoam</a>
+                <span class="resource-description">- Dispersed camping locations with GPS coordinates</span>
+            </div>
+            <div class="resource-item">
+                <span class="icon">📶</span>
+                <a href="https://opensignal.com" class="resource-link">OpenSignal</a>
+                <span class="resource-description">- Cell coverage maps for planning connectivity</span>
+            </div>
+
+            <h3 class="subsection-title">🚐 Vehicle Services & Supplies:</h3>
+            <div class="resource-item">
+                <span class="icon">⛽</span>
+                <strong>Large Vehicle Gas Stations:</strong> Meijer, Fleet Farm, truck stops on I-75/US-131
+            </div>
+            <div class="resource-item">
+                <span class="icon">🔧</span>
+                <strong>Ford Transit Service:</strong> Garber Ford (Grand Rapids), LaFontaine Ford (Traverse City)
+            </div>
+            <div class="resource-item">
+                <span class="icon">🔥</span>
+                <strong>Propane Refills:</strong> Tractor Supply, Rural King, U-Haul locations, most campgrounds
+            </div>
+            <div class="resource-item">
+                <span class="icon">💧</span>
+                <strong>Fresh Water:</strong> Most state parks, city parks, some rest areas, RV supply stores
+            </div>
+            <div class="resource-item">
+                <span class="icon">📶</span>
+                <strong>Wi-Fi Hotspots:</strong> Libraries (free), McDonald's, Starbucks, Panera Bread
+            </div>
+            <div class="resource-item">
+                <span class="icon">🧺</span>
+                <strong>Laundromats:</strong> Speed Queen locator, most towns have coin-ops near downtown
+            </div>
+        </div>
+
+        <div class="safety-section">
+            <h2 class="section-title">🏥 Emergency & Safety Resources</h2>
+            
+            <h3 class="subsection-title">🚑 Hospitals Near Remote Areas:</h3>
+            <div class="resource-item">
+                <span class="icon">🏥</span>
+                <strong>Alpena Regional Medical Center:</strong> 1501 W Chisholm St, Alpena - (989) 356-7000
+            </div>
+            <div class="resource-item">
+                <span class="icon">🏥</span>
+                <strong>War Memorial Hospital:</strong> 500 Osborn Blvd, Sault Ste Marie - (906) 635-4460
+            </div>
+            <div class="resource-item">
+                <span class="icon">🏥</span>
+                <strong>UP Health System-Marquette:</strong> 580 W College Ave, Marquette - (906) 228-9440
+            </div>
+            <div class="resource-item">
+                <span class="icon">🏥</span>
+                <strong>Aspirus Keweenaw Hospital:</strong> 205 Osceola St, Laurium - (906) 337-6500
+            </div>
+
+            <h3 class="subsection-title">🚗 Large Vehicle Towing Services:</h3>
+            <div class="resource-item">
+                <span class="icon">🚛</span>
+                <strong>AAA Plus RV:</strong> Covers vehicles up to 40ft, worth upgrading membership
+            </div>
+            <div class="resource-item">
+                <span class="icon">🔧</span>
+                <strong>Good Sam Emergency Road Service:</strong> RV-specific coverage, 24/7 service
+            </div>
+            <div class="resource-item">
+                <span class="icon">📞</span>
+                <strong>Coach-Net:</strong> 1-800-562-0715, specializes in large vehicles and RVs
+            </div>
+
+            <h3 class="subsection-title">☎️ Emergency Contacts:</h3>
+            <div class="resource-item">
+                <span class="icon">🚨</span>
+                <strong>Emergency Services:</strong> 911 (works even with no cell signal in most areas)
+            </div>
+            <div class="resource-item">
+                <span class="icon">👮</span>
+                <strong>Michigan State Police:</strong> *MSP (*677) from cell phone
+            </div>
+            <div class="resource-item">
+                <span class="icon">🌊</span>
+                <strong>Coast Guard:</strong> Channel 16 on marine radio or 911 for water emergencies
+            </div>
         </div>
     </div>
 </body>
