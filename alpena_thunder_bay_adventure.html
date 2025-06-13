@@ -77,7 +77,7 @@
             top: 80px;
             bottom: 80px;
             width: 4px;
-            background: linear-gradient(180deg, #27ae60 0%, #2196f3 20%, #ff7043 40%, #9c27b0 60%, #4caf50 80%, #607d8b 100%);
+            background: linear-gradient(180deg, #27ae60 0%, #2196f3 33%, #9c27b0 66%, #4caf50 100%);
             border-radius: 2px;
             z-index: 1;
         }
@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 60px; /* Increased margin to make room for drive info */
+            margin-bottom: 60px;
             position: relative;
             z-index: 2;
         }
@@ -108,20 +108,12 @@
             background: #2196f3;
         }
         
-        .shipwreck-marker {
-            background: #ff7043;
-        }
-        
         .rockport-marker {
             background: #9c27b0;
         }
         
         .negwegon-marker {
             background: #4caf50;
-        }
-        
-        .thunder-marker {
-            background: #607d8b;
         }
         
         .destination-info {
@@ -141,20 +133,12 @@
             border-left-color: #2196f3;
         }
         
-        .shipwreck-info {
-            border-left-color: #ff7043;
-        }
-        
         .rockport-info {
             border-left-color: #9c27b0;
         }
         
         .negwegon-info {
             border-left-color: #4caf50;
-        }
-        
-        .thunder-info {
-            border-left-color: #607d8b;
         }
         
         .location-header {
@@ -364,28 +348,99 @@
                     <div class="brewery-highlight">
                         <strong>🍺 Alpena Liquid Assets:</strong> <a href="https://thunderbaywinery.com">Thunder Bay Winery</a> (family-owned, wines named after local landmarks), <a href="https://www.austinbrosbeerco.com/">Austin Brothers Beer Co.</a> (handcrafted Michigan beer), <a href="https://www.redbricktap.com">Red Brick Tap & Barrel</a> (English pub with Michigan craft beers).
                     </div>
-                    
+
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">🎣</span>
+                            <span>July Festival Highlight</span>
+                        </div>
+                        <div class="sanctuary-highlight">
+                            🎣 <a href="https://www.browntroutfestival.com">Michigan Brown Trout Festival</a> (July 18-27) - 10-day fishing tournament & live music festival! 🎣
+                        </div>
+                    </div>
+
+                    <div class="sanctuary-highlight" style="margin: 15px 0;">
+                        🏛️ <strong>Downtown Cultural District</strong> 🏛️
+                    </div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🏛️</span>
                             <span><a href="https://thunderbay.noaa.gov">Maritime Heritage Center</a></span>
                         </div>
                         <div class="activity-item">
+                            <span class="activity-icon">🎭</span>
+                            <span><a href="https://www.facebook.com/ThunderBayTheatre/">Thunder Bay Theatre (professional)</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎨</span>
+                            <span><a href="https://www.artintheloft.org/">Art in the Loft Gallery</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎨</span>
+                            <span><a href="https://www.visitalpena.com/see-do/mural-trail/">6 art galleries & murals</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛍️</span>
+                            <span><a href="https://alpenafarmersmarket.com/">Farmers Market (year-round)</a></span>
+                        </div>
+                        <div class="activity-item">
                             <span class="activity-icon">🏺</span>
                             <span><a href="https://www.bessermuseum.org">Besser Museum (Sky Theater)</a></span>
                         </div>
+                    </div>
+
+                    <div class="fossil-highlight" style="margin: 15px 0;">
+                        🚢 <strong>On-Water Adventures</strong> 🚢
+                    </div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Kayaking to shallow wrecks</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Charter fishing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📚</span>
+                            <span>Maritime history education</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span>View Thunder Bay Island from water</span>
+                        </div>
+                    </div>
+
+                    <div class="lighthouse-special">
+                        <strong>🚢 Glass-Bottom Boat Details:</strong> 65-foot "Lady Michigan" with 2.5-hour tours ($30 adults, $10 kids 6-12). Daily 10am departures June-October. View 200+ shipwrecks, Thunder Bay Island, and Scarecrow Island. Book at <a href="https://alpenashipwrecktours.com/">alpenashipwrecktours.com</a>
+                    </div>
+
+                    <div class="aurora-highlight" style="margin: 15px 0;">
+                        🚴 <strong>Trail Network</strong> 🚴
+                    </div>
+                    <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🚴</span>
                             <span><a href="https://www.trailscouncil.org/alpena-bi-path-trail/">18.5-mile Alpena Bi-Path</a></span>
                         </div>
                         <div class="activity-item">
+                            <span class="activity-icon">🚵</span>
+                            <span><a href="https://www.trailforks.com/region/alpena/">29 mountain biking trails</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛤️</span>
+                            <span><a href="https://www.trailscouncil.org/north-eastern-state-trail-michigan/">71-mile NEST Trail to Cheboygan</a></span>
+                        </div>
+                        <div class="activity-item">
                             <span class="activity-icon">🌊</span>
                             <span><a href="https://thunderbaywaterfronttrail.com/">Thunder Bay Waterfront Trail</a></span>
                         </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🎨</span>
-                            <span><a href="https://www.visitalpena.com/see-do/mural-trail/">Historic murals downtown</a></span>
-                        </div>
+                    </div>
+
+                    <div class="lighthouse-special" style="margin: 15px 0;">
+                        🗼 <strong>Historic Sites</strong> 🗼
+                    </div>
+                    <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🗼</span>
                             <span><a href="https://www.visitalpena.com/places/alpenas-little-red-lighthouse/">Little Red Lighthouse (1914)</a></span>
@@ -394,27 +449,6 @@
                             <span class="activity-icon">🗼</span>
                             <span><a href="https://www.visitalpena.com/7-lighthouse-adventure/">7 Lighthouse Adventure</a></span>
                         </div>
-                    </div>
-                    <div class="camping-options">
-                        <strong>Urban Base:</strong> <a href="https://www.michigandnr.com/parksandtrails/details.aspx?id=637&type=SFCG">Thunder Bay State Forest Campground</a>, <a href="https://www.thunderbayresort.com">Thunder Bay Resort RV Park</a> (premium option with elk viewing)
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Glass-bottom boat -->
-            <div class="drive-info">⛴️ Glass-bottom boat tours</div>
-            
-            <!-- Stop 2: Thunder Bay Shipwreck Tours -->
-            <div class="destination-stop">
-                <div class="stop-marker shipwreck-marker"></div>
-                <div class="destination-info shipwreck-info">
-                    <div class="location-header">
-                        <span class="location-icon">🚢</span>
-                        <span class="location-name">Thunder Bay Shipwreck Tours</span>
-                    </div>
-                    
-                    <div class="sanctuary-highlight">
-                        🚢 65-foot <a href="https://www.us23heritageroute.org/event.asp?ait=ev&eid=2676&aid=997">"Lady Michigan"</a> with glass-bottom viewing wells! 200+ historic shipwrecks! 🚢
                     </div>
 
                     <div class="seasonal-activities">
@@ -442,86 +476,64 @@
                         </div>
                     </div>
                     
-                    <div class="activities-grid">
-                        <div class="activity-item">
-                            <span class="activity-icon">🌊</span>
-                            <span>4,300 sq mile marine sanctuary</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🛶</span>
-                            <span>Kayaking to shallow wrecks</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏊</span>
-                            <span>Snorkeling opportunities</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🎣</span>
-                            <span>Charter fishing</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">📚</span>
-                            <span>Maritime history education</span>
-                        </div>
-                    </div>
                     <div class="camping-options">
-                        <strong>Tours:</strong> 2.5-hour glass-bottom boat experiences, seasonal moorings May-September, advance booking recommended
+                        <strong>Urban Base:</strong> <a href="https://www.michigandnr.com/parksandtrails/details.aspx?id=637&type=SFCG">Thunder Bay State Forest Campground</a>, <a href="https://www.thunderbayresort.com">Thunder Bay Resort RV Park</a> (premium option with elk viewing)
                     </div>
                 </div>
             </div>
             
-            <!-- Drive to Rockport -->
+            <!-- Drive to Presque Isle Peninsula -->
             <div class="drive-info">🚗 12 miles north</div>
             
-            <!-- Stop 3: Rockport State Recreation Area -->
+            <!-- Stop 2: Presque Isle Peninsula -->
             <div class="destination-stop">
                 <div class="stop-marker rockport-marker"></div>
                 <div class="destination-info rockport-info">
                     <div class="location-header">
-                        <span class="location-icon">🪨</span>
-                        <span class="location-name"><a href="https://www2.dnr.state.mi.us/parksandtrails/Details.aspx?id=729&type=SPRK">Rockport State Recreation Area</a></span>
+                        <span class="location-icon">🗼</span>
+                        <span class="location-name">Presque Isle Peninsula</span>
                     </div>
                     
                     <div class="fossil-highlight">
-                        🪨 <a href="https://www.visitalpena.com/adventures/fossil-hunting/">400-million-year-old Devonian fossils!</a> 25 lbs per person collection limit! 🪨
+                        🪨 <a href="https://www.visitalpena.com/adventures/fossil-hunting/" style="color: #fff200;">400-million-year-old Devonian fossils!</a> 25 lbs per person collection limit! 🪨
                     </div>
                     
                     <div class="activities-grid">
                         <div class="activity-item">
-                            <span class="activity-icon">🏺</span>
-                            <span>Devonian Period fossil hunting</span>
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://www.presqueislelighthouses.org/">Old Presque Isle Lighthouse (1840)</a></span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">⛰️</span>
-                            <span>Abandoned limestone quarry</span>
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://www.presqueislelighthouses.org/">New Presque Isle Lighthouse (1870)</a></span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🦇</span>
-                            <span>Bat hibernaculum (3 species)</span>
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic keeper's house museum</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Lake Huron coastal views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🪨</span>
+                            <span><a href="https://www2.dnr.state.mi.us/parksandtrails/Details.aspx?id=729&type=SPRK">Rockport State Park fossil hunting</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌌</span>
-                            <span><a href="https://darksky.org/places/rockport-state-park-dark-sky-park/">Official Dark Sky Park</a></span>
+                            <span><a href="https://darksky.org/places/rockport-state-park-dark-sky-park/">Dark Sky Park stargazing</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🕳️</span>
                             <span>Dozen sinkholes to explore</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">⛵</span>
-                            <span>Boat launch & historic pier</span>
-                        </div>
-                        <div class="activity-item">
                             <span class="activity-icon">🥾</span>
-                            <span>20+ miles rugged trails</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🚴</span>
-                            <span>Mountain biking</span>
+                            <span>Coastal & forest hiking trails</span>
                         </div>
                     </div>
                     <div class="camping-options">
-                        <strong>Rustic Camping:</strong> 4,237-acre recreation area, dispersed camping, requires sturdy shoes for fossil hunting
+                        <strong>Peninsula Camping:</strong> <a href="https://www2.dnr.state.mi.us/parksandtrails/Details.aspx?id=729&type=SPRK">Rockport State Park</a> dispersed camping, lighthouse areas day-use only
                     </div>
                 </div>
             </div>
@@ -529,7 +541,7 @@
             <!-- Drive to Negwegon -->
             <div class="drive-info">🚗 20 minutes south</div>
             
-            <!-- Stop 4: Negwegon State Park -->
+            <!-- Stop 3: Negwegon State Park -->
             <div class="destination-stop">
                 <div class="stop-marker negwegon-marker"></div>
                 <div class="destination-info negwegon-info">
@@ -552,10 +564,6 @@
                             <span>7 miles Lake Huron shoreline</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🌌</span>
-                            <span>Dark sky preserve stargazing</span>
-                        </div>
-                        <div class="activity-item">
                             <span class="activity-icon">🥾</span>
                             <span>11 miles hiking trails</span>
                         </div>
@@ -573,65 +581,17 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Boat to Thunder Bay Island -->
-            <div class="drive-info">⛵ Boat access only</div>
-            
-            <!-- Stop 5: Thunder Bay Island -->
-            <div class="destination-stop">
-                <div class="stop-marker thunder-marker"></div>
-                <div class="destination-info thunder-info">
-                    <div class="location-header">
-                        <span class="location-icon">🗼</span>
-                        <span class="location-name"><a href="https://www.fws.gov/refuge/michigan-islands">Thunder Bay Island</a></span>
-                    </div>
-                    
-                    <div class="sanctuary-highlight">
-                        🗼 Historic <a href="https://www.bluewater.org/things-to-do/lighthouses/">Thunder Bay Island lighthouse</a>! Maritime heritage restoration in progress! 🗼
-                    </div>
-
-                    <div class="lighthouse-special">
-                        <strong>Island Access:</strong> Limited to Coast Guard, Wildlife Service, and <a href="https://thunderbayislandlight.com/">Thunder Bay Island Preservation Society</a> members. Best viewed from <a href="https://www.us23heritageroute.org/event.asp?ait=ev&eid=2676&aid=997">"Lady Michigan"</a> glass-bottom boat tours or private boat charter.
-                    </div>
-                    
-                    <div class="activities-grid">
-                        <div class="activity-item">
-                            <span class="activity-icon">🗼</span>
-                            <span>1832 lighthouse (3rd on Lake Huron)</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span>Life-saving station ruins</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🐦</span>
-                            <span><a href="https://www.fws.gov/refuge/michigan-islands">National Wildlife Refuge</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏃</span>
-                            <span>Historic ghost town site</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">📷</span>
-                            <span>Wildlife photography</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🌊</span>
-                            <span>Pristine island beaches</span>
-                        </div>
-                    </div>
-                    <div class="camping-options">
-                        <strong>No Camping:</strong> Day-use only, accessible by charter or private boat
-                    </div>
-                </div>
-            </div>
         </div>
         
         <div class="notes-section">
             <div class="notes-title">🗒️ Sanctuary & Shipwreck Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">📅</span>
+                <span class="note-icon">🎣</span>
                 <span>SEASONAL TIMING: May-October for boat tours, September-April prime for Aurora viewing, winter XC skiing magical</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎪</span>
+                <span>FESTIVAL TIMING: <a href="https://www.browntroutfestival.com">Michigan Brown Trout Festival</a> in July (18-27) - 10 days of fishing tournaments, live music & community celebration</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🎫</span>
@@ -639,15 +599,15 @@
             </div>
             <div class="note-item">
                 <span class="note-icon">🎒</span>
-                <span>GEAR ESSENTIALS: Sturdy shoes for <a href="https://www.visitalpena.com/adventures/fossil-hunting/">fossil hunting</a>, collection bag, headlamp for cave exploration</span>
+                <span>GEAR ESSENTIALS: Sturdy shoes for fossil hunting, collection bag, headlamp for cave exploration</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🏕️</span>
                 <span>VAN STRATEGY: Use Alpena as base camp, day trips to Rockport/Negwegon, return to town amenities</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🎨</span>
-                <span>DOWNTOWN GEMS: Walk the <a href="https://www.visitalpena.com/see-do/mural-trail/">Mural Trail</a> between brewery visits - 20+ murals tell Alpena's story</span>
+                <span class="note-icon">🚵</span>
+                <span>TRAIL OPTIONS: <a href="https://www.trailscouncil.org/north-eastern-state-trail-michigan/">NEST Trail</a> for long-distance cycling, <a href="https://www.us23heritageroute.org/location.asp?ait=av&aid=582">Huron Sunrise Trail</a> day trip to Rogers City</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🌊</span>
