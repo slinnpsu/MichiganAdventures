@@ -85,7 +85,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* Increased margin to make room for drive info */
             position: relative;
             z-index: 2;
         }
@@ -178,15 +178,18 @@
         }
         
         .drive-info {
-            position: absolute;
+            position: relative;
             left: 110px;
             background: rgba(52, 73, 94, 0.9);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 20px 0;
+            width: fit-content;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .notes-section {
@@ -215,6 +218,13 @@
         .note-icon {
             margin-right: 8px;
             color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
         }
     </style>
 </head>
@@ -248,7 +258,7 @@
             </div>
             
             <!-- Drive to St. Ignace -->
-            <div class="drive-info" style="top: 140px;">🚗 5 hours north</div>
+            <div class="drive-info">🚗 5 hours north</div>
             
             <!-- Stop 1: St. Ignace -->
             <div class="destination-stop">
@@ -284,14 +294,14 @@
                             <span>Lake Michigan camping</span>
                         </div>
                     </div>
-                    <div style="font-size: 0.8rem; color: #7f8c8d; margin-top: 8px;">
+                    <div class="camping-options">
                         <strong>Backup Adventures:</strong> Tahquamenon Falls (1.25 hrs), Brimley State Park
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Marquette -->
-            <div class="drive-info" style="top: 280px;">🚗 3 hours west</div>
+            <div class="drive-info">🚗 3 hours west</div>
             
             <!-- Stop 2: Marquette -->
             <div class="destination-stop">
@@ -327,14 +337,14 @@
                             <span>North Country Trail</span>
                         </div>
                     </div>
-                    <div style="font-size: 0.8rem; color: #7f8c8d; margin-top: 8px;">
+                    <div class="camping-options">
                         <strong>Camping Options:</strong> Van Riper State Park (Lake Michigamme), Rippling River Resort, dispersed sites
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Copper Harbor -->
-            <div class="drive-info" style="top: 420px;">🚗 2.5 hours north</div>
+            <div class="drive-info">🚗 2.5 hours north</div>
             
             <!-- Final Stop: Copper Harbor -->
             <div class="destination-stop">
@@ -370,7 +380,7 @@
                             <span>Estivant Pines Sanctuary</span>
                         </div>
                     </div>
-                    <div style="font-size: 0.8rem; color: #7f8c8d; margin-top: 8px;">
+                    <div class="camping-options">
                         <strong>Camping Options:</strong> Fort Wilkins SP, Lake Fanny Hooe Resort, McLain State Park (40 min)
                     </div>
                 </div>
@@ -378,30 +388,46 @@
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Adventure Notes & Options</div>
+            <div class="notes-title">🗒️ Upper Peninsula Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🏕️</span>
-                <span>Dispersed camping in Hiawatha National Forest plus state park options at each stop</span>
+                <span class="note-icon">⛽</span>
+                <span>FUEL STRATEGY: Fill up at every opportunity - gas stations sparse in UP, especially Keweenaw</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🐕</span>
-                <span>Dogs welcome on all trails (6-foot leash required) - great for hiking partners!</span>
+                <span class="note-icon">🌡️</span>
+                <span>WEATHER PREP: UP weather changes fast - pack layers even in summer, snow possible year-round</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🔄</span>
-                <span>Return route: Mix it up with 1 night each in Marquette & St. Ignace</span>
+                <span class="note-icon">🛣️</span>
+                <span>ROAD CONDITIONS: Some forest roads rough - check van clearance, 4WD recommended for remote spots</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🍂</span>
-                <span>Early fall timing: Perfect for colors, warm weather, fewer crowds</span>
+                <span>TIMING SECRET: September perfect for fall colors without snow risk - peak season for UP adventures</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🎯</span>
-                <span>Backup plans: Tahquamenon Falls, Brimley SP, McLain SP, multiple brewery options</span>
+                <span class="note-icon">👋</span>
+                <span>LOCAL KNOWLEDGE: UP locals incredibly helpful - ask for hidden spots and insider recommendations</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🎉</span>
-                <span>Brickside = Michigan's northernmost brewery! Epic mountain biking capital of Midwest</span>
+                <span class="note-icon">📸</span>
+                <span>PHOTO TIP: Brockway Mountain Drive best at sunset for dramatic colors over Lake Superior</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🦟</span>
+                <span>GEAR ADVICE: Bug spray essential May-August, especially in forests - mosquitoes and black flies fierce</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📱</span>
+                <span>NAVIGATION TIP: Cell service spotty throughout UP - download offline maps before entering remote areas</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🥧</span>
+                <span>CULTURAL NOTE: Pasties (meat pies) are UP tradition - try them everywhere, each place has unique recipe</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌲</span>
+                <span>HIDDEN GEM: Estivant Pines has 800-year-old white pines - Michigan's oldest living trees</span>
             </div>
         </div>
     </div>
