@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Thumb Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff8dc 0%, #f0f8ff 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #e67e22;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '🌾';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #7f8c8d;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 20px 40px;
+            position: relative;
+        }
+        
+        .departure-banner {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            border-radius: 20px;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #3498db 0%, #e67e22 50%, #2980b9 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .harbor-marker {
+            background: #3498db;
+        }
+        
+        .caseville-marker {
+            background: #e67e22;
+        }
+        
+        .port-austin-marker {
+            background: #f39c12;
+        }
+        
+        .grindstone-marker {
+            background: #95a5a6;
+        }
+        
+        .sanilac-marker {
+            background: #2980b9;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .harbor-info {
+            border-left-color: #3498db;
+        }
+        
+        .caseville-info {
+            border-left-color: #e67e22;
+        }
+        
+        .port-austin-info {
+            border-left-color: #f39c12;
+        }
+        
+        .grindstone-info {
+            border-left-color: #95a5a6;
+        }
+        
+        .sanilac-info {
+            border-left-color: #2980b9;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e67e22;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #e67e22;
+            padding-left: 15px;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            color: #27ae60;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 30px 0;
+            width: fit-content;
+            z-index: 10;
+        }
+        
+        .winter-special {
+            background: rgba(142, 68, 173, 0.08);
+            border-left: 4px solid #8e44ad;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .winter-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+        
+        .brewery-special {
+            background: rgba(52, 152, 219, 0.08);
+            border-left: 4px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .resource-item {
+            font-size: 0.9rem;
+            color: #5d6d7e;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">The Thumb</h1>
+            <p class="subtitle">Rural Heritage & Lake Huron Shores</p>
+        </div>
+        
+        <div class="duration-banner">
+            Largest man-made freshwater harbor • Turnip Rock • 1,000-year-old petroglyphs • Cheeseburger in Caseville Festival • Authentic farm country
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <div class="departure-banner">
+                📍 Departing Traverse City • 3 hours southeast
+            </div>
+            
+            <!-- Stop 1: Harbor Beach -->
+            <div class="destination-stop">
+                <div class="stop-marker harbor-marker"></div>
+                <div class="destination-info harbor-info">
+                    <div class="location-header">
+                        <span class="location-icon">⚓</span>
+                        <span class="location-name"><a href="https://www.harborbeach.com">Harbor Beach</a></span>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        ⚓ Largest Man-Made Freshwater Harbor in the World! Historic Lighthouse! Gateway to The Thumb! ⚓
+                    </div>
+                    
+                    <div class="section-title">⚓ Harbor Beach Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⚓</span>
+                            <span><a href="https://www.harborbeach.com/harbor">World's largest man-made freshwater harbor</a> - engineering marvel</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://www.michiganlighthouses.com/harbor-beach-lighthouse/">Harbor Beach Lighthouse (1885)</a> - historic red brick lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span><a href="https://www.harborbeach.com/beach-park">Harbor Beach State Park</a> - swimming and sandy beaches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Excellent fishing for walleye, perch, and salmon</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚤</span>
+                            <span>Marina district with boat launches and charters</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic downtown with shops and maritime heritage</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        🗺️ <a href="https://www.huroncounty.com">Huron County Tourism</a> - complete guide to Thumb area attractions, events, and accommodations
+                    </div>
+                    <div class="resource-item">
+                        🚗 <a href="https://www.michigan.org/article/trip-idea/michigan-thumb-heritage-driving-tour">Michigan Thumb Heritage Driving Tour</a> - scenic route through agricultural landscapes and historic towns
+                    </div>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            ☕ Harbor Beach features charming cafes with Lake Huron views and local establishments serving fresh lake fish. The downtown area offers authentic small-town dining experiences perfect for van life exploration.
+                        </div>
+                    </div>
+                    
+                    <div class="camping-options">
+                        <strong>Harbor Camping:</strong> <a href="https://www.michigan.gov/dnr/places/state-parks/harbor-beach">Harbor Beach State Park</a> - lakefront sites with harbor views, downtown proximity
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Caseville -->
+            <div class="drive-info">🚗 Drive to Caseville • 45 minutes northwest</div>
+            
+            <!-- Stop 2: Caseville -->
+            <div class="destination-stop">
+                <div class="stop-marker caseville-marker"></div>
+                <div class="destination-info caseville-info">
+                    <div class="location-header">
+                        <span class="location-icon">🍔</span>
+                        <span class="location-name"><a href="https://www.caseville.org">Caseville</a></span>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        🍔 "Cheeseburger in Caseville" Festival Capital! Jimmy Buffett Tribute Town! 🍔
+                    </div>
+                    
+                    <div class="section-title">🏖️ Caseville Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span><a href="https://www.caseville.org/beach">Caseville County Park Beach</a> - sandy Lake Huron shoreline</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦅</span>
+                            <span><a href="https://www.alltrails.com/trail/us/michigan/wildfowl-bay-wildlife-area">Wildfowl Bay Wildlife Area</a> - migratory bird watching hotspot</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🧀</span>
+                            <span><a href="https://www.pinconningcheese.com">Pinconning Cheese Company</a> - famous Michigan cheese since 1915</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Saginaw Bay fishing - walleye and perch hotspot</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Spectacular sunrise viewing over Saginaw Bay</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛍️</span>
+                            <span>Farmers markets and authentic rural shopping experiences</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        🗺️ <a href="https://www.caseville.org/visitor-information">Official Caseville Visitor Guide</a> - complete guide to accommodations, dining, and seasonal events
+                    </div>
+                    <div class="resource-item">
+                        🎣 <a href="https://www.michigan.gov/dnr/places/state-parks/caseville">Caseville State Park Guide</a> - camping, trails, and beach access information
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">🍔</span>
+                            <span>August Festival Highlight</span>
+                        </div>
+                        <div class="resource-item">
+                            🎪 <a href="https://www.cheeseburgerincaseville.com">Cheeseburger in Caseville Festival</a> (August) - 10-day Jimmy Buffett tribute celebration with live music, tiki bars, and tropical Michigan vibes. The Midwest's premier Parrothead gathering!
+                        </div>
+                    </div>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            🍺 <strong><a href="https://www.thumbbrewery.com">Thumb Brewery</a></strong> offers craft beers with Great Lakes themes, while <strong><a href="https://bluewaterwinery.com">Blue Water Winery</a></strong> in nearby Carsonville produces wines from local grapes in a charming rural setting.
+                        </div>
+                    </div>
+                    
+                    <div class="camping-options">
+                        <strong>Beach Camping:</strong> <a href="https://www.michigan.gov/dnr/places/state-parks/caseville">Caseville State Park</a> - lakefront sites, <a href="https://wagertreefarm.com">Wager Tree Farm</a> nearby for van camping
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Port Austin -->
+            <div class="drive-info">🚗 Drive to Port Austin • 30 minutes northeast</div>
+            
+            <!-- Stop 2: Port Austin -->
+            <div class="destination-stop">
+                <div class="stop-marker port-austin-marker"></div>
+                <div class="destination-info port-austin-info">
+                    <div class="location-header">
+                        <span class="location-icon">🪨</span>
+                        <span class="location-name"><a href="https://www.portaustinarea.com">Port Austin</a></span>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        🪨 Turnip Rock Kayaking! Tip of The Thumb! Lighthouse Capital! 🪨
+                    </div>
+                    
+                    <div class="section-title">🌊 Port Austin Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span><a href="https://www.kayakthehuron.com">Turnip Rock kayaking</a> - iconic sea stack formation</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎨</span>
+                            <span><a href="https://www.portaustinarea.com/arts">Art galleries and murals</a> - vibrant local arts scene</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛍️</span>
+                            <span>Weekend farmers market with local produce and crafts</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://www.portaustinlighthouse.org">Port Austin Reef Lighthouse</a> - 1878 offshore lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span><a href="https://www.portaustinarea.com/beach-areas">Bird Creek Park Beach</a> - pristine swimming and sunbathing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span><a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=435&type=SPRK">Port Crescent State Park</a> - 3 miles of hiking trails</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">⭐ Turnip Rock Experience</div>
+                    <div class="resource-item">
+                        🛶 Michigan's most Instagram-famous landmark! This unique sea stack formation is accessible only by kayak, creating an exclusive adventure. The 2-3 hour paddle through crystal-clear Lake Huron waters leads to this stunning geological wonder that's become a bucket-list destination for outdoor enthusiasts.
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">❄️</span>
+                            <span>Winter by the Lake</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🥾</span>
+                                <span>Snowshoeing through Port Crescent State Park</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🏖️</span>
+                                <span>Quiet winter beaches perfect for peaceful walks</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎄</span>
+                                <span>Holiday lights in charming small towns</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎣</span>
+                                <span>Ice fishing on Lake Huron - excellent perch and walleye</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            🍺 <strong><a href="https://www.facebook.com/BeachBarPortAustin/">The Beach Bar</a></strong> offers craft cocktails with stunning lake views, while <strong><a href="https://www.portaustinarea.com/dining">local establishments</a></strong> feature fresh Lake Huron fish and farm-to-table dining experiences.
+                        </div>
+                    </div>
+                    
+                    <div class="camping-options">
+                        <strong>Van-Friendly Camping:</strong> <a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=435&type=SPRK">Port Crescent State Park</a> - van-friendly sites, <a href="https://harvesthosts.com">Harvest Host</a> locations throughout rural Thumb area
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Grindstone City -->
+            <div class="drive-info">🚗 Drive to Grindstone City • 20 minutes east</div>
+            
+            <!-- Stop 3: Grindstone City -->
+            <div class="destination-stop">
+                <div class="stop-marker grindstone-marker"></div>
+                <div class="destination-info grindstone-info">
+                    <div class="location-header">
+                        <span class="location-icon">⛏️</span>
+                        <span class="location-name"><a href="https://www.michigan.org/city/grindstone-city">Grindstone City</a></span>
+                    </div>
+                    
+                    <div class="section-title">⛏️ Historic Quarry Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⛏️</span>
+                            <span>Historic grindstone quarry ruins - 1800s industrial heritage</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🪨</span>
+                            <span>Unique geological formations and rock collecting</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Secluded beach areas with fewer crowds</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📸</span>
+                            <span>Historic quarry photography - remnants of Michigan industry</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Crystal-clear Lake Huron swimming holes</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Small town charm with authentic rural character</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        🏛️ <a href="https://www.historicalmarkerproject.com/markers/HM1EHH_grindstone-city_Grindstone-City-MI.html">Grindstone City Historical Marker</a> - learn about the quarry industry that shaped this unique community
+                    </div>
+                    
+                    <div class="camping-options">
+                        <strong>Rural Camping:</strong> Private campgrounds nearby, dispersed camping opportunities, <a href="https://freecampsites.net/#!Grindstone%20City%20MI">free camping sites</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Sanilac Petroglyphs -->
+            <div class="drive-info">🚗 Drive to Sanilac Petroglyphs • 45 minutes south</div>
+            
+            <!-- Stop 4: Sanilac Petroglyphs -->
+            <div class="destination-stop">
+                <div class="stop-marker sanilac-marker"></div>
+                <div class="destination-info sanilac-info">
+                    <div class="location-header">
+                        <span class="location-icon">🗿</span>
+                        <span class="location-name"><a href="https://www.michigan.gov/dnr/places/state-parks/sanilac-petroglyphs">Sanilac Petroglyphs</a></span>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        🗿 1,000-Year-Old Native American Rock Carvings! Michigan's Only Known Petroglyphs! 🗿
+                    </div>
+                    
+                    <div class="section-title">🗿 Ancient Heritage Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🗿</span>
+                            <span>1,000-year-old Native American petroglyphs - Michigan's only known site</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span><a href="https://www.michigan.gov/dnr/places/state-parks/sanilac-petroglyphs">Visitor center exhibits</a> - interpretation of ancient symbols</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>Nature trails through diverse forest ecosystems</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📚</span>
+                            <span>Educational programs about Native American heritage</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌲</span>
+                            <span>Peaceful forest setting for reflection and learning</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📸</span>
+                            <span>Protected historic site photography (restrictions apply)</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        🗿 <a href="https://www.michigan.gov/dnr/places/state-parks/sanilac-petroglyphs">Official Petroglyphs Historic Site Guide</a> - visitor hours, educational programs, and preservation information
+                    </div>
+                    <div class="resource-item">
+                        📚 <a href="https://bentley.umich.edu/research/guides/michigan-indians/overview.php">University of Michigan Native American Heritage</a> - contextual information about Michigan's indigenous peoples
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">🍂</span>
+                            <span>Seasonal Highlights</span>
+                        </div>
+                        <div class="resource-item">
+                            🌲 Best visited late spring through early fall when visitor center is open. Fall colors provide stunning backdrop to the ancient carvings. Winter access limited but peaceful for contemplation of this sacred site.
+                        </div>
+                    </div>
+                    
+                    <div class="camping-options">
+                        <strong>Heritage Base:</strong> Nearby state forest camping, <a href="https://www.michigan.gov/dnr/places/state-parks/lakeport">Lakeport State Park</a> 20 minutes south for lakefront camping
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ The Thumb Rural Heritage Pro Tips</div>
+            <div class="note-item">
+                <span class="note-icon">📅</span>
+                <span>TIMING RECOMMENDATION: Plan 3-4 days minimum - Harbor Beach engineering marvel, Turnip Rock kayaking, cheese factory tours, and petroglyphs each deserve dedicated time</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⚓</span>
+                <span>ENGINEERING MARVEL: Harbor Beach's massive breakwater took 30 years to build - walk the pier for incredible Lake Huron views</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🛶</span>
+                <span>TURNIP ROCK TIP: Book kayak tours early in season - this Instagram-famous spot fills up quickly during summer weekends</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🍔</span>
+                <span>FESTIVAL TIMING: Plan around Cheeseburger in Caseville (August) for ultimate Parrothead experience or avoid for quieter exploration</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: The Thumb offers excellent dispersed camping - wide open agricultural areas with landowner permission</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛏️</span>
+                <span>HIDDEN GEM: Grindstone City quarry ruins tell fascinating story of Michigan's industrial heritage - bring camera for unique shots</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🗿</span>
+                <span>RESPECT TIP: Sanilac Petroglyphs are sacred - observe all restrictions and visitor center hours for proper cultural context</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌅</span>
+                <span>PHOTOGRAPHY SECRET: Lake Huron sunrise from Caseville or Port Austin rivals any Great Lakes sunrise - arrive early!</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🪨</span>
+                <span>ROCK HOUND TIP: Excellent fossil hunting throughout The Thumb - Petoskey stones, coral fossils, and unique limestone formations</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚗</span>
+                <span>RURAL ROADS: Perfect for slow van life exploration - quiet country roads, farm stands, and authentic small-town Michigan charm</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🎣</span>
+                <span>FISHING SECRET: Saginaw Bay offers some of Michigan's best walleye and perch fishing - charter boats available in Caseville</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏛️</span>
+                <span>CULTURAL BONUS: The Thumb represents authentic rural Michigan - agricultural heritage, small-town values, and unhurried pace</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌾</span>
+                <span>SEASONAL TIP: Late summer through fall offers harvest season charm - corn mazes, pumpkin patches, and agricultural festivals</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
