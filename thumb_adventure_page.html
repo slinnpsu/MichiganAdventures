@@ -90,16 +90,7 @@
             top: 80px;
             bottom: 80px;
             width: 4px;
-        .journey-line {
-            position: absolute;
-            left: 80px;
-            top: 80px;
-            bottom: 80px;
-            width: 4px;
             background: linear-gradient(180deg, #3498db 0%, #e67e22 50%, #2980b9 100%);
-            border-radius: 2px;
-            z-index: 1;
-        }
             border-radius: 2px;
             z-index: 1;
         }
@@ -122,7 +113,7 @@
             flex-shrink: 0;
         }
         
-        .harbor-marker {
+        .bay-city-marker {
             background: #3498db;
         }
         
@@ -132,10 +123,6 @@
         
         .port-austin-marker {
             background: #f39c12;
-        }
-        
-        .grindstone-marker {
-            background: #95a5a6;
         }
         
         .sanilac-marker {
@@ -151,7 +138,7 @@
             flex-grow: 1;
         }
         
-        .harbor-info {
+        .bay-city-info {
             border-left-color: #3498db;
         }
         
@@ -161,10 +148,6 @@
         
         .port-austin-info {
             border-left-color: #f39c12;
-        }
-        
-        .grindstone-info {
-            border-left-color: #95a5a6;
         }
         
         .sanilac-info {
@@ -312,84 +295,80 @@
     <div class="page-container">
         <div class="header">
             <h1 class="adventure-title">The Thumb</h1>
-            <p class="subtitle">Rural Heritage & Lake Huron Shores</p>
+            <p class="subtitle">Bay City Base Camp & Saginaw Bay Exploration</p>
         </div>
         
         <div class="duration-banner">
-            Largest man-made freshwater harbor • Turnip Rock • 1,000-year-old petroglyphs • Cheeseburger in Caseville Festival • Authentic farm country
+            Victorian Bay City • Turnip Rock • Cheeseburger in Caseville Festival • 1,000-year-old petroglyphs • Iconic Thumb tip experience
         </div>
         
         <div class="timeline-container">
             <div class="journey-line"></div>
             
             <div class="departure-banner">
-                📍 Departing Traverse City • 3 hours southeast
+                📍 Departing Traverse City • 2.5 hours southeast
             </div>
             
-            <!-- Stop 1: Harbor Beach -->
+            <!-- Stop 1: Bay City Base Camp -->
             <div class="destination-stop">
-                <div class="stop-marker harbor-marker"></div>
-                <div class="destination-info harbor-info">
+                <div class="stop-marker bay-city-marker"></div>
+                <div class="destination-info bay-city-info">
                     <div class="location-header">
-                        <span class="location-icon">⚓</span>
-                        <span class="location-name"><a href="https://www.harborbeach.com">Harbor Beach</a></span>
+                        <span class="location-icon">🏙️</span>
+                        <span class="location-name"><a href="https://www.visitbaycity.org">Bay City</a></span>
                     </div>
                     
                     <div class="highlight-box">
-                        ⚓ Largest Man-Made Freshwater Harbor in the World! Historic Lighthouse! Gateway to The Thumb! ⚓
+                        🏙️ Victorian Lumber Baron City! Saginaw River Waterfront! Perfect Base Camp for Thumb Exploration! 🏙️
                     </div>
                     
-                    <div class="section-title">⚓ Harbor Beach Adventures</div>
+                    <div class="section-title">🏙️ Bay City Base Camp Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
-                            <span class="activity-icon">⚓</span>
-                            <span><a href="https://www.harborbeach.com/harbor">World's largest man-made freshwater harbor</a> - engineering marvel</span>
+                            <span class="activity-icon">🏛️</span>
+                            <span><a href="https://www.visitbaycity.org/historic-downtown">Historic downtown district</a> - Victorian lumber baron architecture</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🗼</span>
-                            <span><a href="https://www.michiganlighthouses.com/harbor-beach-lighthouse/">Harbor Beach Lighthouse (1885)</a> - historic red brick lighthouse</span>
+                            <span class="activity-icon">🚢</span>
+                            <span><a href="https://svnsm.com/">Saginaw Valley Naval Ship Museum</a> - USS EDSON historic destroyer</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛍️</span>
+                            <span><a href="https://www.gogreat.com/directory/bay-city-antiques-center-bay-antique-center/">Bay City Antiques Center</a> - treasure hunting in historic buildings</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
-                            <span><a href="https://www.harborbeach.com/beach-park">Harbor Beach State Park</a> - swimming and sandy beaches</span>
+                            <span><a href="https://www.michigan.gov/recsearch/parks/baycity">Bay City State Park</a> - Saginaw Bay beach and nature center</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🎣</span>
-                            <span>Excellent fishing for walleye, perch, and salmon</span>
+                            <span class="activity-icon">🌊</span>
+                            <span>Maritime heritage - lumber boom history and Great Lakes shipping</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🚤</span>
-                            <span>Marina district with boat launches and charters</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span>Historic downtown with shops and maritime heritage</span>
+                            <span class="activity-icon">🛒</span>
+                            <span>Van life resupply - full city amenities and services</span>
                         </div>
                     </div>
 
                     <div class="section-title">📚 Planning Resources</div>
                     <div class="resource-item">
-                        🗺️ <a href="https://www.huroncounty.com">Huron County Tourism</a> - complete guide to Thumb area attractions, events, and accommodations
+                        🗺️ <a href="https://www.huroncounty.com/plan-your-visit">Huron County Tourism</a> - complete guide to Thumb area attractions, events, and accommodations
                     </div>
                     <div class="resource-item">
-                        🚗 <a href="https://www.michigan.org/article/trip-idea/michigan-thumb-heritage-driving-tour">Michigan Thumb Heritage Driving Tour</a> - scenic route through agricultural landscapes and historic towns
+                        🚗 <a href="https://www.bluewater.org/member-detail/thumbcoast-heritage-road-trip/">Thumb Coast Heritage Road Trip</a> - scenic route through agricultural landscapes and historic towns
                     </div>
-
-                    <div class="section-title">🍺 Liquid Assets</div>
-                    <div class="brewery-special">
-                        <div class="resource-item">
-                            ☕ Harbor Beach features charming cafes with Lake Huron views and local establishments serving fresh lake fish. The downtown area offers authentic small-town dining experiences perfect for van life exploration.
-                        </div>
+                    <div class="resource-item">
+                        🌊 <a href="https://www.gogreat.com/plan/trip-ideas/">Saginaw Bay Trip Ideas</a> - comprehensive resource for exploring the bay region
                     </div>
                     
                     <div class="camping-options">
-                        <strong>Harbor Camping:</strong> <a href="https://www.michigan.gov/dnr/places/state-parks/harbor-beach">Harbor Beach State Park</a> - lakefront sites with harbor views, downtown proximity
+                        <strong>Base Camp Options:</strong> <a href="https://www.michigan.gov/recsearch/parks/baycity">Bay City State Park</a> - bay views, <a href="https://huroncountyparks.com/">Huron County Parks</a> for dispersed options, urban van parking for resupply
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Caseville -->
-            <div class="drive-info">🚗 Drive to Caseville • 45 minutes northwest</div>
+            <div class="drive-info">🚗 Day trip to Caseville • 1 hour northeast around Saginaw Bay</div>
             
             <!-- Stop 2: Caseville -->
             <div class="destination-stop">
@@ -397,22 +376,22 @@
                 <div class="destination-info caseville-info">
                     <div class="location-header">
                         <span class="location-icon">🍔</span>
-                        <span class="location-name"><a href="https://www.caseville.org">Caseville</a></span>
+                        <span class="location-name"><a href="https://casevillechamber.com/">Caseville</a></span>
                     </div>
                     
                     <div class="highlight-box">
-                        🍔 "Cheeseburger in Caseville" Festival Capital! Jimmy Buffett Tribute Town! 🍔
+                        🍔 "Cheeseburger in Caseville" Festival Capital! Jimmy Buffett Tribute Town on Saginaw Bay! 🍔
                     </div>
                     
-                    <div class="section-title">🏖️ Caseville Adventures</div>
+                    <div class="section-title">🏖️ Caseville Saginaw Bay Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
-                            <span><a href="https://www.caseville.org/beach">Caseville County Park Beach</a> - sandy Lake Huron shoreline</span>
+                            <span><a href="https://huroncountyparks.com/caseville-county-park">Caseville County Park</a> - Saginaw Bay beach access</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🦅</span>
-                            <span><a href="https://www.alltrails.com/trail/us/michigan/wildfowl-bay-wildlife-area">Wildfowl Bay Wildlife Area</a> - migratory bird watching hotspot</span>
+                            <span><a href="https://stateparks.com/wild_fowl_bay_state_park_in_michigan.html">Wildfowl Bay Wildlife Area</a> - migratory bird watching hotspot</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🧀</span>
@@ -432,41 +411,26 @@
                         </div>
                     </div>
 
-                    <div class="section-title">📚 Planning Resources</div>
-                    <div class="resource-item">
-                        🗺️ <a href="https://www.caseville.org/visitor-information">Official Caseville Visitor Guide</a> - complete guide to accommodations, dining, and seasonal events
-                    </div>
-                    <div class="resource-item">
-                        🎣 <a href="https://www.michigan.gov/dnr/places/state-parks/caseville">Caseville State Park Guide</a> - camping, trails, and beach access information
-                    </div>
-
                     <div class="winter-special">
                         <div class="winter-title">
                             <span class="winter-icon">🍔</span>
                             <span>August Festival Highlight</span>
                         </div>
                         <div class="resource-item">
-                            🎪 <a href="https://www.cheeseburgerincaseville.com">Cheeseburger in Caseville Festival</a> (August) - 10-day Jimmy Buffett tribute celebration with live music, tiki bars, and tropical Michigan vibes. The Midwest's premier Parrothead gathering!
-                        </div>
-                    </div>
-
-                    <div class="section-title">🍺 Liquid Assets</div>
-                    <div class="brewery-special">
-                        <div class="resource-item">
-                            🍺 <strong><a href="https://www.thumbbrewery.com">Thumb Brewery</a></strong> offers craft beers with Great Lakes themes, while <strong><a href="https://bluewaterwinery.com">Blue Water Winery</a></strong> in nearby Carsonville produces wines from local grapes in a charming rural setting.
+                            🎪 <a href="https://casevillechamber.com/cheeseburger-fest">Cheeseburger in Caseville Festival</a> (August) - 10-day Jimmy Buffett tribute celebration with live music, tiki bars, and tropical Michigan vibes. The Midwest's premier Parrothead gathering on Saginaw Bay!
                         </div>
                     </div>
                     
                     <div class="camping-options">
-                        <strong>Beach Camping:</strong> <a href="https://www.michigan.gov/dnr/places/state-parks/caseville">Caseville State Park</a> - lakefront sites, <a href="https://wagertreefarm.com">Wager Tree Farm</a> nearby for van camping
+                        <strong>Day Trip Base:</strong> Return to Bay City base camp, or <a href="https://www.harborbeach.com/north-park-campground">North Park Campground</a> for extended stay
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Port Austin -->
-            <div class="drive-info">🚗 Drive to Port Austin • 30 minutes northeast</div>
+            <div class="drive-info">🚗 Drive to Port Austin • 45 minutes northeast to Thumb tip</div>
             
-            <!-- Stop 2: Port Austin -->
+            <!-- Stop 3: Port Austin - Iconic Thumb Tip -->
             <div class="destination-stop">
                 <div class="stop-marker port-austin-marker"></div>
                 <div class="destination-info port-austin-info">
@@ -476,46 +440,46 @@
                     </div>
                     
                     <div class="highlight-box">
-                        🪨 Turnip Rock Kayaking! Tip of The Thumb! Lighthouse Capital! 🪨
+                        🪨 Iconic Thumb Tip Experience! Turnip Rock Adventure! Historic Lighthouse! 🪨
                     </div>
                     
-                    <div class="section-title">🌊 Port Austin Adventures</div>
+                    <div class="section-title">🌊 Iconic Thumb Tip Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
-                            <span class="activity-icon">🛶</span>
-                            <span><a href="https://www.kayakthehuron.com">Turnip Rock kayaking</a> - iconic sea stack formation</span>
+                            <span class="activity-icon">🪨</span>
+                            <span><a href="https://www.portaustinarea.com/turnip-rock">Turnip Rock Experience</a> - iconic sea stack formation and kayaking adventure</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🎨</span>
-                            <span><a href="https://www.portaustinarea.com/arts">Art galleries and murals</a> - vibrant local arts scene</span>
+                            <span><a href="https://www.portaustinarea.com/arts-culture/#art-galleries">Art galleries and murals</a> - vibrant local arts scene</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://www.portaustinreeflight.org/">Port Austin Reef Lighthouse</a> - 1878 offshore lighthouse</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span><a href="https://www.portaustinarea.com/beaches">Thumb tip beaches</a> - pristine Lake Huron shoreline</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span><a href="https://www.michigan.org/property/port-crescent-state-park">Port Crescent State Park</a> - hiking trails and beach access</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🛍️</span>
                             <span>Weekend farmers market with local produce and crafts</span>
                         </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🗼</span>
-                            <span><a href="https://www.portaustinlighthouse.org">Port Austin Reef Lighthouse</a> - 1878 offshore lighthouse</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏖️</span>
-                            <span><a href="https://www.portaustinarea.com/beach-areas">Bird Creek Park Beach</a> - pristine swimming and sunbathing</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🥾</span>
-                            <span><a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=435&type=SPRK">Port Crescent State Park</a> - 3 miles of hiking trails</span>
-                        </div>
                     </div>
 
-                    <div class="section-title">⭐ Turnip Rock Experience</div>
+                    <div class="section-title">⭐ Turnip Rock - Michigan's Most Famous Natural Landmark</div>
                     <div class="resource-item">
-                        🛶 Michigan's most Instagram-famous landmark! This unique sea stack formation is accessible only by kayak, creating an exclusive adventure. The 2-3 hour paddle through crystal-clear Lake Huron waters leads to this stunning geological wonder that's become a bucket-list destination for outdoor enthusiasts.
+                        🛶 Michigan's most Instagram-famous landmark sits at the very tip of The Thumb! This unique sea stack formation is accessible by kayak, creating an exclusive Lake Huron adventure. The experience includes crystal-clear waters, dramatic limestone cliffs, and the satisfaction of reaching Michigan's most iconic natural wonder.
                     </div>
 
                     <div class="winter-special">
                         <div class="winter-title">
                             <span class="winter-icon">❄️</span>
-                            <span>Winter by the Lake</span>
+                            <span>Winter at the Thumb Tip</span>
                         </div>
                         <div class="activities-grid">
                             <div class="activity-item">
@@ -527,8 +491,8 @@
                                 <span>Quiet winter beaches perfect for peaceful walks</span>
                             </div>
                             <div class="activity-item">
-                                <span class="activity-icon">🎄</span>
-                                <span>Holiday lights in charming small towns</span>
+                                <span class="activity-icon">📸</span>
+                                <span>Frozen lighthouse photography - dramatic ice formations</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🎣</span>
@@ -536,73 +500,15 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="section-title">🍺 Liquid Assets</div>
-                    <div class="brewery-special">
-                        <div class="resource-item">
-                            🍺 <strong><a href="https://www.facebook.com/BeachBarPortAustin/">The Beach Bar</a></strong> offers craft cocktails with stunning lake views, while <strong><a href="https://www.portaustinarea.com/dining">local establishments</a></strong> feature fresh Lake Huron fish and farm-to-table dining experiences.
-                        </div>
-                    </div>
                     
                     <div class="camping-options">
-                        <strong>Van-Friendly Camping:</strong> <a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=435&type=SPRK">Port Crescent State Park</a> - van-friendly sites, <a href="https://harvesthosts.com">Harvest Host</a> locations throughout rural Thumb area
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Drive to Grindstone City -->
-            <div class="drive-info">🚗 Drive to Grindstone City • 20 minutes east</div>
-            
-            <!-- Stop 3: Grindstone City -->
-            <div class="destination-stop">
-                <div class="stop-marker grindstone-marker"></div>
-                <div class="destination-info grindstone-info">
-                    <div class="location-header">
-                        <span class="location-icon">⛏️</span>
-                        <span class="location-name"><a href="https://www.michigan.org/city/grindstone-city">Grindstone City</a></span>
-                    </div>
-                    
-                    <div class="section-title">⛏️ Historic Quarry Adventures</div>
-                    <div class="activities-grid">
-                        <div class="activity-item">
-                            <span class="activity-icon">⛏️</span>
-                            <span>Historic grindstone quarry ruins - 1800s industrial heritage</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🪨</span>
-                            <span>Unique geological formations and rock collecting</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏖️</span>
-                            <span>Secluded beach areas with fewer crowds</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">📸</span>
-                            <span>Historic quarry photography - remnants of Michigan industry</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🌊</span>
-                            <span>Crystal-clear Lake Huron swimming holes</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span>Small town charm with authentic rural character</span>
-                        </div>
-                    </div>
-
-                    <div class="section-title">📚 Planning Resources</div>
-                    <div class="resource-item">
-                        🏛️ <a href="https://www.historicalmarkerproject.com/markers/HM1EHH_grindstone-city_Grindstone-City-MI.html">Grindstone City Historical Marker</a> - learn about the quarry industry that shaped this unique community
-                    </div>
-                    
-                    <div class="camping-options">
-                        <strong>Rural Camping:</strong> Private campgrounds nearby, dispersed camping opportunities, <a href="https://freecampsites.net/#!Grindstone%20City%20MI">free camping sites</a>
+                        <strong>Thumb Tip Camping:</strong> <a href="https://www.michigan.org/property/port-crescent-state-park">Port Crescent State Park</a> - lakefront sites, <a href="https://huroncountyparks.com/wagener-county-park">Wagener County Park</a> for dispersed options
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Sanilac Petroglyphs -->
-            <div class="drive-info">🚗 Drive to Sanilac Petroglyphs • 45 minutes south</div>
+            <div class="drive-info">🚗 Heritage drive to Sanilac Petroglyphs • 1 hour south</div>
             
             <!-- Stop 4: Sanilac Petroglyphs -->
             <div class="destination-stop">
@@ -610,14 +516,14 @@
                 <div class="destination-info sanilac-info">
                     <div class="location-header">
                         <span class="location-icon">🗿</span>
-                        <span class="location-name"><a href="https://www.michigan.gov/dnr/places/state-parks/sanilac-petroglyphs">Sanilac Petroglyphs</a></span>
+                        <span class="location-name"><a href="https://www.michigan.gov/mhc/museums/sanilac">Sanilac Petroglyphs</a></span>
                     </div>
                     
                     <div class="highlight-box">
-                        🗿 1,000-Year-Old Native American Rock Carvings! Michigan's Only Known Petroglyphs! 🗿
+                        🗿 1,000-Year-Old Native American Rock Carvings! Michigan's Only Known Petroglyphs! Sacred Heritage Site! 🗿
                     </div>
                     
-                    <div class="section-title">🗿 Ancient Heritage Adventures</div>
+                    <div class="section-title">🗿 Ancient Heritage Experience</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🗿</span>
@@ -625,7 +531,7 @@
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏛️</span>
-                            <span><a href="https://www.michigan.gov/dnr/places/state-parks/sanilac-petroglyphs">Visitor center exhibits</a> - interpretation of ancient symbols</span>
+                            <span>Visitor center exhibits with interpretation of ancient symbols</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🥾</span>
@@ -640,45 +546,41 @@
                             <span>Peaceful forest setting for reflection and learning</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">📸</span>
-                            <span>Protected historic site photography (restrictions apply)</span>
+                            <span class="activity-icon">🚗</span>
+                            <span>Perfect stop on return journey to Traverse City</span>
                         </div>
-                    </div>
-
-                    <div class="section-title">📚 Planning Resources</div>
-                    <div class="resource-item">
-                        🗿 <a href="https://www.michigan.gov/dnr/places/state-parks/sanilac-petroglyphs">Official Petroglyphs Historic Site Guide</a> - visitor hours, educational programs, and preservation information
-                    </div>
-                    <div class="resource-item">
-                        📚 <a href="https://bentley.umich.edu/research/guides/michigan-indians/overview.php">University of Michigan Native American Heritage</a> - contextual information about Michigan's indigenous peoples
                     </div>
 
                     <div class="winter-special">
                         <div class="winter-title">
                             <span class="winter-icon">🍂</span>
-                            <span>Seasonal Highlights</span>
+                            <span>Seasonal Heritage Experience</span>
                         </div>
                         <div class="resource-item">
-                            🌲 Best visited late spring through early fall when visitor center is open. Fall colors provide stunning backdrop to the ancient carvings. Winter access limited but peaceful for contemplation of this sacred site.
+                            🌲 Best visited late spring through early fall when visitor center is open. Fall colors provide stunning backdrop to the ancient carvings. This sacred site offers a contemplative end to your Thumb adventure, connecting you with Michigan's deep indigenous heritage.
                         </div>
                     </div>
                     
                     <div class="camping-options">
-                        <strong>Heritage Base:</strong> Nearby state forest camping, <a href="https://www.michigan.gov/dnr/places/state-parks/lakeport">Lakeport State Park</a> 20 minutes south for lakefront camping
+                        <strong>Heritage Journey:</strong> Day visit en route home, or nearby state forest camping for extended contemplation
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ The Thumb Rural Heritage Pro Tips</div>
+            <div class="notes-title">🗒️ Thumb Adventure Pro Tips</div>
             <div class="note-item">
                 <span class="note-icon">📅</span>
-                <span>TIMING RECOMMENDATION: Plan 3-4 days minimum - Harbor Beach engineering marvel, Turnip Rock kayaking, cheese factory tours, and petroglyphs each deserve dedicated time</span>
+                <span>TIMING RECOMMENDATION: Plan 3-4 days minimum - Bay City base camp setup, Turnip Rock adventure, Saginaw Bay exploration, and petroglyphs heritage experience</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">⚓</span>
-                <span>ENGINEERING MARVEL: Harbor Beach's massive breakwater took 30 years to build - walk the pier for incredible Lake Huron views</span>
+                <span class="note-icon">🏙️</span>
+                <span>BASE CAMP STRATEGY: Bay City offers full van life amenities - use as base for day trips to authentic Thumb destinations</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌊</span>
+                <span>SAGINAW BAY DISCOVERY: This massive bay offers different experiences from Lake Michigan - warmer waters, excellent fishing, agricultural shoreline</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🛶</span>
@@ -689,12 +591,16 @@
                 <span>FESTIVAL TIMING: Plan around Cheeseburger in Caseville (August) for ultimate Parrothead experience or avoid for quieter exploration</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🚐</span>
-                <span>VAN LIFE HACK: The Thumb offers excellent dispersed camping - wide open agricultural areas with landowner permission</span>
+                <span class="note-icon">💳</span>
+                <span>RECREATION PASSPORT: Michigan requires $12 annual Recreation Passport for state parks - add when renewing plates or buy separately</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">⛏️</span>
-                <span>HIDDEN GEM: Grindstone City quarry ruins tell fascinating story of Michigan's industrial heritage - bring camera for unique shots</span>
+                <span class="note-icon">🚐</span>
+                <span>VAN LIFE HACK: The Thumb offers excellent dispersed camping opportunities - wide open agricultural areas with respectful landowner permission</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🧀</span>
+                <span>LOCAL TASTE: Pinconning Cheese Company represents authentic Michigan agricultural heritage - perfect van life snack stop</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🗿</span>
@@ -702,27 +608,15 @@
             </div>
             <div class="note-item">
                 <span class="note-icon">🌅</span>
-                <span>PHOTOGRAPHY SECRET: Lake Huron sunrise from Caseville or Port Austin rivals any Great Lakes sunrise - arrive early!</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🪨</span>
-                <span>ROCK HOUND TIP: Excellent fossil hunting throughout The Thumb - Petoskey stones, coral fossils, and unique limestone formations</span>
+                <span>PHOTOGRAPHY SECRET: Saginaw Bay sunrise from Caseville rivals any Great Lakes sunrise - arrive early for spectacular shots!</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚗</span>
                 <span>RURAL ROADS: Perfect for slow van life exploration - quiet country roads, farm stands, and authentic small-town Michigan charm</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🎣</span>
-                <span>FISHING SECRET: Saginaw Bay offers some of Michigan's best walleye and perch fishing - charter boats available in Caseville</span>
-            </div>
-            <div class="note-item">
                 <span class="note-icon">🏛️</span>
-                <span>CULTURAL BONUS: The Thumb represents authentic rural Michigan - agricultural heritage, small-town values, and unhurried pace</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🌾</span>
-                <span>SEASONAL TIP: Late summer through fall offers harvest season charm - corn mazes, pumpkin patches, and agricultural festivals</span>
+                <span>CULTURAL BONUS: The Thumb represents authentic rural Michigan - agricultural heritage, small-town values, and unhurried pace of life</span>
             </div>
         </div>
     </div>
