@@ -14,7 +14,7 @@
             font-family: 'Georgia', serif;
             margin: 0;
             padding: 20px;
-            background: linear-gradient(135deg, #fff9e6 0%, #e6f3ff 100%);
+            background: linear-gradient(135deg, #fff3e0 0%, #e1f5fe 100%);
             min-height: 100vh;
             color: #2c3e50;
         }
@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #e74c3c 100%);
+            background: #2980b9;
             color: white;
             padding: 25px;
             text-align: center;
@@ -42,6 +42,7 @@
             top: 15px;
             right: 25px;
             font-size: 2rem;
+            color: white;
         }
         
         .adventure-title {
@@ -58,7 +59,7 @@
         }
         
         .duration-banner {
-            background: #e67e22;
+            background: #7f8c8d;
             color: white;
             padding: 12px 15px;
             text-align: center;
@@ -67,8 +68,20 @@
         }
         
         .timeline-container {
-            padding: 30px 40px;
+            padding: 20px 40px;
             position: relative;
+        }
+        
+        .departure-banner {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            border-radius: 20px;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
         
         .journey-line {
@@ -77,7 +90,7 @@
             top: 80px;
             bottom: 80px;
             width: 4px;
-            background: linear-gradient(180deg, #27ae60 0%, #2980b9 50%, #e74c3c 100%);
+            background: linear-gradient(180deg, #2980b9 0%, #e74c3c 100%);
             border-radius: 2px;
             z-index: 1;
         }
@@ -100,10 +113,6 @@
             flex-shrink: 0;
         }
         
-        .start-marker {
-            background: #27ae60;
-        }
-        
         .ludington-marker {
             background: #2980b9;
         }
@@ -119,10 +128,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-left: 4px solid;
             flex-grow: 1;
-        }
-        
-        .start-info {
-            border-left-color: #27ae60;
         }
         
         .ludington-info {
@@ -150,91 +155,20 @@
             font-size: 1.8rem;
         }
         
-        .subsection-header {
-            background: linear-gradient(45deg, #3498db, #2980b9);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-align: center;
-            margin: 15px 0 10px 0;
-            font-size: 0.95rem;
-        }
-        
-        .cultural-header {
-            background: linear-gradient(45deg, #8e44ad, #9b59b6);
-        }
-        
-        .lighthouse-header {
-            background: linear-gradient(45deg, #e67e22, #f39c12);
-        }
-        
-        .liquid-header {
-            background: linear-gradient(45deg, #f39c12, #e67e22);
-        }
-        
-        .state-park-special {
-            background: rgba(52, 152, 219, 0.15);
-            border: 2px solid #3498db;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
-        }
-        
-        .lighthouse-special {
-            background: rgba(243, 156, 18, 0.15);
-            border: 2px solid #f39c12;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
-        }
-        
-        .cultural-special {
-            background: rgba(142, 68, 173, 0.15);
-            border: 2px solid #8e44ad;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
-        }
-        
-        .brewery-special {
-            background: rgba(243, 156, 18, 0.15);
-            border: 2px solid #f39c12;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
-        }
-        
-        .winter-special {
-            background: rgba(142, 68, 173, 0.1);
-            border: 2px solid #8e44ad;
-            border-radius: 8px;
-            padding: 12px;
-            margin: 10px 0;
-        }
-        
-        .winter-title {
-            font-weight: bold;
-            color: #8e44ad;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .winter-icon {
-            margin-right: 8px;
+        .section-title {
             font-size: 1.2rem;
+            font-weight: bold;
+            color: #2980b9;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #2980b9;
+            padding-left: 15px;
         }
         
         .activities-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .activity-item {
@@ -251,17 +185,47 @@
         
         .drive-info {
             position: relative;
-            left: 110px;
+            left: 50%;
+            transform: translateX(-50%);
             background: rgba(52, 73, 94, 0.9);
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 30px 0;
             width: fit-content;
             z-index: 10;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .winter-special {
+            background: rgba(142, 68, 173, 0.08);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #8e44ad;
+        }
+        
+        .winter-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .winter-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .brewery-special {
+            background: rgba(52, 152, 219, 0.08);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
         }
         
         .highlight-box {
@@ -273,6 +237,20 @@
             text-align: center;
             margin: 10px 0;
             font-size: 0.9rem;
+        }
+        
+        .resource-item {
+            font-size: 0.9rem;
+            color: #5d6d7e;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
         }
         
         .notes-section {
@@ -302,13 +280,6 @@
             margin-right: 8px;
             color: #7f8c8d;
         }
-        
-        .camping-options {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 8px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -325,38 +296,20 @@
         <div class="timeline-container">
             <div class="journey-line"></div>
             
-            <!-- Start: Traverse City -->
-            <div class="destination-stop">
-                <div class="stop-marker start-marker"></div>
-                <div class="destination-info start-info">
-                    <div class="location-header">
-                        <span class="location-icon">🏠</span>
-                        <span class="location-name">Traverse City</span>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-icon">🚀</span>
-                        <span>Iconic lighthouse adventure awaits!</span>
-                    </div>
-                </div>
+            <div class="departure-banner">
+                📍 Departing Traverse City • 1.5 hours southwest
             </div>
             
-            <!-- Drive to Ludington -->
-            <div class="drive-info">🚗 1.5 hours south</div>
-            
-            <!-- Stop 1: Ludington (Everything) -->
+            <!-- Stop 1: Ludington -->
             <div class="destination-stop">
                 <div class="stop-marker ludington-marker"></div>
                 <div class="destination-info ludington-info">
                     <div class="location-header">
                         <span class="location-icon">🏖️</span>
-                        <span class="location-name"><a href="https://pureludington.com/?utm_source=google&utm_medium=cpc&utm_campaign=26LudingtonSEM2025&utm_content=general&utm_term=visit%20ludington&gad_source=1&gad_campaignid=21587381921&gbraid=0AAAAADnmmhnv3B7vc1Bfs24yjgbcQhOIC&gclid=Cj0KCQjwmK_CBhCEARIsAMKwcD4VuEEJuF1qkoHEhD5mjVpo9BrcdhT7b0B4mPF0lnNXqwUVz72XUvcaAuADEALw_wcB" target="_blank">Ludington</a></span>
+                        <span class="location-name"><a href="https://pureludington.com/?utm_source=google&utm_medium=cpc&utm_campaign=26LudingtonSEM2025&utm_content=general&utm_term=visit%20ludington&gad_source=1&gad_campaignid=21587381921&gbraid=0AAAAADnmmhnv3B7vc1Bfs24yjgbcQhOIC&gclid=Cj0KCQjwmK_CBhCEARIsAMKwcD4VuEEJuF1qkoHEhD5mjVpo9BrcdhT7b0B4mPF0lnNXqwUVz72XUvcaAuADEALw_wcB">Ludington</a></span>
                     </div>
                     
-                    <!-- Ludington State Park Activities -->
-                    <div class="subsection-header">
-                        🏞️ <a href="https://visitludington.com/ludington-state-park" target="_blank" style="color: white; text-decoration: none;">Ludington State Park Adventures</a>
-                    </div>
-                    
+                    <div class="section-title">🏞️ Ludington State Park Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🥾</span>
@@ -372,11 +325,11 @@
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🛶</span>
-                            <span><a href="https://visitludington.com/hamlin-lake" target="_blank">Hamlin Lake paddling</a></span>
+                            <span><a href="https://visitludington.com/hamlin-lake">Hamlin Lake paddling</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌅</span>
-                            <span><a href="https://www.michigantrailmaps.com/member-detail/ludington-state-park-skyline-trail-loop/" target="_blank">Skyline Trail vistas & map</a></span>
+                            <span><a href="https://www.michigantrailmaps.com/member-detail/ludington-state-park-skyline-trail-loop/">Skyline Trail vistas</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🐕</span>
@@ -384,10 +337,6 @@
                         </div>
                     </div>
                     
-                    <div class="camping-options">
-                        <strong>State Park Camping:</strong> <a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=463&type=SPCG" target="_blank">Pines</a>, <a href="https://www.hipcamp.com/en-US/campground/united-states/michigan/cedar-campground-lkpqczwp" target="_blank">Cedars</a>, <a href="https://www.mymichigantrips.com/wp/jack-pine-hike-in-sites-backpacking-ludington-state-park-mi/" target="_blank">Jack Pine walk-in sites</a> • <a href="https://freecampsites.net/#!Ludington%20MI" target="_blank">Free camping options</a>
-                    </div>
-
                     <div class="winter-special">
                         <div class="winter-title">
                             <span class="winter-icon">❄️</span>
@@ -410,111 +359,105 @@
                                 <span class="activity-icon">🔥</span>
                                 <span>Bonfire at amphitheater</span>
                             </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🛷</span>
+                                <span>Snowshoe making classes (October and November)</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">📚</span>
+                                <span><a href="https://visitludington.com/ludington-state-park-winter-activities">Winter activities guide</a></span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Lighthouse Adventures -->
-                    <div class="subsection-header lighthouse-header">
-                        🗼 Lighthouse Adventures
-                    </div>
-                    
-                    <div class="highlight-box">
-                        🗼 Three iconic lighthouses accessible from Ludington! 🗼
-                    </div>
-                    
-                    <div class="lighthouse-special">
-                        <strong><a href="https://visitludington.com/big-sable-point-lighthouse-ludington-state-park" target="_blank">Big Sable Point Lighthouse</a>:</strong> Built 1867 • $8 adults/$5 kids to climb • 1.8 mi walk/bike from park • Spectacular Lake Michigan views from top!
-                    </div>
-                    
-                    <div class="lighthouse-special">
-                        <strong><a href="https://splka.org/what-we-do/our-lights/ludington.html" target="_blank">North Breakwater Light</a>:</strong> Historic landmark with stunning sunset views • Walk the historic pier • Downtown location perfect for evening strolls
-                    </div>
-                    
-                    <div class="lighthouse-special">
-                        <strong>Bonus Lighthouse:</strong> <a href="https://statebystatetravel.com/just-still/" target="_blank">Little Sable Point Lighthouse</a> - Historic beauty worth the scenic drive for lighthouse enthusiasts
-                    </div>
-                    
+                    <div class="section-title">🗼 Three Iconic Lighthouses</div>
                     <div class="activities-grid">
                         <div class="activity-item">
-                            <span class="activity-icon">📸</span>
-                            <span>Iconic striped tower photos</span>
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://visitludington.com/big-sable-point-lighthouse-ludington-state-park">Big Sable Point (1867)</a></span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🌊</span>
-                            <span>Pristine beach access</span>
+                            <span class="activity-icon">🌅</span>
+                            <span>$8 adults/$5 kids to climb</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://splka.org/what-we-do/our-lights/ludington.html">North Breakwater Light</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🚶</span>
                             <span>Historic pier walks</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🌅</span>
-                            <span>Epic sunrise & sunset views</span>
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://statebystatetravel.com/just-still/">Little Sable Point</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📸</span>
+                            <span>Scenic drive bonus</span>
                         </div>
                     </div>
 
-                    <!-- Cultural Gems -->
-                    <div class="subsection-header cultural-header">
-                        🏛️ Cultural Gems
-                    </div>
-                    
-                    <div class="cultural-special">
-                        <strong>Maritime History:</strong> <a href="https://ludingtonmaritimemuseum.org/" target="_blank">Port of Ludington Maritime Museum</a> - Interactive exhibits in former Coast Guard Station, pilot historic carferry simulator, original lighthouse lenses
-                    </div>
-                    
-                    <div class="cultural-special">
-                        <strong>Living History:</strong> <a href="https://historicwhitepinevillage.org/" target="_blank">Historic White Pine Village</a> - 30 historic buildings with live interpreters, blacksmith demonstrations, steam locomotive displays
-                    </div>
-                    
-                    <div class="cultural-special">
-                        <strong>Van Adventure Extension:</strong> <a href="https://ssbadger.com/" target="_blank">SS Badger Ferry to Wisconsin</a> - Take your van across Lake Michigan! 4-hour cruise with staterooms, last coal-fired steamship in US
-                    </div>
-                    
+                    <div class="section-title">🏛️ Cultural Attractions</div>
                     <div class="activities-grid">
                         <div class="activity-item">
-                            <span class="activity-icon">🎨</span>
-                            <span>Summer festivals (June-August)</span>
+                            <span class="activity-icon">🏛️</span>
+                            <span><a href="https://ludingtonmaritimemuseum.org/">Maritime Museum</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⚓</span>
+                            <span>Carferry simulator</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏘️</span>
+                            <span><a href="https://historicwhitepinevillage.org/">Historic White Pine Village</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🔨</span>
+                            <span>Live blacksmith demos</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">⛴️</span>
-                            <span>Ferry to Manitowoc, Wisconsin</span>
+                            <span><a href="https://ssbadger.com/about/">SS Badger to Wisconsin</a></span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span>Historic downtown district</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🎭</span>
-                            <span>Arts & cultural events</span>
+                            <span class="activity-icon">🚐</span>
+                            <span>Take your van across!</span>
                         </div>
                     </div>
 
-                    <!-- Liquid Assets & Van Life Eats -->
-                    <div class="subsection-header liquid-header">
-                        🍺 Liquid Assets & Van Life Eats
-                    </div>
-                    
+                    <div class="section-title">🍺 Liquid Assets</div>
                     <div class="brewery-special">
-                        <strong>Brewpubs:</strong> <a href="https://jamesportbrewingcompany.com/" target="_blank">Jamesport Brewing Co.</a> (410 S James St) - Award-winning beer, dog-friendly beer garden, full menu, Victorian building atmosphere
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🍺</span>
+                                <span><a href="https://jamesportbrewingcompany.com/">Jamesport Brewing Co.</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🐕</span>
+                                <span>Dog-friendly beer garden</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🍺</span>
+                                <span><a href="https://ludingtonbaybrewing.com/">Ludington Bay Brewing</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🌿</span>
+                                <span>Locally sourced ingredients</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        📖 <a href="https://www.mydigitalpublication.com/publication/?m=34968&l=1">Official Ludington Visitor Guide</a> - Comprehensive digital guide with attractions, dining & events
+                    </div>
+                    <div class="resource-item">
+                        🚴 <a href="https://pureludington.com/a-complete-guide-to-biking-in-ludington-michigan/">Ludington Four Season Biking Guide</a> - Year-round cycling with trail maps & route planning
                     </div>
                     
-                    <div class="brewery-special">
-                        <strong>Local Brewery:</strong> <a href="https://ludingtonbaybrewing.com/" target="_blank">Ludington Bay Brewing Co.</a> - Covered porch seating, traditional American fare, locally sourced ingredients, community gathering spot
-                    </div>
-                    
-                    <div class="activities-grid">
-                        <div class="activity-item">
-                            <span class="activity-icon">🚚</span>
-                            <span>The 10 Spot food trucks (US 10)</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🥕</span>
-                            <span>Farmers Market (Fri 3-8pm)</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🍺</span>
-                            <span>Dog-friendly patios</span>
-                        </div>
+                    <div class="camping-options">
+                        <strong>State Park Camping:</strong> <a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=463&type=SPCG">Pines</a>, <a href="https://www.hipcamp.com/en-US/campground/united-states/michigan/cedar-campground-lkpqczwp">Cedars</a>, <a href="https://www.mymichigantrips.com/wp/jack-pine-hike-in-sites-backpacking-ludington-state-park-mi/">Jack Pine walk-in sites</a> • <a href="https://freecampsites.net/#!Ludington%20MI">Free camping options</a>
                     </div>
                 </div>
             </div>
@@ -528,7 +471,7 @@
                 <div class="destination-info wilderness-info">
                     <div class="location-header">
                         <span class="location-icon">🏜️</span>
-                        <span class="location-name"><a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18437" target="_blank">Nordhouse Dunes Wilderness</a></span>
+                        <span class="location-name"><a href="https://www.oldgrowthforest.net/mi-nordhouse-dunes-wilderness-area">Nordhouse Dunes Wilderness</a></span>
                     </div>
                     
                     <div class="highlight-box">
@@ -546,7 +489,7 @@
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🥾</span>
-                            <span><a href="https://www.michigantrailmaps.com/member-detail/nordhouse-dunes-wilderness-manistee-national-forest/" target="_blank">10 miles wilderness trails & map</a></span>
+                            <span><a href="https://www.michigantrailmaps.com/member-detail/nordhouse-dunes-wilderness-manistee-national-forest/">10 miles wilderness trails</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌊</span>
@@ -562,7 +505,7 @@
                         </div>
                     </div>
                     <div class="camping-options">
-                        <strong>Wilderness Camping:</strong> 3,500 acres, hike-in camping, largest freshwater interdunal ponds in world • <a href="https://feliciafullwood.com/blog/camping-backpacking-nordhouse-dunes-lake-michigan" target="_blank">Camping & backpacking guide</a>
+                        <strong>Wilderness Camping:</strong> 3,500 acres, hike-in camping, largest freshwater interdunal ponds in world • <a href="https://feliciafullwood.com/blog/camping-backpacking-nordhouse-dunes-lake-michigan">Camping & backpacking guide</a>
                     </div>
                 </div>
             </div>
