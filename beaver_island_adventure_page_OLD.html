@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaver Island Ferry Adventure</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        
+        .page-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 50%, #03a9f4 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '⛴️';
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+        }
+        
+        .adventure-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin: 8px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .duration-banner {
+            background: #ff7043;
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .timeline-container {
+            padding: 30px 40px;
+            position: relative;
+        }
+        
+        .journey-line {
+            position: absolute;
+            left: 80px;
+            top: 80px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(180deg, #27ae60 0%, #3498db 33%, #e67e22 66%, #8e44ad 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+        
+        .destination-stop {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stop-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .start-marker {
+            background: #27ae60;
+        }
+        
+        .charlevoix-marker {
+            background: #3498db;
+        }
+        
+        .ferry-marker {
+            background: #e67e22;
+        }
+        
+        .island-marker {
+            background: #8e44ad;
+        }
+        
+        .destination-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid;
+            flex-grow: 1;
+        }
+        
+        .start-info {
+            border-left-color: #27ae60;
+        }
+        
+        .charlevoix-info {
+            border-left-color: #3498db;
+        }
+        
+        .ferry-info {
+            border-left-color: #e67e22;
+        }
+        
+        .island-info {
+            border-left-color: #8e44ad;
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .location-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-left: 10px;
+        }
+        
+        .location-icon {
+            font-size: 1.8rem;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #5d6d7e;
+        }
+        
+        .activity-icon {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+        
+        .drive-info {
+            position: absolute;
+            left: 110px;
+            background: rgba(52, 73, 94, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .ferry-highlight {
+            background: rgba(230, 126, 34, 0.1);
+            border: 2px solid #e67e22;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .ferry-highlight-title {
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 6px;
+        }
+        
+        .notes-section {
+            background: #ecf0f1;
+            margin: 0 30px 30px 30px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
+        }
+        
+        .notes-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .note-item {
+            font-size: 0.95rem;
+            margin: 6px 0;
+            color: #5d6d7e;
+            display: flex;
+            align-items: center;
+        }
+        
+        .note-icon {
+            margin-right: 8px;
+            color: #7f8c8d;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <h1 class="adventure-title">Beaver Island Ferry Adventure</h1>
+            <p class="subtitle">America's Emerald Isle by Camper Van</p>
+        </div>
+        
+        <div class="duration-banner">
+            Island life • Dark sky sanctuary • Take our home across Lake Michigan!
+        </div>
+        
+        <div class="timeline-container">
+            <div class="journey-line"></div>
+            
+            <!-- Start: Traverse City -->
+            <div class="destination-stop">
+                <div class="stop-marker start-marker"></div>
+                <div class="destination-info start-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏠</span>
+                        <span class="location-name">Traverse City</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🚀</span>
+                        <span>Load up the van - we're taking it on a ferry!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Drive to Charlevoix -->
+            <div class="drive-info" style="top: 140px;">🚗 45 minutes north</div>
+            
+            <!-- Stop 1: Charlevoix -->
+            <div class="destination-stop">
+                <div class="stop-marker charlevoix-marker"></div>
+                <div class="destination-info charlevoix-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏛️</span>
+                        <span class="location-name">Charlevoix</span>
+                    </div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">⛴️</span>
+                            <span>Ferry terminal</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏪</span>
+                            <span>Last chance provisions</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">☕</span>
+                            <span>Downtown exploration</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Lake Michigan beaches</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">Gateway to the islands • Historic waterfront town</div>
+                </div>
+            </div>
+            
+            <!-- Ferry crossing -->
+            <div class="drive-info" style="top: 300px;">⛴️ 2h 10min ferry ride</div>
+            
+            <!-- Ferry Experience -->
+            <div class="destination-stop">
+                <div class="stop-marker ferry-marker"></div>
+                <div class="destination-info ferry-info">
+                    <div class="location-header">
+                        <span class="location-icon">🌊</span>
+                        <span class="location-name">Lake Michigan Crossing</span>
+                    </div>
+                    <div class="ferry-highlight">
+                        <div class="ferry-highlight-title">Ferry Van Requirements:</div>
+                        <div>• Height: Your extended roof Transit works on Emerald Isle vessel</div>
+                        <div>• Reservations: Call with exact van dimensions required</div>
+                        <div>• Check-in: 90 minutes before departure</div>
+                    </div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Open deck relaxation</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📱</span>
+                            <span>Last cell service for a while!</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦅</span>
+                            <span>Wildlife watching</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">📷</span>
+                            <span>Epic photo opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Final Stop: Beaver Island -->
+            <div class="destination-stop">
+                <div class="stop-marker island-marker"></div>
+                <div class="destination-info island-info">
+                    <div class="location-header">
+                        <span class="location-icon">🏝️</span>
+                        <span class="location-name">Beaver Island</span>
+                    </div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>100+ miles of trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏰</span>
+                            <span>Two historic lighthouses</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span>Pristine, empty beaches</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌌</span>
+                            <span>Dark Sky Sanctuary</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Incredible fishing</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Mormon Kingdom history</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛶</span>
+                            <span>Kayaking hidden bays</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐕</span>
+                            <span>Dog-friendly everywhere!</span>
+                        </div>
+                    </div>
+                    <div class="camping-options">
+                        <strong>Camping:</strong> Bill Wagner Memorial (lakefront), St. James Township, Beaver Island Retreat (glamping), dispersed options
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="notes-section">
+            <div class="notes-title">🗒️ Island Adventure Notes</div>
+            <div class="note-item">
+                <span class="note-icon">⛴️</span>
+                <span>Book ferry vehicle reservations well in advance - limited space available</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏪</span>
+                <span>Stock up in Charlevoix - island has 1 grocery store with limited selection</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📱</span>
+                <span>Limited cell service - perfect for digital detox and stargazing</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🚗</span>
+                <span>Only paved road is in St. James - rest of island is beautiful dirt roads</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏝️</span>
+                <span>13×6 mile island with 600 year-round residents - true "island time"</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⭐</span>
+                <span>Fun fact: Only place in US that was ever ruled by a king (1850-1856)!</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
