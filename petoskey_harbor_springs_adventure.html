@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #4169e1 0%, #6495ed 50%, #87ceeb 100%);
+            background: #f39c12;
             color: white;
             padding: 25px;
             text-align: center;
@@ -42,6 +42,7 @@
             top: 15px;
             right: 25px;
             font-size: 2rem;
+            color: white;
         }
         
         .adventure-title {
@@ -58,7 +59,7 @@
         }
         
         .duration-banner {
-            background: #ff6b6b;
+            background: #7f8c8d;
             color: white;
             padding: 12px 15px;
             text-align: center;
@@ -67,8 +68,20 @@
         }
         
         .timeline-container {
-            padding: 30px 40px;
+            padding: 20px 40px;
             position: relative;
+        }
+        
+        .departure-banner {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            border-radius: 20px;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
         
         .journey-line {
@@ -77,7 +90,7 @@
             top: 80px;
             bottom: 80px;
             width: 4px;
-            background: linear-gradient(180deg, #27ae60 0%, #3498db 33%, #e74c3c 66%, #9b59b6 100%);
+            background: linear-gradient(180deg, #f39c12 0%, #e74c3c 100%);
             border-radius: 2px;
             z-index: 1;
         }
@@ -85,7 +98,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 60px; /* Increased margin to make room for drive info */
+            margin-bottom: 60px;
             position: relative;
             z-index: 2;
         }
@@ -100,20 +113,12 @@
             flex-shrink: 0;
         }
         
-        .start-marker {
-            background: #27ae60;
-        }
-        
         .petoskey-marker {
-            background: #3498db;
+            background: #f39c12;
         }
         
         .harbor-marker {
             background: #e74c3c;
-        }
-        
-        .tunnel-marker {
-            background: #9b59b6;
         }
         
         .destination-info {
@@ -125,20 +130,12 @@
             flex-grow: 1;
         }
         
-        .start-info {
-            border-left-color: #27ae60;
-        }
-        
         .petoskey-info {
-            border-left-color: #3498db;
+            border-left-color: #f39c12;
         }
         
         .harbor-info {
             border-left-color: #e74c3c;
-        }
-        
-        .tunnel-info {
-            border-left-color: #9b59b6;
         }
         
         .location-header {
@@ -158,32 +155,20 @@
             font-size: 1.8rem;
         }
         
-        .seasonal-activities {
-            background: rgba(155, 89, 182, 0.1);
-            border: 2px solid #9b59b6;
-            border-radius: 8px;
-            padding: 12px;
-            margin: 10px 0;
-        }
-        
-        .seasonal-title {
-            font-weight: bold;
-            color: #9b59b6;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .seasonal-icon {
-            margin-right: 8px;
+        .section-title {
             font-size: 1.2rem;
+            font-weight: bold;
+            color: #f39c12;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #f39c12;
+            padding-left: 15px;
         }
         
         .activities-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .activity-item {
@@ -200,21 +185,44 @@
         
         .drive-info {
             position: relative;
-            left: 110px;
-            background: rgba(52, 73, 94, 0.9);
-            color: white;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            color: #27ae60;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 30px 0;
             width: fit-content;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
-        .stone-highlight {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        .winter-special {
+            background: rgba(142, 68, 173, 0.08);
+            border-left: 4px solid #8e44ad;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .winter-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+        
+        .brewery-special {
+            background: rgba(52, 152, 219, 0.08);
+            border-left: 4px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
             color: white;
             padding: 10px 12px;
             border-radius: 6px;
@@ -224,22 +232,18 @@
             font-size: 0.9rem;
         }
         
-        .wheelway-special {
-            background: rgba(52, 152, 219, 0.15);
-            border: 2px solid #3498db;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
+        .resource-item {
+            font-size: 0.9rem;
+            color: #5d6d7e;
+            margin: 8px 0;
+            line-height: 1.4;
         }
         
-        .brewery-highlight {
-            background: rgba(243, 156, 18, 0.15);
-            border: 2px solid #f39c12;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
         }
         
         .notes-section {
@@ -269,13 +273,6 @@
             margin-right: 8px;
             color: #7f8c8d;
         }
-        
-        .camping-options {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 8px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -286,193 +283,219 @@
         </div>
         
         <div class="duration-banner">
-            Petoskey stone hunting • 26-mile bike trail • Historic breweries • Secluded camping
+            Petoskey stone hunting • 26-mile bike trail • Historic breweries • Tunnel of Trees scenic drive
         </div>
         
         <div class="timeline-container">
             <div class="journey-line"></div>
             
-            <!-- Start: Traverse City -->
-            <div class="destination-stop">
-                <div class="stop-marker start-marker"></div>
-                <div class="destination-info start-info">
-                    <div class="location-header">
-                        <span class="location-icon">🏠</span>
-                        <span class="location-name">Traverse City</span>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-icon">🚀</span>
-                        <span>Off to hunt for Michigan's state stone!</span>
-                    </div>
-                </div>
+            <div class="departure-banner">
+                📍 Departing Traverse City • 45 minutes northeast
             </div>
             
-            <!-- Drive to Petoskey Beach -->
-            <div class="drive-info">🚗 45 minutes northeast</div>
-            
-            <!-- Stop 1: Petoskey Stone Beaches -->
+            <!-- Stop 1: Petoskey -->
             <div class="destination-stop">
                 <div class="stop-marker petoskey-marker"></div>
                 <div class="destination-info petoskey-info">
                     <div class="location-header">
                         <span class="location-icon">🪨</span>
-                        <span class="location-name">Petoskey Stone Beaches</span>
+                        <span class="location-name"><a href="https://www.michigan.org/city/petoskey-area">Petoskey</a></span>
                     </div>
                     
-                    <div class="stone-highlight">
-                        🪨 World's best Petoskey stone hunting! 400-million-year-old fossilized coral! 🪨
+                    <div class="highlight-box">
+                        🪨 World's best Petoskey stone hunting! 400-million-year-old fossilized coral treasures! 🪨
                     </div>
                     
-                    <div class="seasonal-activities">
-                        <div class="seasonal-title">
-                            <span class="seasonal-icon">❄️</span>
-                            <span>Winter Stone Hunting</span>
+                    <div class="section-title">🪨 Petoskey Stone Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span><a href="https://petoskeyarea.com/places/magnus-city-park-beach/">Magnus Park Beach</a> - prime stone hunting location</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🪨</span>
+                            <span>Multiple public beaches along Little Traverse Bay</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>Sunrise Beach for early morning collecting</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span><a href="https://www.petoskeydowntown.com/#:~:text=Explore%20The%20Gaslight%20District,shopping%2C%20dining%2C%20and%20entertainment.">Historic Gaslight District</a> - Victorian-era downtown</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>Waterfront walking trails with bay views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎣</span>
+                            <span>Little Traverse Bay fishing spots</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">🚴 Trail Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span><a href="https://petoskeyarea.com/places/little-traverse-wheelway/">Little Traverse Wheelway</a> - 26-mile paved trail system</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🛤️</span>
+                            <span>North Western State Trail connection</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚵</span>
+                            <span>Van-supported cycling to Harbor Springs</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Lakefront trail segments with scenic overlooks</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        📖 <a href="https://petoskeyarea.com/play/attractions/">Official Petoskey Area attractions guide</a> - comprehensive listing of activities, museums & historic sites
+                    </div>
+                    <div class="resource-item">
+                        🗺️ <a href="https://petoskeyarea.com/places/little-traverse-wheelway/">Little Traverse Wheelway trail maps</a> and bike rental locations throughout the system
+                    </div>
+                    <div class="resource-item">
+                        🪨 Petoskey stone identification guides available at visitor centers and local shops
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">❄️</span>
+                            <span>Winter Magic</span>
                         </div>
                         <div class="activities-grid">
                             <div class="activity-item">
                                 <span class="activity-icon">⛷️</span>
-                                <span>Cross-country skiing trails</span>
+                                <span>Cross-country skiing trails throughout the area</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🪨</span>
-                                <span>Ice-polished stones easier to spot</span>
+                                <span>Ice-polished stones easier to spot on beaches</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🌨️</span>
-                            <span>Lake-effect snow paradise</span>
+                                <span>Lake-effect snow creates winter wonderland</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🔥</span>
-                                <span>Beach bonfires allowed</span>
+                                <span>Beach bonfires allowed for warming up</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="activities-grid">
-                        <div class="activity-item">
-                            <span class="activity-icon">🏖️</span>
-                            <span>Multiple public beaches</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">⛰️</span>
-                            <span><a href="https://www.petoskey.us/services/departments/magnus-park" target="_blank">Magnus Park & Beach</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🌅</span>
-                            <span>Little Traverse Bay views</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🥾</span>
-                            <span>Waterfront walking trails</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🎣</span>
-                            <span>Bay fishing spots</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span><a href="https://www.petoskeyarea.com/things-to-do/historic-gaslight-district" target="_blank">Historic Gaslight District</a></span>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            🍺 <strong><a href="https://www.petoskeybrewing.com">Petoskey Brewing Company</a></strong> features award-winning craft beer since 1996 in a historic four-story brick building, famous for their Horny Monk Belgian Ale. <strong><a href="https://tap30.com">Tap 30 Pourhouse</a></strong> rotates 30 craft beer taps with small batch spirits and quality bar food. <strong><a href="https://thebacklot.menu/petoskey/">The Back Lot</a></strong> offers an outdoor beer garden with multiple food trucks and locally crafted beverages including High Five Spirits canned cocktails.
                         </div>
                     </div>
+                    
                     <div class="camping-options">
-                        <strong>Van-Friendly Options:</strong> <a href="https://harvesthosts.com" target="_blank">Harvest Hosts</a> nearby, secluded parking at <a href="https://www.petoskey.us/services/departments/magnus-park" target="_blank">Magnus Park</a> for day use
+                        <strong>Base Camp Options:</strong> Magnus Park day use, nearby <a href="https://harvesthosts.com">Harvest Hosts</a> locations, downtown parking for urban exploration
                     </div>
                 </div>
             </div>
             
-            <!-- Bike to Harbor Springs -->
-            <div class="drive-info">🚴 6 miles north on trail</div>
+            <!-- Drive to Harbor Springs -->
+            <div class="drive-info">🚴 6 miles north on Wheelway trail</div>
             
-            <!-- Stop 2: Harbor Springs -->
+            <!-- Stop 2: Harbor Springs & Tunnel of Trees -->
             <div class="destination-stop">
                 <div class="stop-marker harbor-marker"></div>
                 <div class="destination-info harbor-info">
                     <div class="location-header">
                         <span class="location-icon">⛵</span>
-                        <span class="location-name">Harbor Springs</span>
+                        <span class="location-name"><a href="https://www.harborspringsmi.gov">Harbor Springs</a></span>
                     </div>
                     
-                    <div class="wheelway-special">
-                        <strong><a href="https://www.littletraversewheelway.com" target="_blank">Little Traverse Wheelway</a>:</strong> 26-mile paved trail connecting Charlevoix to Harbor Springs - perfect for van-supported cycling!
-                    </div>
-
-                    <div class="brewery-highlight">
-                        <strong>🍺 Notable Brewery:</strong> <a href="https://www.petoskeybrewing.com" target="_blank">Petoskey Brewing</a> (downtown Petoskey) - Award-winning craft beer since 1996. Features Horny Monk Belgian Ale!
-                    </div>
-                    
+                    <div class="section-title">⛵ Harbor Springs Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🏛️</span>
-                            <span>Historic downtown</span>
+                            <span>Historic downtown waterfront district</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
-                            <span><a href="https://www.harborspringsmi.gov/parks-recreation/zorn-park" target="_blank">Zorn Park Beach</a></span>
+                            <span><a href="https://www.downtownharborsprings.com/zorn-beach">Zorn Park Beach</a> - family-friendly lakefront</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">⛵</span>
-                            <span>Deepest harbor in Great Lakes</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🍽️</span>
-                            <span>Waterfront dining</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🎭</span>
-                            <span>Arts & cultural events</span>
+                            <span>Deepest natural harbor on the Great Lakes</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌿</span>
-                            <span><a href="https://www.landtrust.org/thorne-swift-nature-preserve" target="_blank">Thorne Swift Nature Preserve</a></span>
+                            <span><a href="https://www.landtrust.org/thorne-swift-nature-preserve">Thorne Swift Nature Preserve</a> - 40 acres trails</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍽️</span>
+                            <span>Waterfront dining with yacht watching</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎭</span>
+                            <span>Arts galleries and cultural events</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Drive Tunnel of Trees -->
-            <div class="drive-info">🚗 22 miles north on M-119</div>
-            
-            <!-- Stop 3: Tunnel of Trees -->
-            <div class="destination-stop">
-                <div class="stop-marker tunnel-marker"></div>
-                <div class="destination-info tunnel-info">
-                    <div class="location-header">
-                        <span class="location-icon">🌳</span>
-                        <span class="location-name">M-119 Tunnel of Trees</span>
-                    </div>
-                    
-                    <div class="stone-highlight">
+
+                    <div class="section-title">🌳 M-119 Tunnel of Trees</div>
+                    <div class="highlight-box">
                         🌳 One of America's most scenic roads! Tree-lined canopy route along Lake Michigan! 🌳
                     </div>
-                    
+                    <div class="resource-item">
+                        🗺️ <a href="https://petoskeyarea.com/places/tunnel-of-trees-m-119/">Official M-119 Tunnel of Trees guide</a> - detailed route information, seasonal highlights & stopping points
+                    </div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🚗</span>
-                            <span>22 miles scenic route</span>
+                            <span>22-mile scenic route to Cross Village</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🍂</span>
-                            <span>Spectacular fall colors</span>
+                            <span>Spectacular fall colors late September</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌸</span>
-                            <span>Spring trillium carpets</span>
+                            <span>Spring trillium wildflower carpets</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
-                            <span>Hidden beach access points</span>
+                            <span>Hidden beach access points along route</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏘️</span>
-                            <span><a href="https://legsinn.com" target="_blank">Cross Village (Legs Inn)</a></span>
+                            <span><a href="https://legsinn.com">Cross Village & Legs Inn</a> - historic Polish restaurant</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏕️</span>
-                            <span><a href="https://www.michigan.gov/dnr/places/state-parks/wilderness" target="_blank">Wilderness State Park</a></span>
+                            <span><a href="https://www.michigan.org/property/wilderness-state-park">Wilderness State Park</a> - 10,000+ acres</span>
                         </div>
                     </div>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            🍺 <strong><a href="https://www.pondhill.com">Pond Hill Farm</a></strong> combines winery, brewery, and café on a working 173-acre farm along M-119, featuring farm-to-table dining, hiking trails, and seasonal events like pumpkin patches. <strong><a href="https://www.harborbeer.com">Harbor Brewing Co.</a></strong> operates a lakefront biergarten at NorthPoint Marina with rotating local breweries and Lake Michigan views.
+                        </div>
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">🚴</span>
+                            <span>September Festival Highlight</span>
+                        </div>
+                        <div class="resource-item">
+                            🚴 <a href="https://biketemberfest.com/">Biketember Fest</a> transforms Harbor Springs into cycling celebration headquarters with group rides, bike demos, family activities, and cycling-themed entertainment throughout the weekend.
+                        </div>
+                    </div>
+                    
                     <div class="camping-options">
-                        <strong>Remote Camping:</strong> <a href="https://www.michigan.gov/dnr/places/state-parks/wilderness" target="_blank">Wilderness State Park</a> (dispersed backcountry sites), roadside pulloffs for scenic overnight parking
+                        <strong>Remote Options:</strong> Free roadside pulloffs along M-119 for scenic overnight parking, nearby state forest lands for dispersed camping
                     </div>
                 </div>
             </div>
@@ -481,28 +504,28 @@
         <div class="notes-section">
             <div class="notes-title">🗒️ Stone Hunting & Coastal Adventure Pro Tips</div>
             <div class="note-item">
-                <span class="note-icon">🌊</span>
-                <span>STONE HUNTING SECRET: Best hunting after storms when waves wash up new stones on shore</span>
+                <span class="note-icon">📅</span>
+                <span>TIMING RECOMMENDATION: Plan 2-3 days minimum - stone hunting deserves patient time, plus scenic drives and cycling adventures reward slower exploration</span>
             </div>
             <div class="note-item">
-                <span class="note-icon">🌅</span>
-                <span>TIMING TIP: Early morning hunting before other collectors arrive - fewer crowds, fresh finds</span>
+                <span class="note-icon">🌊</span>
+                <span>STONE HUNTING SECRET: Best hunting after storms when waves wash up new stones - check weather and head out early morning before crowds arrive</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">💧</span>
-                <span>TOOL TIP: Bring spray bottle to wet stones and see coral patterns clearly - dry stones hide details</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🏪</span>
-                <span>HIDDEN GEM: <a href="https://goodhartgeneralstore.com" target="_blank">Good Hart General Store</a> - historic 1934 stop on Tunnel of Trees route with local crafts</span>
+                <span>TOOL TIP: Bring spray bottle to wet stones and reveal coral patterns - dry stones hide their beautiful details</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">📸</span>
-                <span>PHOTO TIP: Golden hour lighting makes wet stones glow on sand - magical for photography</span>
+                <span>PHOTO TIP: Golden hour lighting makes wet stones glow on sand - magical for photography memories</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🏪</span>
+                <span>HIDDEN GEM: <a href="https://goodhartgeneralstore.com">Good Hart General Store</a> - historic 1934 stop on Tunnel of Trees with local crafts</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚐</span>
-                <span>VAN LIFE HACK: Many beach parking areas allow overnight stays during off-season (Oct-April)</span>
+                <span>VAN LIFE HACK: Many beach parking areas allow overnight stays during off-season (October-April)</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">📶</span>
@@ -518,7 +541,7 @@
             </div>
             <div class="note-item">
                 <span class="note-icon">🛣️</span>
-                <span>NAVIGATION TIP: M-119 can be narrow with limited passing - plan for slow, scenic driving pace</span>
+                <span>NAVIGATION TIP: M-119 can be narrow with limited passing - plan for slow, scenic driving pace and enjoy the journey</span>
             </div>
         </div>
     </div>
