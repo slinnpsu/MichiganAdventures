@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+            background: #f39c12;
             color: white;
             padding: 25px;
             text-align: center;
@@ -42,6 +42,7 @@
             top: 15px;
             right: 25px;
             font-size: 2rem;
+            color: white;
         }
         
         .adventure-title {
@@ -58,7 +59,7 @@
         }
         
         .duration-banner {
-            background: #e74c3c;
+            background: #7f8c8d;
             color: white;
             padding: 12px 15px;
             text-align: center;
@@ -67,8 +68,20 @@
         }
         
         .timeline-container {
-            padding: 30px 40px;
+            padding: 20px 40px;
             position: relative;
+        }
+        
+        .departure-banner {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            border-radius: 20px;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
         
         .journey-line {
@@ -77,7 +90,7 @@
             top: 80px;
             bottom: 80px;
             width: 4px;
-            background: linear-gradient(180deg, #27ae60 0%, #f39c12 25%, #e74c3c 50%, #8e44ad 75%, #3498db 100%);
+            background: linear-gradient(180deg, #f39c12 0%, #3498db 100%);
             border-radius: 2px;
             z-index: 1;
         }
@@ -85,7 +98,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 60px; /* Increased margin to make room for drive info */
+            margin-bottom: 60px;
             position: relative;
             z-index: 2;
         }
@@ -98,10 +111,6 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             margin-right: 30px;
             flex-shrink: 0;
-        }
-        
-        .start-marker {
-            background: #27ae60;
         }
         
         .holland-marker {
@@ -127,10 +136,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-left: 4px solid;
             flex-grow: 1;
-        }
-        
-        .start-info {
-            border-left-color: #27ae60;
         }
         
         .holland-info {
@@ -166,32 +171,20 @@
             font-size: 1.8rem;
         }
         
-        .seasonal-activities {
-            background: rgba(255, 107, 53, 0.1);
-            border: 2px solid #ff6b35;
-            border-radius: 8px;
-            padding: 12px;
-            margin: 10px 0;
-        }
-        
-        .seasonal-title {
-            font-weight: bold;
-            color: #ff6b35;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .seasonal-icon {
-            margin-right: 8px;
+        .section-title {
             font-size: 1.2rem;
+            font-weight: bold;
+            color: #f39c12;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #f39c12;
+            padding-left: 15px;
         }
         
         .activities-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .activity-item {
@@ -208,21 +201,44 @@
         
         .drive-info {
             position: relative;
-            left: 110px;
-            background: rgba(52, 73, 94, 0.9);
-            color: white;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            color: #27ae60;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 30px 0;
             width: fit-content;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
-        .tulip-highlight {
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
+        .winter-special {
+            background: rgba(142, 68, 173, 0.08);
+            border-left: 4px solid #8e44ad;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .winter-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+        
+        .brewery-special {
+            background: rgba(52, 152, 219, 0.08);
+            border-left: 4px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
             color: white;
             padding: 10px 12px;
             border-radius: 6px;
@@ -232,22 +248,18 @@
             font-size: 0.9rem;
         }
         
-        .brewery-highlight {
-            background: rgba(243, 156, 18, 0.15);
-            border: 2px solid #f39c12;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
+        .resource-item {
+            font-size: 0.9rem;
+            color: #5d6d7e;
+            margin: 8px 0;
+            line-height: 1.4;
         }
         
-        .beach-special {
-            background: rgba(52, 152, 219, 0.15);
-            border: 2px solid #3498db;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
         }
         
         .notes-section {
@@ -277,13 +289,6 @@
             margin-right: 8px;
             color: #7f8c8d;
         }
-        
-        .camping-options {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 8px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
@@ -300,23 +305,9 @@
         <div class="timeline-container">
             <div class="journey-line"></div>
             
-            <!-- Start: Traverse City -->
-            <div class="destination-stop">
-                <div class="stop-marker start-marker"></div>
-                <div class="destination-info start-info">
-                    <div class="location-header">
-                        <span class="location-icon">🏠</span>
-                        <span class="location-name">Traverse City</span>
-                    </div>
-                    <div class="activity-item">
-                        <span class="activity-icon">🚀</span>
-                        <span>Journey to West Michigan's cultural coast!</span>
-                    </div>
-                </div>
+            <div class="departure-banner">
+                📍 Departing Traverse City • 2.5 hours south
             </div>
-            
-            <!-- Drive to Holland -->
-            <div class="drive-info">🚗 2.5 hours south</div>
             
             <!-- Stop 1: Holland -->
             <div class="destination-stop">
@@ -327,13 +318,13 @@
                         <span class="location-name"><a href="https://www.michigan.org/article/trip-idea/things-to-do-in-holland-ultimate-pure-michigan-guide">Holland</a></span>
                     </div>
                     
-                    <div class="tulip-highlight">
-                        🌷 Home to <a href="https://www.tuliptime.com">Tulip Time Festival</a>! 6 million tulips bloom in May! Top 10 Michigan beaches! 🌷
+                    <div class="highlight-box">
+                        🌷 Home to Tulip Time Festival! 6 million tulips bloom in May! Top 10 Michigan beaches! 🌷
                     </div>
                     
-                    <div class="seasonal-activities">
-                        <div class="seasonal-title">
-                            <span class="seasonal-icon">🌷</span>
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">🌷</span>
                             <span>Spring Tulip Season (Late April-May)</span>
                         </div>
                         <div class="activities-grid">
@@ -356,14 +347,34 @@
                         </div>
                     </div>
 
-                    <div class="brewery-highlight">
-                        <strong>🥃 Holland Liquid Assets:</strong> <a href="https://newhollandbrew.com">New Holland Brewing</a> (founded 1997) - Famous for Dragon's Milk bourbon barrel stout. Also <a href="https://www.coppercraft.com">Coppercraft Distillery</a> for award-winning bourbon and whiskey.
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🍺</span>
+                                <span><a href="https://newhollandbrew.com">New Holland Brewing</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥃</span>
+                                <span>Dragon's Milk bourbon stout</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥃</span>
+                                <span><a href="https://www.coppercraft.com">Coppercraft Distillery</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🏆</span>
+                                <span>Award-winning bourbon</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="beach-special">
-                        <strong>🎓 <a href="https://hope.edu">Hope College</a>:</strong> Beautiful 120-acre campus in downtown Holland where Suzie attended! Founded 1851, scenic location near Lake Michigan shores.
+                    <div class="section-title">🎓 Hope College</div>
+                    <div class="resource-item">
+                        🎓 <a href="https://hope.edu">Hope College</a> - Beautiful 120-acre campus in downtown Holland where Suzie attended! Founded 1851, scenic location near Lake Michigan shores.
                     </div>
                     
+                    <div class="section-title">🏖️ Holland Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
@@ -390,6 +401,17 @@
                             <span><a href="https://www.holland.org/things-to-do/downtown/">Historic downtown district</a></span>
                         </div>
                     </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">❄️</span>
+                            <span>Winter Magic</span>
+                        </div>
+                        <div class="resource-item">
+                            🔥 Holland makes cold weather fun — with heated sidewalks, outdoor fire pits downtown, and <a href="https://www.holland.org/listing/outdoor-discovery-center/187/">cross-country ski and snowshoe rentals</a> available at the Outdoor Discovery Center.
+                        </div>
+                    </div>
+                    
                     <div class="camping-options">
                         <strong>Van Options:</strong> <a href="https://harvesthosts.com">Harvest Host</a> locations, <a href="https://www.holland.org/holland-state-park/">Holland State Park</a> (lakefront sites), dispersed parking near beaches
                     </div>
@@ -397,7 +419,7 @@
             </div>
             
             <!-- Drive to Saugatuck -->
-            <div class="drive-info">🚗 15 minutes northeast</div>
+            <div class="drive-info">🚗 Drive to Saugatuck • 15 minutes northeast</div>
             
             <!-- Stop 2: Saugatuck -->
             <div class="destination-stop">
@@ -408,22 +430,38 @@
                         <span class="location-name"><a href="https://www.michigan.org/city/saugatuck">Saugatuck</a></span>
                     </div>
                     
-                    <div class="tulip-highlight">
-                        🎨 "Art Coast of Michigan" - Historic artist colony since 1910s! <a href="https://www.saugatuck.com/oval-beach">Oval Beach</a>: Top 25 Beaches Worldwide! 🎨
+                    <div class="highlight-box">
+                        🎨 "Art Coast of Michigan" - Historic artist colony since 1910s! Oval Beach: Top 25 Beaches Worldwide! 🎨
                     </div>
 
-                    <div class="brewery-highlight">
-                        <strong>🍺 Brewery Highlights:</strong> <a href="https://www.saugatuckbrewing.com">Saugatuck Brewing Company</a> (since 2005) - Known for Neapolitan Milk Stout. <a href="https://www.virtuecider.com">Virtue Cider</a> nearby for Michigan's finest hard ciders.
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🍺</span>
+                                <span><a href="https://www.saugatuckbrewing.com">Saugatuck Brewing Company</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥛</span>
+                                <span>Neapolitan Milk Stout</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🍎</span>
+                                <span><a href="https://www.virtuecider.com">Virtue Cider</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🏆</span>
+                                <span>Michigan's finest hard ciders</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="beach-special">
-                        <strong>📄 Saugatuck Resources:</strong> 
-                        <a href="https://drive.google.com/file/d/13w-WywATHeUqZ_eaT_-Qs6eDdXiascWT/view?usp=share_link">Art Guide</a> • 
-                        <a href="https://drive.google.com/file/d/1VI-brYJMz0doc-e86G8FZBh9rB-UV4fv/view?usp=share_link">Drink Guide</a> • 
-                        <a href="https://drive.google.com/file/d/1ZbZl38M4L9zZScMRDW-imPFYk5gzWQJZ/view?usp=share_link">Fall Escapes</a> • 
-                        <a href="https://drive.google.com/file/d/1Nv2C-fSi0SfCoh7gCEjV_Fg8RZZ3VvjR/view?usp=share_link">Trail Guide</a>
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        🎨 <a href="https://drive.google.com/file/d/13w-WywATHeUqZ_eaT_-Qs6eDdXiascWT/view?usp=share_link">Art Guide</a> • <a href="https://drive.google.com/file/d/1VI-brYJMz0doc-e86G8FZBh9rB-UV4fv/view?usp=share_link">Drink Guide</a> • <a href="https://drive.google.com/file/d/1ZbZl38M4L9zZScMRDW-imPFYk5gzWQJZ/view?usp=share_link">Fall Escapes</a> • <a href="https://drive.google.com/file/d/1Nv2C-fSi0SfCoh7gCEjV_Fg8RZZ3VvjR/view?usp=share_link">Trail Guide</a>
                     </div>
                     
+                    <div class="section-title">🎨 Saugatuck Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🎨</span>
@@ -457,7 +495,7 @@
             </div>
             
             <!-- Drive to Grand Haven -->
-            <div class="drive-info">🚗 30 minutes north</div>
+            <div class="drive-info">🚗 Drive to Grand Haven • 30 minutes north</div>
             
             <!-- Stop 3: Grand Haven -->
             <div class="destination-stop">
@@ -468,14 +506,25 @@
                         <span class="location-name"><a href="https://www.michigan.org/city/grand-haven">Grand Haven</a></span>
                     </div>
                     
-                    <div class="tulip-highlight">
-                        ⛲ <a href="https://www.grandhaven.org/musical-fountain">World's largest musical fountain</a>! <a href="https://visitgrandhaven.com/listing/grand-haven-state-park/">Grand Haven State Park</a>: Top 25 US beaches 2024! ⛲
+                    <div class="highlight-box">
+                        ⛲ World's largest musical fountain! Grand Haven State Park: Top 25 US beaches 2024! ⛲
                     </div>
 
-                    <div class="brewery-highlight">
-                        <strong>🍺 Grand Haven Brewing:</strong> <a href="https://oddsideales.com">Odd Side Ales</a> (nearby) - Acclaimed craft brewery. Downtown Grand Haven has several craft beer spots with Lake Michigan views.
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">🍺</span>
+                                <span><a href="https://oddsideales.com">Odd Side Ales</a></span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🏆</span>
+                                <span>Acclaimed craft brewery</span>
+                            </div>
+                        </div>
                     </div>
                     
+                    <div class="section-title">⛲ Grand Haven Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">⛲</span>
@@ -501,16 +550,12 @@
                             <span class="activity-icon">🌅</span>
                             <span>Epic sunset watching</span>
                         </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span>Historic downtown</span>
-                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Warren Dunes -->
-            <div class="drive-info">🚗 45 minutes south</div>
+            <div class="drive-info">🚗 Drive to Warren Dunes • 45 minutes south</div>
             
             <!-- Stop 4: Warren Dunes State Park -->
             <div class="destination-stop">
@@ -521,8 +566,8 @@
                         <span class="location-name"><a href="https://www.michigan.gov/recsearch/parks/warrendunes">Warren Dunes State Park</a></span>
                     </div>
                     
-                    <div class="beach-special">
-                        <strong>Sand Dune Paradise:</strong> 240-foot tall sand dunes! 3 miles of Lake Michigan shoreline with secluded beach camping options.
+                    <div class="highlight-box">
+                        ⛰️ 240-foot tall sand dunes! 3 miles of Lake Michigan shoreline! ⛰️
                     </div>
                     
                     <div class="activities-grid">
@@ -562,19 +607,19 @@
             <div class="notes-title">🗒️ West Michigan Cultural Coast Pro Tips</div>
             <div class="note-item">
                 <span class="note-icon">🍺</span>
-                <span>Brewery Trail: <a href="https://newhollandbrew.com">New Holland</a> (Dragon's Milk), <a href="https://www.saugatuckbrewing.com">Saugatuck Brewing</a>, <a href="https://oddsideales.com">Odd Side Ales</a></span>
+                <span>BREWERY TRAIL: <a href="https://newhollandbrew.com">New Holland</a> (Dragon's Milk), <a href="https://www.saugatuckbrewing.com">Saugatuck Brewing</a>, <a href="https://oddsideales.com">Odd Side Ales</a></span>
             </div>
-           	<div class="note-item">
-    			<span class="note-icon">❄️</span>
-    			<span>WINTER: Holland makes cold weather fun — with heated sidewalks, outdoor fire pits downtown, and <a href="https://www.holland.org/listing/outdoor-discovery-center/187/">cross-country ski and snowshoe rentals</a> available at the Outdoor Discovery Center.</span>
-		 	</div>   
+            <div class="note-item">
+                <span class="note-icon">❄️</span>
+                <span>WINTER MAGIC: Holland's heated sidewalks, outdoor fire pits downtown, and ski/snowshoe rentals make cold weather fun</span>
+            </div>   
             <div class="note-item">
                 <span class="note-icon">⛰️</span>
-                <span><a href="https://www.michigan.gov/recsearch/parks/warrendunes">Warren Dunes</a>: 240-foot dunes perfect for hang gliding, secluded Tower Hill sites for privacy</span>
+                <span>DUNES ADVENTURE: Warren Dunes' 240-foot dunes perfect for hang gliding, secluded Tower Hill sites for privacy</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚴</span>
-                <span><a href="https://www.michigan.gov/recsearch/parks/kalhaven">Kal-Haven Trail</a>: 34-mile rail-trail from Kalamazoo to South Haven - great van-supported biking</span>
+                <span>TRAIL BONUS: Kal-Haven Trail - 34-mile rail-trail from Kalamazoo to South Haven, great van-supported biking</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🌅</span>
