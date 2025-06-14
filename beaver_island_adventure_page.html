@@ -193,18 +193,39 @@
         }
         
         .ferry-highlight {
-            background: rgba(230, 126, 34, 0.1);
-            border: 2px solid #e67e22;
+            background: rgba(79, 195, 247, 0.15);
+            border: 2px solid #4fc3f7;
             border-radius: 8px;
-            padding: 12px;
+            padding: 10px;
             margin: 10px 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .ferry-highlight-title {
             font-weight: bold;
-            color: #e67e22;
+            color: #1976d2;
             margin-bottom: 6px;
+        }
+        
+        .seasonal-activities {
+            background: rgba(156, 39, 176, 0.1);
+            border: 2px solid #9c27b0;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .seasonal-title {
+            font-weight: bold;
+            color: #7b1fa2;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .seasonal-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
         }
         
         .notes-section {
@@ -281,26 +302,54 @@
                 <div class="destination-info charlevoix-info">
                     <div class="location-header">
                         <span class="location-icon">🏛️</span>
-                        <span class="location-name">Charlevoix</span>
+                        <span class="location-name"><a href="https://www.michigan.org/city/charlevoix">Charlevoix</a></span>
                     </div>
+
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">🍎</span>
+                            <span>October Festival Highlight</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍎</span>
+                            <span><a href="https://business.charlevoix.org/events/details/46th-annual-apple-fest-14833">46th Annual Apple Fest</a> - Family-friendly celebration with local vendors</span>
+                        </div>
+                    </div>
+
+                    <div class="ferry-highlight">
+                        <div class="ferry-highlight-title">🍺 Charlevoix Liquid Assets:</div>
+                        <div><strong><a href="https://biersinwoodbrewery.com">Bier's Inwood Brewery</a></strong> (6 mi south, 11 tap lines), <strong><a href="https://www.visitcharlevoix.com/craftbeverages/">Vue Wine Bar</a></strong> (world-class selection), <strong><a href="https://www.visitcharlevoix.com/craftbeverages/">Royal Farms Winery</a></strong> (fruit wines), <strong><a href="https://www.shortsbrewing.com">Shorts Brewing</a></strong> (innovative names)</div>
+                    </div>
+
+                    <div class="ferry-highlight">
+                        <div class="ferry-highlight-title">🏘️ Earl Young Mushroom Houses:</div>
+                        <div>26 whimsical stone homes built 1918-1950s using Lake Michigan boulders! Known as "Hobbit Houses" with wavy roofs, unique chimneys, and fairy-tale architecture. <a href="https://www.visitcharlevoix.com/Earl-Young/">Learn about Earl Young & the houses</a>, <a href="https://www.mushroomhousetours.com">professional tours</a>, or <a href="https://chxhistory.com/mushroom-house-tours/">self-guided walking tours</a></div>
+                    </div>
+
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">⛴️</span>
-                            <span><a href="https://emeraldisletransit.com" style="color: #3498db; text-decoration: none;">Ferry terminal</a></span>
+                            <span><a href="https://www.bibco.com">Beaver Island Boat Company</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏪</span>
-                            <span><a href="https://beaverisland.org/shopping-dining/" style="color: #3498db; text-decoration: none;">Last chance provisions</a></span>
+                            <span>Last chance provisions</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">☕</span>
-                            <span><a href="https://www.charlevoix.org" style="color: #3498db; text-decoration: none;">Downtown exploration</a></span>
+                            <span>Downtown exploration</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
                             <span>Lake Michigan beaches</span>
                         </div>
                     </div>
+
+                    <div class="ferry-highlight">
+                        <div class="ferry-highlight-title">📖 Charlevoix Resources:</div>
+                        <div><a href="https://player.flipsnack.com/?hash=QkZDOTk3NThCN0EraG1mdjB5cW04eQ==">Complete Charlevoix visitor guide</a> with local attractions, dining, and activities</div>
+                    </div>
+
                     <div class="camping-options">Gateway to the islands • Historic waterfront town</div>
                 </div>
             </div>
@@ -318,9 +367,10 @@
                     </div>
                     <div class="ferry-highlight">
                         <div class="ferry-highlight-title">Ferry Van Requirements:</div>
-                        <div>• Height: Your extended roof Transit works on <a href="https://emeraldisletransit.com" style="color: #00ffff; text-decoration: underline;">Emerald Isle vessel</a></div>
-                        <div>• Reservations: <a href="https://emeraldisletransit.com" style="color: #00ffff; text-decoration: underline;">Call with exact van dimensions</a> required</div>
+                        <div>• Vessel: Beaver Islander or Emerald Isle (check <a href="https://www.bibco.com/know-before-you-go/reservations/#:~:text=BEAVER%20ISLANDER%20*%20Weight%20restrictions%20call%20for,*%20Trailers%20are%20not%20allowed%20on%20vessel.">vehicle restrictions</a>)</div>
+                        <div>• Reservations: Call with exact van dimensions required</div>
                         <div>• Check-in: 90 minutes before departure</div>
+                        <div>• Weight restrictions apply - call for specifics</div>
                     </div>
                     <div class="activities-grid">
                         <div class="activity-item">
@@ -354,11 +404,11 @@
                     <div class="activities-grid">
                         <div class="activity-item">
                             <span class="activity-icon">🚴</span>
-                            <span><a href="https://beaverisland.org/recreation/" style="color: #3498db; text-decoration: none;">100+ miles of trails</a></span>
+                            <span>100+ miles of trails</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏰</span>
-                            <span><a href="https://beaverisland.org/attractions/" style="color: #3498db; text-decoration: none;">Two historic lighthouses</a></span>
+                            <span><a href="https://www.beaverislandhistory.org/lighthouses/">Two historic lighthouses</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
@@ -366,27 +416,51 @@
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌌</span>
-                            <span><a href="https://beaverisland.org/dark-sky/" style="color: #3498db; text-decoration: none;">Dark Sky Sanctuary</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🎣</span>
-                            <span><a href="https://beaverisland.org/recreation/" style="color: #3498db; text-decoration: none;">Incredible fishing</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏛️</span>
-                            <span><a href="https://beaverisland.org/history/" style="color: #3498db; text-decoration: none;">Mormon Kingdom history</a></span>
+                            <span><a href="http://www.beaverislandbirdingtrail.org/dark-sky-island/">Dark Sky Sanctuary</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🛶</span>
-                            <span>Kayaking hidden bays</span>
+                            <span><a href="https://www.michiganwatertrails.org/trail.asp?ait=cv&cid=361">Beaver Island Water Trail</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🦅</span>
+                            <span><a href="http://www.beaverislandbirdingtrail.org/">Beaver Island Birding Trail</a></span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🍺</span>
+                            <span><a href="https://whiskeypointbrewing.com/">Whiskey Point Brewing</a></span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🐕</span>
                             <span>Dog-friendly everywhere!</span>
                         </div>
                     </div>
+
+                    <div class="ferry-highlight">
+                        <div class="ferry-highlight-title">🍽️ Island Dining Highlights:</div>
+                        <div><strong><a href="https://beaverislandlodge.com">The Sunset Restaurant</a></strong> (French cuisine, reservations essential), <strong><a href="https://www.beaverisland.org/restaurants/">Shamrock Bar & Restaurant</a></strong>, <strong><a href="https://harbourbodega.com">Harbour Bodega</a></strong> (catering & bakery), <strong><a href="https://www.beaverisland.org/restaurants/">Wild Strawberry Cafe</a></strong> (breakfast & lunch), <strong><a href="https://www.beaverisland.org/restaurants/">Paradise Bay Coffee</a></strong> (coffee roasted on-site)</div>
+                    </div>
+
+                    <div class="seasonal-activities">
+                        <div class="seasonal-title">
+                            <span class="seasonal-icon">🎪</span>
+                            <span>Island Events</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎉</span>
+                            <span><a href="https://www.beaverisland.org/events-new/">Seasonal celebrations</a> - Check event calendar</span>
+                        </div>
+                    </div>
+
+                    <div class="ferry-highlight">
+                        <div class="ferry-highlight-title">🗺️ Island Navigation:</div>
+                        <div>• Compact size: Drive around entire island in about 1 hour</div>
+                        <div>• Many roads are gravel/dirt - perfect for van adventure, slower pace</div>
+                        <div>• <a href="https://www.beaverisland.org/media-marketing-publishing/order-beaver-island-map/">Official Beaver Island map</a></div>
+                    </div>
+
                     <div class="camping-options">
-                        <strong>Camping:</strong> <a href="https://beaverisland.org/lodging-camping/" style="color: #3498db; text-decoration: none;">Bill Wagner Memorial</a> (lakefront), <a href="https://beaverisland.org/lodging-camping/" style="color: #3498db; text-decoration: none;">St. James Township</a>, <a href="https://beaverislandretreat.com" style="color: #3498db; text-decoration: none;">Beaver Island Retreat</a> (glamping), dispersed options
+                        <strong>Camping:</strong> <a href="https://www.beaverisland.org/camping/">Multiple camping options available</a> - Bill Wagner Memorial (lakefront), St. James Township, dispersed options
                     </div>
                 </div>
             </div>
@@ -401,6 +475,10 @@
             <div class="note-item">
                 <span class="note-icon">🛒</span>
                 <span>PROVISIONING TIP: Bring all specialty foods/drinks - island store covers basics only, higher prices</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">⛽</span>
+                <span>FUEL STRATEGY: Fill up before ferry - island has one gas station with significantly higher prices</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚗</span>
@@ -421,10 +499,6 @@
             <div class="note-item">
                 <span class="note-icon">📅</span>
                 <span>TIMING TIP: Shoulder seasons (May, September) have fewer crowds and better accommodation rates</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">⛽</span>
-                <span>FUEL STRATEGY: Fill up before ferry - island has one gas station with significantly higher prices</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🔦</span>
