@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 50%, #6ab7ff 100%);
+            background: #27ae60;
             color: white;
             padding: 25px;
             text-align: center;
@@ -42,6 +42,7 @@
             top: 15px;
             right: 25px;
             font-size: 2rem;
+            color: white;
         }
         
         .adventure-title {
@@ -58,7 +59,7 @@
         }
         
         .duration-banner {
-            background: #28a745;
+            background: #7f8c8d;
             color: white;
             padding: 12px 15px;
             text-align: center;
@@ -67,8 +68,20 @@
         }
         
         .timeline-container {
-            padding: 30px 40px;
+            padding: 20px 40px;
             position: relative;
+        }
+        
+        .departure-banner {
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            border-radius: 20px;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 30px;
         }
         
         .journey-line {
@@ -77,7 +90,7 @@
             top: 80px;
             bottom: 80px;
             width: 4px;
-            background: linear-gradient(180deg, #27ae60 0%, #16a085 50%, #3498db 100%);
+            background: linear-gradient(180deg, #27ae60 0%, #3498db 100%);
             border-radius: 2px;
             z-index: 1;
         }
@@ -85,7 +98,7 @@
         .destination-stop {
             display: flex;
             align-items: center;
-            margin-bottom: 60px; /* Increased margin to make room for drive info */
+            margin-bottom: 60px;
             position: relative;
             z-index: 2;
         }
@@ -100,15 +113,15 @@
             flex-shrink: 0;
         }
         
-        .start-marker {
+        .manistee-marker {
             background: #27ae60;
         }
         
         .forest-marker {
-            background: #16a085;
+            background: #2ecc71;
         }
         
-        .beach-marker {
+        .ludington-marker {
             background: #3498db;
         }
         
@@ -121,15 +134,15 @@
             flex-grow: 1;
         }
         
-        .start-info {
+        .manistee-info {
             border-left-color: #27ae60;
         }
         
         .forest-info {
-            border-left-color: #16a085;
+            border-left-color: #2ecc71;
         }
         
-        .beach-info {
+        .ludington-info {
             border-left-color: #3498db;
         }
         
@@ -150,32 +163,20 @@
             font-size: 1.8rem;
         }
         
-        .seasonal-activities {
-            background: rgba(52, 152, 219, 0.1);
-            border: 2px solid #3498db;
-            border-radius: 8px;
-            padding: 12px;
-            margin: 10px 0;
-        }
-        
-        .seasonal-title {
-            font-weight: bold;
-            color: #2980b9;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .seasonal-icon {
-            margin-right: 8px;
+        .section-title {
             font-size: 1.2rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #27ae60;
+            padding-left: 15px;
         }
         
         .activities-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .activity-item {
@@ -192,28 +193,65 @@
         
         .drive-info {
             position: relative;
-            left: 110px;
-            background: rgba(52, 73, 94, 0.9);
-            color: white;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(39, 174, 96, 0.1);
+            border: 1px solid #27ae60;
+            color: #27ae60;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 30px 0;
             width: fit-content;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
-        .award-highlight {
+        .winter-special {
+            background: rgba(142, 68, 173, 0.08);
+            border-left: 4px solid #8e44ad;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .winter-title {
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+        
+        .brewery-special {
+            background: rgba(52, 152, 219, 0.08);
+            border-left: 4px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight-box {
             background: linear-gradient(45deg, #f39c12, #e67e22);
             color: white;
-            padding: 8px 12px;
+            padding: 10px 12px;
             border-radius: 6px;
             font-weight: bold;
             text-align: center;
             margin: 10px 0;
             font-size: 0.9rem;
+        }
+        
+        .resource-item {
+            font-size: 0.9rem;
+            color: #5d6d7e;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+        
+        .camping-options {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
         }
         
         .notes-section {
@@ -243,175 +281,326 @@
             margin-right: 8px;
             color: #7f8c8d;
         }
-        
-        .camping-options {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-top: 8px;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
     <div class="page-container">
         <div class="header">
             <h1 class="adventure-title">Manistee National Forest</h1>
-            <p class="subtitle">Four Season Paradise - Van Life Perfection</p>
+            <p class="subtitle">River Town & Forest Adventures</p>
         </div>
         
         <div class="duration-banner">
-            540,000 acres • #1 beach in Michigan • World-class cross-country skiing
+            540,000 acres • #1 beach in Michigan • World-class cross-country skiing • Historic Victorian ports
         </div>
         
         <div class="timeline-container">
             <div class="journey-line"></div>
             
-            <!-- Start: Traverse City -->
+            <div class="departure-banner">
+                📍 Departing Traverse City • 1 hour southwest
+            </div>
+            
+            <!-- Stop 1: Manistee City -->
             <div class="destination-stop">
-                <div class="stop-marker start-marker"></div>
-                <div class="destination-info start-info">
+                <div class="stop-marker manistee-marker"></div>
+                <div class="destination-info manistee-info">
                     <div class="location-header">
-                        <span class="location-icon">🏠</span>
-                        <span class="location-name">Traverse City</span>
+                        <span class="location-icon">🏛️</span>
+                        <span class="location-name"><a href="https://www.michigan.org/city/manistee">Manistee</a></span>
                     </div>
-                    <div class="activity-item">
-                        <span class="activity-icon">🚀</span>
-                        <span>Perfect year-round escape!</span>
+                    
+                    <div class="highlight-box">
+                        🏛️ Historic Victorian Port City with #1 Michigan Beach and Award-Winning Breweries! 🏛️
+                    </div>
+                    
+                    <div class="section-title">🏛️ Historic Manistee</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏖️</span>
+                            <span><a href="https://www.visitmanistee.com/first-street-beach">First Street Beach</a> - USA Today's #1 beach in Michigan 2024</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏰</span>
+                            <span><a href="https://www.visitmanistee.com/north-pierhead-lighthouse">North Pierhead Lighthouse</a> - 1870s Victorian charm</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span><a href="https://www.visitmanisteecounty.com/manistee-riverwalk">Manistee Riverwalk</a> - scenic river and harbor views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span>Lakeshore biking with panoramic Lake Michigan views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span>Historic downtown Victorian architecture district</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🎭</span>
+                            <span><a href="https://www.ramsdelltheatre.org">Ramsdell Theatre</a> - historic performance venue</span>
+                        </div>
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">🎄</span>
+                            <span>December Festival Highlight</span>
+                        </div>
+                        <div class="resource-item">
+                            🛷 <a href="https://manisteesleighbellparade.com/">Manistee Sleigh Bell Parade</a> (December 6) - magical holiday celebration with horse-drawn sleighs, hot cocoa, and Victorian downtown charm.
+                        </div>
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">🌲</span>
+                            <span>July Festival Highlight</span>
+                        </div>
+                        <div class="resource-item">
+                            🎪 <a href="https://westmichiganguides.com/manistee-forest-festival">Manistee National Forest Festival</a> - celebrates the forest with lumberjack competitions, live music, and outdoor activities. <a href="https://manisteeforestfestival.com/manistee-national-forest-festival-event-schedule-manistee-michigan/">Full event schedule</a>
+                        </div>
+                    </div>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            🍺 <strong><a href="https://www.northchannelbrewing.com/">North Channel Brewing</a></strong> crafts innovative ales with stories woven into Manistee's fascinating history, while <strong><a href="https://www.thirdlifebrewing.com/">Third Life Brewing</a></strong> specializes in traditional German lagers. <strong><a href="https://www.visitmanisteecounty.com/web-2-0-directory/ironfish-distillery">Iron Fish Distillery</a></strong> - Michigan's first farm distillery offers award-winning spirits with wood-fired cuisine and heated indoor patio year-round.
+                        </div>
+                    </div>
+                    
+                    <div class="camping-options">
+                        <strong>City Base:</strong> Downtown accommodations, <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18596">Lake Michigan Recreation Area</a> nearby for lakefront camping
                     </div>
                 </div>
             </div>
             
             <!-- Drive to Forest -->
-            <div class="drive-info">🚗 1 hour southwest</div>
+            <div class="drive-info">🚗 Drive to National Forest • 20 minutes east</div>
             
-            <!-- Stop 1: National Forest -->
+            <!-- Stop 2: Manistee National Forest -->
             <div class="destination-stop">
                 <div class="stop-marker forest-marker"></div>
                 <div class="destination-info forest-info">
                     <div class="location-header">
                         <span class="location-icon">🌲</span>
-                        <span class="location-name"><a href="https://www.fs.usda.gov/hmnf" target="_blank">Manistee National Forest</a></span>
+                        <span class="location-name"><a href="https://www.fs.usda.gov/hmnf">Manistee National Forest</a></span>
                     </div>
                     
-                    <div class="seasonal-activities">
-                        <div class="seasonal-title">
-                            <span class="seasonal-icon">❄️</span>
+                    <div class="section-title">🌲 Forest Adventures</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span><a href="https://www.visitmanisteecounty.com/project/manistee-river-trail">Manistee River Trail</a> - 11+ mile system along river bluffs</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌉</span>
+                            <span>Little Mac suspension bridge - 245-foot wooden span</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏕️</span>
+                            <span>Free dispersed camping - 540,000 acres of possibilities</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛰️</span>
+                            <span><a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18606">Briar Hill</a> - highest point in Lower Peninsula (1,706ft)</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🚴</span>
+                            <span><a href="https://www.bikemap.net/en/l/5000611/">Bike trail network</a> - mapped routes for all skill levels</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">💧</span>
+                            <span>Waterfalls & pristine Manistee River views</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">🥾 Manistee River Trail Highlights</div>
+                    <div class="resource-item">
+                        🌊 Experience this 11+ mile trail system along the high banks of the Big Manistee River between Tippy Dam and Hodenpyl Dam. The trail offers numerous rustic campsites, scenic overlooks, and connects to the 23-mile North Country Trail loop for extended adventures.
+                    </div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">💧</span>
+                            <span>Waterfall near Mile Marker 3</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌉</span>
+                            <span>Suspension bridge at Hodenpyl Dam</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌅</span>
+                            <span>River overlooks near Mile Marker 6/7</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🌊</span>
+                            <span>Arquilla Creek crossing</span>
+                        </div>
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">❄️</span>
                             <span>Winter Wonderland</span>
                         </div>
                         <div class="activities-grid">
                             <div class="activity-item">
                                 <span class="activity-icon">⛷️</span>
-                                <span>Hundreds of miles XC ski trails</span>
+                                <span>Hundreds of miles XC ski trails - world-class grooming</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🥾</span>
-                                <span>Snowshoeing paradise</span>
+                                <span>Snowshoeing paradise with marked winter routes</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🔥</span>
-                                <span>Cozy van camping with heat</span>
+                                <span>Cozy van camping with heated comfort</span>
                             </div>
                             <div class="activity-item">
                                 <span class="activity-icon">🌌</span>
-                                <span>Stargazing in snow</span>
+                                <span>Stargazing in pristine snow-covered wilderness</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="activities-grid">
-                        <div class="activity-item">
-                            <span class="activity-icon">🥾</span>
-                            <span><a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18432" target="_blank">23-mile trail loop</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🌉</span>
-                            <span><a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18608" target="_blank">Suspension bridge</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🏕️</span>
-                            <span>Free dispersed camping</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">⛰️</span>
-                            <span><a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18606" target="_blank">Briar Hill (highest in LP)</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🐕</span>
-                            <span>Dog-friendly trails</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">💧</span>
-                            <span>Waterfalls & river views</span>
-                        </div>
-                    </div>
                     <div class="camping-options">
-                        <strong>Camping:</strong> <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18599" target="_blank">Seaton Creek</a>, <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18598" target="_blank">Red Bridge</a>, Upper River Road, dispersed sites throughout
+                        <strong>Forest Camping:</strong> <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18599">Seaton Creek</a>, <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18598">Red Bridge</a>, Upper River Road, plus endless dispersed sites
                     </div>
                 </div>
             </div>
             
-            <!-- Drive to Beach -->
-            <div class="drive-info">🚗 30 minutes to Lake Michigan</div>
+            <!-- Drive to Ludington -->
+            <div class="drive-info">🚗 Drive to Ludington • 45 minutes south</div>
             
-            <!-- Stop 2: Manistee Beaches -->
+            <!-- Stop 3: Ludington -->
             <div class="destination-stop">
-                <div class="stop-marker beach-marker"></div>
-                <div class="destination-info beach-info">
+                <div class="stop-marker ludington-marker"></div>
+                <div class="destination-info ludington-info">
                     <div class="location-header">
-                        <span class="location-icon">🏖️</span>
-                        <span class="location-name">Manistee Beach Towns</span>
+                        <span class="location-icon">🗼</span>
+                        <span class="location-name"><a href="https://pureludington.com">Ludington</a></span>
                     </div>
                     
-                    <div class="award-highlight">
-                        🏆 <a href="https://www.visitmanistee.com/first-street-beach" target="_blank">First Street Beach</a>: USA Today's #1 Beach in Michigan 2024! 🏆
+                    <div class="highlight-box">
+                        🗼 112-foot Big Sable Point Lighthouse & 21 miles of trails! State Park Paradise! 🗼
                     </div>
                     
+                    <div class="section-title">🏞️ Ludington State Park Adventures</div>
                     <div class="activities-grid">
                         <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://visitludington.com/big-sable-point-lighthouse-ludington-state-park">Big Sable Point Lighthouse</a> - 112-foot climb with $8 admission</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🥾</span>
+                            <span>21 miles marked trails through diverse ecosystems</span>
+                        </div>
+                        <div class="activity-item">
                             <span class="activity-icon">🏖️</span>
-                            <span>Award-winning beaches</span>
+                            <span>7 miles Lake Michigan shore with pristine beaches</span>
                         </div>
                         <div class="activity-item">
-                            <span class="activity-icon">🏰</span>
-                            <span><a href="https://www.visitmanistee.com/north-pierhead-lighthouse" target="_blank">Historic lighthouse</a></span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🌊</span>
-                            <span>Lake Michigan swimming</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🚴</span>
-                            <span>Lakeshore biking</span>
-                        </div>
-                        <div class="activity-item">
-                            <span class="activity-icon">🍺</span>
-                            <span>Downtown breweries</span>
+                            <span class="activity-icon">🛶</span>
+                            <span><a href="https://visitludington.com/hamlin-lake">Hamlin Lake paddling</a> - peaceful inland lake perfect for kayaking</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-icon">🌅</span>
-                            <span>Epic sunset watching</span>
+                            <span><a href="https://www.michigantrailmaps.com/member-detail/ludington-state-park-skyline-trail-loop/">Skyline Trail vistas</a> - elevated boardwalk with panoramic lake views</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🐕</span>
+                            <span>Dog-friendly beaches for van life companions</span>
                         </div>
                     </div>
+
+                    <div class="section-title">🏛️ Cultural Attractions</div>
+                    <div class="activities-grid">
+                        <div class="activity-item">
+                            <span class="activity-icon">🏛️</span>
+                            <span><a href="https://ludingtonmaritimemuseum.org/">Maritime Museum</a> - carferry simulator experience</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🏘️</span>
+                            <span><a href="https://historicwhitepinevillage.org/">Historic White Pine Village</a> - live blacksmith demos</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">⛴️</span>
+                            <span><a href="https://ssbadger.com/about/">SS Badger to Wisconsin</a> - take your van across!</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-icon">🗼</span>
+                            <span><a href="https://www.holland.org/big-red-lighthouse/">"Big Red" Lighthouse</a> - North Breakwater Light</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title">📚 Planning Resources</div>
+                    <div class="resource-item">
+                        📖 <a href="https://www.mydigitalpublication.com/publication/?m=34968&l=1">Official Ludington Visitor Guide</a> - Comprehensive digital guide with attractions, dining & events
+                    </div>
+                    <div class="resource-item">
+                        🚴 <a href="https://pureludington.com/a-complete-guide-to-biking-in-ludington-michigan/">Ludington Four Season Biking Guide</a> - Year-round cycling with trail maps & route planning
+                    </div>
+
+                    <div class="winter-special">
+                        <div class="winter-title">
+                            <span class="winter-icon">❄️</span>
+                            <span>Winter Magic</span>
+                        </div>
+                        <div class="activities-grid">
+                            <div class="activity-item">
+                                <span class="activity-icon">⛷️</span>
+                                <span>Cross-country skiing trails through state park</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🥾</span>
+                                <span>Snowshoeing tours with lantern-lit evening walks</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🔥</span>
+                                <span>Bonfire at amphitheater with winter programs</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🛷</span>
+                                <span><a href="https://visitludington.com/ludington-state-park-winter-activities">Snowshoe making classes</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">🍺 Liquid Assets</div>
+                    <div class="brewery-special">
+                        <div class="resource-item">
+                            🍺 <strong><a href="https://jamesportbrewingcompany.com/">Jamesport Brewing Co.</a></strong> features a dog-friendly beer garden perfect for van life dining, while <strong><a href="https://ludingtonbaybrewing.com/">Ludington Bay Brewing</a></strong> specializes in locally sourced ingredients and craft beers with Lake Michigan views.
+                        </div>
+                    </div>
+                    
                     <div class="camping-options">
-                        <strong>Camping:</strong> <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18596" target="_blank">Lake Michigan Recreation Area</a> (lakefront), <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18437" target="_blank">Nordhouse Dunes Wilderness</a>
+                        <strong>State Park Camping:</strong> <a href="https://www.michigandnr.com/parksandtrails/Details.aspx?id=463&type=SPCG">Pines</a>, <a href="https://www.hipcamp.com/en-US/campground/united-states/michigan/cedar-campground-lkpqczwp">Cedars</a>, <a href="https://www.mymichigantrips.com/wp/jack-pine-hike-in-sites-backpacking-ludington-state-park-mi/">Jack Pine walk-in sites</a>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="notes-section">
-            <div class="notes-title">🗒️ Four Season Adventure Pro Tips</div>
+            <div class="notes-title">🗒️ Forest & Coastal Adventure Pro Tips</div>
             <div class="note-item">
                 <span class="note-icon">📅</span>
-                <span>SEASONAL TIMING: XC skiing Jan-March, beaches June-September, fall colors October</span>
+                <span>TIMING RECOMMENDATION: Plan 3-5 days minimum - forest trails, historic towns, and lighthouse adventures each deserve dedicated time</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🔗</span>
+                <span>SUPER ADVENTURE TIP: This adventure combines perfectly with our Nordhouse Dunes Wilderness adventure for an epic 7-10 day west Michigan experience</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">📅</span>
+                <span>SEASONAL TIMING: XC skiing Jan-March, beaches June-September, fall colors October, festivals July & December</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🏕️</span>
-                <span>HIDDEN GEM: Secret dispersed camping spots with lake views along <a href="https://www.fs.usda.gov/hmnf" target="_blank">Forest Road 5629</a></span>
+                <span>HIDDEN GEM: Secret dispersed camping spots with lake views along <a href="https://www.fs.usda.gov/hmnf">Forest Road 5629</a></span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🌊</span>
-                <span>LOCAL SECRET: <a href="https://www.visitmanisteecounty.com/manistee-river-trail" target="_blank">Manistee River Trail</a> connects deep forest to downtown breweries on foot</span>
+                <span>LOCAL SECRET: <a href="https://www.visitmanisteecounty.com/manistee-river-trail">Manistee River Trail</a> connects deep forest to downtown breweries on foot</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">🚐</span>
@@ -423,23 +612,15 @@
             </div>
             <div class="note-item">
                 <span class="note-icon">📸</span>
-                <span>PHOTO SECRET: <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18606" target="_blank">Briar Hill</a> sunrise shots are spectacular - highest point in Lower Peninsula at 1,706ft</span>
+                <span>PHOTO SECRET: <a href="https://www.fs.usda.gov/recarea/hmnf/recarea/?recid=18606">Briar Hill</a> sunrise shots are spectacular - highest point in Lower Peninsula at 1,706ft</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">🌅</span>
+                <span>TIMING TIP: Climb Big Sable Point lighthouse early morning for sunrise photos and fewer crowds</span>
             </div>
             <div class="note-item">
                 <span class="note-icon">💰</span>
                 <span>BUDGET TIP: Free camping + free trails + free beaches = ultimate budget adventure destination</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🚴</span>
-                <span>GEAR TIP: Fat tire bikes work year-round - trails in summer, snow biking in winter</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">🛒</span>
-                <span>LOCAL CONNECTION: Downtown Manistee has outdoor gear shops for last-minute supply runs</span>
-            </div>
-            <div class="note-item">
-                <span class="note-icon">📱</span>
-                <span>NAVIGATION TIP: Download offline maps - cell service spotty in deep forest areas</span>
             </div>
         </div>
     </div>
